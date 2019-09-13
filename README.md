@@ -71,6 +71,7 @@ For a video of how the page changes when the buttons are clicked visit https://y
 ## Bonus
 
 - Add your own styling to the page to add extra polish
+- Smooth out the loading animations
 - If you are getting pokemon or pokemon moves at random, ensure that no duplicates are returned, i.e that it's impossible for your function to get a move more than once or the same pokemon to battle each other.
 - When the battle button is pressed, have one of the pokemon 'attack' by using a move. Reflect this by decreasing the PP for that move by one, and lowering the HP of the pokemon that isn't attacking.
 
