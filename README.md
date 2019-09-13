@@ -68,7 +68,7 @@ On top of default HTML styling, the app should have the following styles:
 For a video of how the page changes when the buttons are clicked visit https://youtu.be/_XVy4hRZ_Ig
 
 
-## Bonus tasks
+## Bonus
 
 - Add your own styling to the page to add extra polish
 - If you are getting pokemon or pokemon moves at random, ensure that no duplicates are returned, i.e that it's impossible for your function to get a move more than once or the same pokemon to battle each other.
