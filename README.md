@@ -67,6 +67,9 @@ On top of default HTML styling, the app should have the following styles:
 
 For a video of how the page changes when the buttons are clicked visit https://youtu.be/_XVy4hRZ_Ig
 
+## Rubric
+
+![loadingDataFromOnlineRubric](./loadingDataFromOnlineRubric.png)
 
 ## Bonus
 
