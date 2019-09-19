@@ -65,3 +65,7 @@ button {
     justify-content: center;
     text-align: center;
 }
+
+img {
+    height: 125px;
+}
