@@ -1,5 +1,6 @@
-z<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,14 @@ z<!DOCTYPE html>
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
+
 <body>
     <div id="root">
         <h1>Pokemon Battle Simulator</h1>
-        <button id="get-pokemon-btn">Get Pokemon</button>
-        <button id="battle-btn">Battle!</button>
+        <div id="button-div">
+            <button id="get-pokemon-btn">Get Pokemon</button>
+            <button id="battle-btn">Battle!</button>
+        </div>
         <div class="data"></div>
         <div class="battleHistory">
             <h3>Battle History:</h3>
@@ -20,4 +24,5 @@ z<!DOCTYPE html>
     </div>
     <script src="script.js" defer type="module"></script>
 </body>
+
 </html>
