@@ -4,7 +4,7 @@
 // https://pokeapi.co/docs/v2.html/#moves
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-import Secret from "./Secrets/secret.js";
+// import Secret from "./Secrets/secret.js";
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
 // console.log(Secret.GoogleSearchApiKey)
@@ -73,7 +73,7 @@ const battlePokemon = () => {
 const getUniqueNumber = (history, max) => {
     const ranNum = Math.floor(Math.random() * max);
     if (!history.includes(ranNum)) {
-        pokeHistory.push(ranNum);
+        history.push(ranNum);
         return ranNum;
     } else {
         return getUniqueNumber(history, max);
