@@ -29,8 +29,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 // Makes API call and then gets two Pokemon Object
 const getPokemon = async () => {
     // Call PokeAPi twice to get two pokemon object
-    const randomNumberOne = getRandomNumber(pokeHistory, 807) + 1;
-    const randomNumberTwo = getRandomNumber(pokeHistory, 807) + 1;
+    const randomNumberOne = getUniqueNumber(pokeHistory, 807) + 1;
+    const randomNumberTwo = getUniqueNumber(pokeHistory, 807) + 1;
 
     // For each pokemon display: 
     // Name, Sprite, Base HP stat, Name & PP of 4 Pokemon moves (1st four or random)
@@ -50,50 +50,39 @@ const getNewPokemon = async () => {
 // Make two Pokemon's battle and returns winner
 const battlePokemon = () => {
     const randomNumber = Math.random();
-    const battleHistory = document.querySelector('ž')
+    const battleResult = document.createElement('p');
+    const battleHistory = document.querySelector('.battleHistory');
     const pokemonOne = document.querySelectorAll('.pokemon-name')[0].innerText;
     const pokemonTwo = document.querySelectorAll('.pokemon-name')[1].innerText;
 
     if (randomNumber < .5) {
-        
+        battleResult.innerText = `${pokemonOne} defeated ${pokemonTwo}`;
+        battleHistory.appendChild(battleResult);
         getNewPokemon();
     } else {
-        
+        battleResult.innerText = `${pokemonTwo} defeated ${pokemonOne}`
+        battleHistory.appendChild(battleResult);
         getNewPokemon();
     }
-
-    console.log(winner);
 }
-
-
 
 // Each time battle button gets clicked => One pokemon randomly selected as winner
 // And adds description of fight to battleHistory
 
 // Random Number generator that takes in account number histroy and max number from 0 - max (not inclusive)
-const getRandomNumber = (history, max) => {
+const getUniqueNumber = (history, max) => {
     const ranNum = Math.floor(Math.random() * max);
-
     if (!history.includes(ranNum)) {
         pokeHistory.push(ranNum);
         return ranNum;
     } else {
-        return getRandomNumber(history, max);
+        return getUniqueNumber(history, max);
     }
 }
 
-const makeApiCall = async (ranNum) => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${ranNum}`;
-    const response = await axios.get(url);
-    console.log(response.data);
-    return response;
-}
+const makeApiCall = async (ranNum) => await axios.get(`https://pokeapi.co/api/v2/pokemon/${ranNum}`);
 
-const makeMovesApiCall = async (url) => {
-    // const url = `https://pokeapi.co/api/v2/move/${num}`;
-    const response = await axios.get(url);
-    return response;
-}
+const makeMovesApiCall = async (url) => await axios.get(url);
 
 const displayPokemonData = async (data) => {
     const pokeContainer = document.createElement('div');
@@ -119,7 +108,7 @@ const displayPokemonData = async (data) => {
     let movesHistory = [];
 
     for (let i = 0; i < 4; i++) {
-        const movesIndex = getRandomNumber(movesHistory, data.data.moves.length);
+        const movesIndex = getUniqueNumber(movesHistory, data.data.moves.length);
         const move = document.createElement('p');
         const chosenMove = data.data.moves[movesIndex];
         const moveUrl = chosenMove.move.url;
