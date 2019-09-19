@@ -15,6 +15,8 @@ h1 {
 .data {
     width: 600px;
     display: flex;
+    height: 500px;
+    margin: 30px 0;
 }
 
 .data > div {
@@ -24,7 +26,6 @@ h1 {
 
 #root {
     width: 600px;
-    border: 1px solid black;
     margin: auto;
 }
 
@@ -55,17 +56,77 @@ button {
     text-shadow: -1.5px 1px 2px black;
 }
 
+button:hover {
+    box-shadow: 0px 0px 3px 3px rgba(158, 158, 158, 0.603);
+}
+
+button:active {
+    color: white;
+    transform: scale(.9);
+    box-shadow: 0px 0px 5px 5px rgba(102, 102, 102, 0.637);
+}
+
 .battleHistory {
     margin: auto;
-    color: rgb(16, 240, 221);
-    text-shadow: -1px 1px 2px black;
+    color: rgb(31, 78, 207);
+    /* text-shadow: -1.5px 1px 1px rgb(124, 124, 124); */
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    letter-spacing: .5px;
 }
 
 img {
     height: 125px;
+}
+
+@keyframes fadeInFromLeft {
+    0% {opacity: 0; left: -200px;}
+    100% {opacity: 1; left: 0px;}
+}
+
+@keyframes fadeInFromRight {
+    0% {opacity: 0; left: 200px;}
+    100% {opacity: 1; left: 0px;}
+}
+
+@keyframes fadeInFromBottom {
+    0% {top: -100px;}
+    100% {top: 0px;}
+
+}
+
+
+.data div:last-child {
+    position: relative;
+    animation-name: fadeInFromRight;
+    animation-duration: 1s;
+}
+
+.data div:first-child {
+    position: relative;
+    animation-name: fadeInFromLeft;
+    animation-duration: 1s;
+}
+
+.battleHistory {
+    position: relative;
+    animation-name: fadeInFromBottom;
+    animation-duration: 1s;
+}
+
+.pokeCard {
+    border-radius: 10px;
+    box-shadow: -1px 1px 5px 5px rgba(161, 199, 212, 0.582);
+    margin: 10px;
+    border: 1px solid rgb(156, 215, 235);
+}
+
+.pokeCard:hover {
+    background-color: rgba(145, 204, 223, 0.788);
+    color: white;
+    border: 1px solid rgb(151, 218, 240);
+    box-shadow: 0 0 10px 10px rgba(132, 184, 201, 0.678);
 }

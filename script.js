@@ -34,10 +34,25 @@ const getPokemon = async () => {
 
     // For each pokemon display: 
     // Name, Sprite, Base HP stat, Name & PP of 4 Pokemon moves (1st four or random)
-    const pokemonOne = await makeApiCall(randomNumberOne);
-    const pokemonTwo = await makeApiCall(randomNumberTwo);
-    displayPokemonData(pokemonOne);
-    displayPokemonData(pokemonTwo);
+    const pokeDataArr = await pokemonDataSync(randomNumberOne, randomNumberTwo);
+
+    await renderPokemonSync(pokeDataArr);
+}
+
+const pokemonDataSync = async (num1, num2) => {
+    let pokeDataArr = [];
+    const pokemonOne = await makeApiCall(num1);
+    const pokemonTwo = await makeApiCall(num2);
+
+    pokeDataArr.push(pokemonOne);
+    pokeDataArr.push(pokemonTwo);
+
+    return await pokeDataArr;
+}
+
+const renderPokemonSync = (pokeDataArr) => {
+    displayPokemonData(pokeDataArr[0]);
+    displayPokemonData(pokeDataArr[1]);
 }
 
 const getNewPokemon = async () => {
@@ -51,17 +66,17 @@ const getNewPokemon = async () => {
 const battlePokemon = () => {
     const randomNumber = Math.random();
     const battleResult = document.createElement('p');
-    const battleHistory = document.querySelector('.battleHistory');
+    const battleHistory = document.querySelector('#history');
     const pokemonOne = document.querySelectorAll('.pokemon-name')[0].innerText;
     const pokemonTwo = document.querySelectorAll('.pokemon-name')[1].innerText;
 
     if (randomNumber < .5) {
         battleResult.innerText = `${pokemonOne} defeated ${pokemonTwo}`;
-        battleHistory.appendChild(battleResult);
+        battleHistory.prepend(battleResult);
         getNewPokemon();
     } else {
         battleResult.innerText = `${pokemonTwo} defeated ${pokemonOne}`
-        battleHistory.appendChild(battleResult);
+        battleHistory.prepend(battleResult);
         getNewPokemon();
     }
 }
@@ -86,6 +101,7 @@ const makeMovesApiCall = async (url) => await axios.get(url);
 
 const displayPokemonData = async (data) => {
     const pokeContainer = document.createElement('div');
+    pokeContainer.setAttribute('class', 'pokeCard');
     const name = document.createElement('h3');
     name.setAttribute('class', 'pokemon-name');
     const img = document.createElement('img');
@@ -118,6 +134,27 @@ const displayPokemonData = async (data) => {
         move.innerText = `${chosenMove.move.name} PP: ${movePowerPoints.data.pp}`;
         pokeContainer.appendChild(move);
     }
+    // console.log(data.data.sprites.back_shiny);
+
+    if (data.data.sprites.back_shiny != null) {
+        img.addEventListener('mouseover', () => {
+            img.style.transition = '.5s ease';
+            img.src = data.data.sprites.back_shiny;
+        })
+    }
+    
+    pokeContainer.addEventListener('mouseover', () => {
+        pokeContainer.style.transform = 'scale(1.05)';
+    })
+    
+    img.addEventListener('mouseleave', () => {
+        img.style.transition = '.5s ease';
+        img.src = data.data.sprites.front_shiny;
+    })
+
+    pokeContainer.addEventListener('mouseleave', () => {
+        pokeContainer.style.transform = 'scale(1)';
+    })
 
     container.appendChild(pokeContainer);
 }
