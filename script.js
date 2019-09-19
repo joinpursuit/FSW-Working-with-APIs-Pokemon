@@ -4,7 +4,7 @@
 // https://pokeapi.co/docs/v2.html/#moves
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
-import  Secret from "./Secrets/secret.js";
+import Secret from "./Secrets/secret.js";
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
 
 // console.log(Secret.GoogleSearchApiKey)
@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Each time getPokemon button gets clicked => Display two new Pokemon
     document.querySelector('#get-pokemon-btn').addEventListener('click', async () => {
-        document.querySelector('.data').innerHTML = '';
-        const start2 = Date.now();
-        await getPokemon();
-        console.log(`Time to get new Pokemons: ${Date.now() - start2} ms`);
+        await getNewPokemon();
     })
 
+    document.querySelector('#battle-btn').addEventListener('click', () => {
+        battlePokemon();
+    })
 })
 
 // Makes API call and then gets two Pokemon Object
@@ -40,9 +40,29 @@ const getPokemon = async () => {
     displayPokemonData(pokemonTwo);
 }
 
+const getNewPokemon = async () => {
+    document.querySelector('.data').innerHTML = '';
+    const start2 = Date.now();
+    await getPokemon();
+    console.log(`Time to get new Pokemons: ${Date.now() - start2} ms`);
+}
+
 // Make two Pokemon's battle and returns winner
 const battlePokemon = () => {
+    const randomNumber = Math.random();
+    const battleHistory = document.querySelector('ž')
+    const pokemonOne = document.querySelectorAll('.pokemon-name')[0].innerText;
+    const pokemonTwo = document.querySelectorAll('.pokemon-name')[1].innerText;
 
+    if (randomNumber < .5) {
+        
+        getNewPokemon();
+    } else {
+        
+        getNewPokemon();
+    }
+
+    console.log(winner);
 }
 
 
@@ -78,6 +98,7 @@ const makeMovesApiCall = async (url) => {
 const displayPokemonData = async (data) => {
     const pokeContainer = document.createElement('div');
     const name = document.createElement('h3');
+    name.setAttribute('class', 'pokemon-name');
     const img = document.createElement('img');
     const hp = document.createElement('p');
     const moves = document.createElement('p');
@@ -88,7 +109,7 @@ const displayPokemonData = async (data) => {
     moves.innerText = 'Moves:';
 
     const container = document.querySelector('.data');
-    
+
     pokeContainer.appendChild(name);
     pokeContainer.appendChild(img);
     pokeContainer.appendChild(hp);
@@ -111,4 +132,3 @@ const displayPokemonData = async (data) => {
 
     container.appendChild(pokeContainer);
 }
-
