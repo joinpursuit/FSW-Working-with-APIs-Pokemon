@@ -1,0 +1,24 @@
+body {
+    font-family: sans-serif;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    padding-top: 30px;
+}
+
+.data {
+    width: 600px;
+    display: flex;
+}
+
+.data > div {
+    width: 300px;
+}
+
+#root {
+    
+}
