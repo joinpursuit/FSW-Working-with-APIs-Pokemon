@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 let pokeBattleHistory = [];
 let currentPokeArr = [];
 
+//this function gets the pokemon from the pokeApi pokemon endpoint
 async function getPokemon() {
     replacePoke()
     const poke1 = await generatePoke()

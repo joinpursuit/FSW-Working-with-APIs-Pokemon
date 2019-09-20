@@ -69,12 +69,18 @@ h3 {
 }
 
 .battleHistory {
+    justify-content: center;
+    width: 500px;
     font-weight: bold;
     position: absolute;
     top: 670px;
     display: grid;
     grid-template-columns: 200px;
     grid-gap: 10px;
+}
+
+.battleHistory p {
+    width: 300px;
 }
 
 #battleButton {
