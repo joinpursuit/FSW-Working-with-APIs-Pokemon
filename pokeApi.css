@@ -1,14 +1,25 @@
 body {
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png);
+    background-repeat: no-repeat;
+    /* background-size: cover; */
     font-family: sans-serif;
     background-color: lightblue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: black;
+    text-shadow: -1px 0 darkgrey, 0 1px darkgrey, 1px 0 darkgrey, 0 -1px darkgrey;
 }
 
 h1 {
     padding: 30px;
+}
+
+#top_heading {
+    font-size: 30px;
+    color: whitesmoke;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .data {
