@@ -29,6 +29,12 @@ h1 {
     font-size: 90px;
 }
 
+h3 {
+    background-color: bisque;
+    border: 1px solid black;
+    text-align: center;
+}
+
 #top_heading {
     font-size: 30px;
 
@@ -56,16 +62,19 @@ h1 {
 
 .pokeContainer {
     width: 300px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-auto-columns: 200px;
     /* background-color: cadetblue; */
-    justify-content: space-between;
+    grid-gap: 10px;
 }
 
 .battleHistory {
     font-weight: bold;
     position: relative;
-    top: 200px;
+    top: 100px;
+    display: grid;
+    grid-template-columns: 200px;
+    grid-gap: 10px;
 }
 
 .pokemonName {

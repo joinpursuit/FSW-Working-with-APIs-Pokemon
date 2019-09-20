@@ -68,7 +68,9 @@ async function pushPoke2Array(par, par2) {
 const getMoves = async (pokeInfo) => {
     //getting the moves of the pokemon generated
     console.log(pokeInfo.moves);
-    let randomIndex = Math.floor((Math.random() * (pokeInfo.moves).length) + 1);
+    let randomIndex = Math.floor((Math.random() * (pokeInfo.moves).length) + 0);
+    console.log(randomIndex);
+
     let url = pokeInfo.moves[`${randomIndex}`].move.url;
     console.log(url);
     let movesInfo = await axios.get(url)
@@ -115,7 +117,12 @@ async function creatingCard(pokemon) {
 
     //assigning the innerText of the elements created to display the information
     pokeName.innerText = pokemon.name
-    pokePic.src = pokemon.sprites.front_default
+
+    if (pokemon.sprites.front_default != null) {
+        pokePic.src = pokemon.sprites.front_default
+    } else {
+        pokePic.src = 'https://images-na.ssl-images-amazon.com/images/I/51YxooVI5%2BL._SX425_.jpg'
+    }
     pokeHp.innerText = `HP: ${pokemon.stats[5].base_stat}`
     pokeMoves.innerText = 'Moves:'
 
