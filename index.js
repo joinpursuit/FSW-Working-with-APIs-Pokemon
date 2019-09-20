@@ -21,14 +21,20 @@ const getPokemon1 = () => {
            let pokemonName = response.data.name.toUpperCase();
            let nameInsert = document.querySelector("#pokemon-name1");
            nameInsert.innerHTML = "NAME: " + pokemonName;
-           let pokemonHp = response.data.stats.stat.hp
-           let hpInsert = document.querySelector("#hp1")
-           hpInsert.innerHTML = "HP: " + pokemonHp
+           let findHp = response.data.stats
+           let pokemonHp = ""
+           findHp.forEach((element, index, array) => {
+               if (element.stat.name === "hp") {
+                   pokemonHp = element.base_stat
+               }
+           })
+           let insertHP = document.querySelector("#hp1")
+           insertHP.innerHTML = "HP: " + pokemonHp
            let pokemonSprite = response.data.sprites.front_default;
            let img = document.querySelector("#sprite1");
            img.src = pokemonSprite;
            img.alt = pokemonName;
-           if 
+
 
        })
 }
