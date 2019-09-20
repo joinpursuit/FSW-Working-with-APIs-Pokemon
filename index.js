@@ -1,12 +1,24 @@
 let apiUrl = 'https://pokeapi.co'
+let pokemonLost = true;
 
 document.addEventListener('DOMContentLoaded', () => {
 	let pokemonGrabber = document.querySelector('#get-pokemon');
 	let battleButton = document.querySelector('#battle');
+	setTimeout(playMusic, 5000);
 	pokemonGrabber.addEventListener('click', createBattleScene);
 	battleButton.addEventListener('click', battlePokemon);
 
 })
+
+async function playMusic(){
+	try{
+	let music = document.querySelector('audio');
+	await music.play();
+	}
+	catch(err){
+		console.log(err.message);
+	}
+}
 
 async function getPokemonFromOnline(){
 	let pokeNum1 = Math.floor(Math.random() * 807) + 1;
@@ -17,6 +29,7 @@ async function getPokemonFromOnline(){
 
 	let pokeData1 = await axios.get(`${apiUrl}/api/v2/pokemon/${pokeNum1}/`);
 	let pokeData2 = await axios.get(`${apiUrl}/api/v2/pokemon/${pokeNum2}/`);
+	pokemonLost = false;
 	return [pokeData1, pokeData2];
 }
 
@@ -36,6 +49,7 @@ async function createBattleScene(){
 		let pokeImg = document.createElement('img');
 		pokeImg.src = pokemon[i].data.sprites.front_shiny;
 		let baseHP = document.createElement('p');
+		baseHP.classList.add('baseHP');
 		baseHP.innerText = pokemon[i].data.stats[5].base_stat;	
 		let movesList = await makeMovesList(pokemon[i]);
 		let pokeCard = document.createElement('div');
@@ -88,23 +102,41 @@ async function makeMovesList(pokemon){
 }
 
 function battlePokemon(){
-	let randomAttacker = Math.floor(Math.random() * 2);
-	let attackingPokemon;
-	let defendingPokemon;
-	if(randomAttacker === 0){
-		attackingPokemon = document.querySelector('.pokeCard1');
-		defendingPokemon = document.querySelector('.pokeCard2');
+	if(!pokemonLost){
+		let battleHistory = document.querySelector('.battleHistory');
+		let randomAttacker = Math.floor(Math.random() * 2);
+		let attackingPokemon;
+		let defendingPokemon;
+		if(randomAttacker === 0){
+			attackingPokemon = document.querySelector('.pokeCard1');
+			defendingPokemon = document.querySelector('.pokeCard2');
+		}
+		else{
+			attackingPokemon = document.querySelector('.pokeCard2');
+			defendingPokemon = document.querySelector('.pokeCard1');
+		}
+		//This goes through the amount of list items in the pokecard selected and takes a random move
+		let randomMove = Math.floor(Math.random() * attackingPokemon.querySelector('ul').getElementsByTagName('li').length);
+		let attackingMovePP = parseInt(attackingPokemon.querySelector('ul').getElementsByTagName('li')[randomMove].querySelector('.ppclass').innerText.slice(3));
+		let summary = document.createElement('ul');
+		let attack = document.createElement('li');
+		attack.innerText = `${attackingPokemon.firstElementChild.innerText} used ${attackingPokemon.querySelector('ul').getElementsByTagName('li')[randomMove].querySelector('.moveInfo').innerText}`;
+		summary.appendChild(attack);
+		let defendingPokemonHP = parseInt(defendingPokemon.querySelector('.baseHP').innerText) - attackingMovePP;
+		if(defendingPokemonHP <= 0){
+			let superEffective = document.createElement('p');
+			superEffective.innerText = 'It was super effective!!!';
+			let defeated = document.createElement('p');
+			defeated.innerText = `${attackingPokemon.firstElementChild.innerText} defeated ${defendingPokemon.firstElementChild.innerText}`;
+			summary.appendChild(superEffective);
+			summary.appendChild(defeated);
+			pokemonLost = true;
+		};
+		defendingPokemon.querySelector('.baseHP').innerText = defendingPokemonHP;
+		battleHistory.appendChild(summary);	
 	}
-	else{
-		attackingPokemon = document.querySelector('.pokeCard2');
-		defendingPokemon = document.querySelector('.pokeCard1');
-	}
-	//This goes through the amount of list items in the pokecard selected and takes a random move
-	let randomMove = Math.floor(Math.random() * attackingPokemon.querySelector('ul').getElementsByTagName('li').length);
-	let attackingMovePP = parseInt(attackingPokemon.querySelector('ul').getElementsByTagName('li')[randomMove].querySelector('.ppclass').innerText.slice(3));
-	let summary = document.createElement('ul');
-	let attack = document.createElement('li');
-	attack.innerText = `${attackingPokemon.firstElementChild.innerText} used ${attackingPokemon.querySelector('ul').getElementsByTagName('li')[randomMove].querySelector('.moveInfo').innerText}`;
+
+
 	//when back, finish the rest of the logic for the battle scene of pokemon
 
 	// added a class to the pokecards so that you can target them here in the battlepokemon function
