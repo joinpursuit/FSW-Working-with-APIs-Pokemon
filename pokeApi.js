@@ -1,12 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     let getPoke = document.querySelector('#getPoke')
     let battle = document.querySelector('#battleButton')
-
+    battle.disabled = true
     getPoke.addEventListener('click', () => {
+        battle.disabled = false
         getPokemon()
     })
     battle.addEventListener('click', async () => {
         battlePokemon()
+        battle.disabled = true
     })
 })
 
@@ -32,7 +34,12 @@ const battlePokemon = async () => {
     //between the two pokemon in the current array
     let randomBattleNum = Math.floor((Math.random() * 2) + 0);
     console.log(randomBattleNum);
-    pokeBattleHistory.push(`${currentPokeArr[randomBattleNum]} won`)
+
+    if (currentPokeArr[0] !== currentPokeArr[randomBattleNum]) {
+        pokeBattleHistory.push(`${currentPokeArr[randomBattleNum]} defeated ${currentPokeArr[0]}`)
+    } else {
+        pokeBattleHistory.push(`${currentPokeArr[randomBattleNum]} defeated ${currentPokeArr[1]}`)
+    }
 
     //this block loops through the array of the battle history and adds the last element to the screen
     for (let i = 0; i < pokeBattleHistory.length; i++) {
