@@ -72,7 +72,14 @@ async function makeMovesList(pokemon){
 			};
 			let moveData = await axios.get(pokemon.data.moves[newMoveNum].move.url);
 			let newMove = document.createElement('li');
-			newMove.innerText =`${pokemon.data.moves[newMoveNum].move.name} PP: ${moveData.data.pp}`;
+			let moveInfo = document.createElement('p');
+			moveInfo.innerText = `${pokemon.data.moves[newMoveNum].move.name}`;
+			moveInfo.classList.add('moveInfo');
+			let pp = document.createElement('p');
+			pp.innerText = `PP:${moveData.data.pp}`;
+			pp.classList.add('ppclass');
+			newMove.appendChild(moveInfo);
+			newMove.appendChild(pp);
 			movesList.appendChild(newMove);
 			assignedMoves.push(newMoveNum);
 		}
@@ -81,7 +88,26 @@ async function makeMovesList(pokemon){
 }
 
 function battlePokemon(){
-// added a class to the pokecards so that you can target them here in the battlepokemon function
+	let randomAttacker = Math.floor(Math.random() * 2);
+	let attackingPokemon;
+	let defendingPokemon;
+	if(randomAttacker === 0){
+		attackingPokemon = document.querySelector('.pokeCard1');
+		defendingPokemon = document.querySelector('.pokeCard2');
+	}
+	else{
+		attackingPokemon = document.querySelector('.pokeCard2');
+		defendingPokemon = document.querySelector('.pokeCard1');
+	}
+	//This goes through the amount of list items in the pokecard selected and takes a random move
+	let randomMove = Math.floor(Math.random() * attackingPokemon.querySelector('ul').getElementsByTagName('li').length);
+	let attackingMovePP = parseInt(attackingPokemon.querySelector('ul').getElementsByTagName('li')[randomMove].querySelector('.ppclass').innerText.slice(3));
+	let summary = document.createElement('ul');
+	let attack = document.createElement('li');
+	attack.innerText = `${attackingPokemon.firstElementChild.innerText} used ${attackingPokemon.querySelector('ul').getElementsByTagName('li')[randomMove].querySelector('.moveInfo').innerText}`;
+	//when back, finish the rest of the logic for the battle scene of pokemon
+
+	// added a class to the pokecards so that you can target them here in the battlepokemon function
 //when you come back, finish the randomized battlepokemon function, then add css styles to make it look nice
 //then if you have time finish up with the bonus stuff
 }
