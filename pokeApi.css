@@ -8,21 +8,35 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: black;
-    text-shadow: -1px 0 darkgrey, 0 1px darkgrey, 1px 0 darkgrey, 0 -1px darkgrey;
-}
-
-h1 {
-    padding: 30px;
-}
-
-#top_heading {
-    font-size: 30px;
     color: whitesmoke;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+button {
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5%;
+    background-color: beige;
+}
+
+#battleButton {
+    position: relative;
+
+}
+
+h1 {
+    padding: 30px;
+    font-size: 90px;
+}
+
+#top_heading {
+    font-size: 30px;
+
+}
+
 .data {
+    position: relative;
+    top: 90px;
     font-weight: bold;
     width: 600px;
     display: grid;
@@ -42,12 +56,16 @@ h1 {
 
 .pokeContainer {
     width: 300px;
+    display: flex;
+    flex-direction: column;
     /* background-color: cadetblue; */
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .battleHistory {
     font-weight: bold;
+    position: relative;
+    top: 200px;
 }
 
 .pokemonName {
