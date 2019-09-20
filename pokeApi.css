@@ -70,11 +70,16 @@ h3 {
 
 .battleHistory {
     font-weight: bold;
-    position: relative;
-    top: 100px;
+    position: absolute;
+    top: 670px;
     display: grid;
     grid-template-columns: 200px;
     grid-gap: 10px;
+}
+
+#battleButton {
+    position: relative;
+    top: 20px;
 }
 
 .pokemonName {
