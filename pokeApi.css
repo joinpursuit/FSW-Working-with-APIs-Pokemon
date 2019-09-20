@@ -1,25 +1,45 @@
 body {
-    background-color: cadetblue;
+    font-family: sans-serif;
+    background-color: lightblue;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-#container {
+h1 {
+    padding: 30px;
+}
+
+.data {
+    font-weight: bold;
+    width: 600px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 550px;
+    grid-gap: 200px;
     /* align-items: center; */
+}
+
+.data:first-child {
+    position: relative;
+    float: left;
+}
+
+.data:last-child {
+    float: right;
 }
 
 .pokeContainer {
     width: 300px;
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
     justify-content: center;
 }
 
-.pokemonName {
+.battleHistory {
     font-weight: bold;
+}
+
+.pokemonName {
     font-size: 30px;
 }
 
