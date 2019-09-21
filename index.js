@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", () =>{
     let button1 = document.querySelector("#random-pokemon");
     button1.addEventListener("click", getAllPokemon)
+    let button2 = document.querySelector("#battle")
+    button2.addEventListener("click", fight)
 })
+
+const coinFlip = () => {
+    let fiftyFifty = Math.floor((Math.random() * 2) +1)
+    console.log(fiftyFifty)
+    return fiftyFifty
+}
 
 const randomPokeId = () => {
     let randomId = Math.floor((Math.random() * 809) +1);
@@ -131,6 +139,7 @@ const getPokemon2 = () => {
                if (element.move.name && twoMove1 === "") {
                    twoMove1 = element.move.name
                    twoMove1url = element.move.url
+                   console.log(twoMove1url)
                } else if (element.move.name && twoMove2 === "") {
                    twoMove2 = element.move.name
                    twoMove2url = element.move.url
@@ -157,7 +166,135 @@ const getPokemon2 = () => {
           })
 }
 
+const getPp1 = () => {
+    let url = oneMove1url
+    axios.get(url)
+       .then((response) => {
+           let pp1 = response.data.pp
+           let ppInsert = document.querySelector("#one-pp1")
+           ppInsert.innerText = "PP: " + pp1
+       })
+       .catch(err => {
+           console.log("GetPP Broken", err)
+       })
+}
+
+const getPp2 = () => {
+    let url = oneMove2url
+    axios.get(url)
+       .then((response) => {
+           let pp = response.data.pp
+           let ppInsert = document.querySelector("#one-pp2")
+           ppInsert.innerText = "PP: " + pp
+       })
+       .catch(err => {
+           console.log("GetPP Broken", err)
+       })
+}
+
+const getPp3 = () => {
+    let url = oneMove3url
+    axios.get(url)
+       .then((response) => {
+           let pp = response.data.pp
+           let ppInsert = document.querySelector("#one-pp3")
+           ppInsert.innerText = "PP: " + pp
+       })
+       .catch(err => {
+           console.log("GetPP Broken", err)
+       })
+}
+
+const getPp4 = () => {
+    let url = oneMove4url
+    axios.get(url)
+       .then((response) => {
+           let pp = response.data.pp
+           let ppInsert = document.querySelector("#one-pp4")
+           ppInsert.innerText = "PP: " + pp
+       })
+       .catch(err => {
+           console.log("GetPP Broken", err)
+       })
+}
+
+const getPp5 = () => {
+    let url = twoMove1url
+    axios.get(url)
+       .then((response) => {
+           let pp = response.data.pp
+           let ppInsert = document.querySelector("#two-pp1")
+           ppInsert.innerText = "PP: " + pp
+       })
+       .catch(err => {
+           console.log("GetPP Broken", err)
+       })
+}
+
+const getPp6 = () => {
+    let url = twoMove2url
+    axios.get(url)
+       .then((response) => {
+           let pp = response.data.pp
+           let ppInsert = document.querySelector("#two-pp2")
+           ppInsert.innerText = "PP: " + pp
+       })
+       .catch(err => {
+           console.log("GetPP Broken", err)
+       })
+}
+
+const getPp7 = () => {
+    let url = twoMove3url
+    axios.get(url)
+       .then((response) => {
+           let pp = response.data.pp
+           let ppInsert = document.querySelector("#two-pp3")
+           ppInsert.innerText = "PP: " + pp
+       })
+       .catch(err => {
+           console.log("GetPP Broken", err)
+       })
+}
+
+const getPp8 = () => {
+    let url = twoMove4url
+    axios.get(url)
+       .then((response) => {
+           let pp = response.data.pp
+           let ppInsert = document.querySelector("#two-pp4")
+           ppInsert.innerText = "PP: " + pp
+       })
+       .catch(err => {
+           console.log("GetPP Broken", err)
+       })
+}
+
 const getAllPokemon = () => {
+    getPp1()
+    getPp2()
+    getPp3()
+    getPp4()
+    getPp5()
+    getPp6()
+    getPp7()
+    getPp8()
     getPokemon1()
     getPokemon2()
+}
+
+const fight = () => {
+    let winnerCheck = coinFlip()
+    console.log(winnerCheck)
+    if(winnerCheck === 1) {
+        let win1 = document.createElement("p")
+        let div1 = document.querySelector("#battle-history")
+        win1.innerText = firstPokemon
+        div1.append(win1)
+    } else {
+        let win2 = document.createElement("p")
+        let div2 = document.querySelector("#battle-history")
+        win2.innerText = secondPokemon
+        div2.append(win2)
+    }
 }
