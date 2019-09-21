@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Pokemon Games</title>
+    <script src="./pokemonBattle.js" rel="text/javascript"></script>
+    <link href="./pokemonBattle.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="header">
+        <h1>Pokemon Battle Simulator</h1>
+        <p>Click 'get pokemon!' to display your two fighters! Click "battle!" to have the pokemon battle</p>
+        <button id="getPokemon">get pokemon!</button> <br>
+        <button id="battle">battle!</button>
+    </div>
+
+    <div id='poke-battle'>
+        <div class="data">
+            <p id="p1-name"></p>
+            <img id="p1-sprites"></img>
+            <p id="p1-hp"></p>
+            <!-- <p>Moves:</p> -->
+            <div id="p1-attributes"></div>
+
+        </div>
+
+        <div class="data2">
+            <p id="p2-name"></p>
+            <img id="p2-sprites"></img>
+            <p id="p2-hp"></p>
+            <!-- <p>Moves:</p> -->
+            <div id="p2-attributes"></div>
+
+        </div>
+    </div>
+
+    <div class="battleHistory">
+        <h3>Battle History</h3>
+        <ul id='winners'></ul>
+    </div>
+</body>
+
+</html>
