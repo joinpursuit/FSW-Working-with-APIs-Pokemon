@@ -10,3 +10,9 @@ h1, p, form{
     display: flex;
     justify-content: center;
 }  */
+
+.data {
+    display: flex;
+    /* grid-template-columns: repeat(2,1fr); */
+    
+}
