@@ -104,7 +104,7 @@ const battlePoke = () => {
     let loserPokemon = arena.childNodes[loser]
     console.log(loserPokemon.innerHTML)
     console.log(arena.childNodes)
-    // winnerPokemon.style.backgroundColor = 'yellow'
+    winnerPokemon.style.backgroundColor = 'yellow'
     console.log('the winner is ', winner)
     let footer = document.querySelector('#footer')
     let battleResult = document.createElement('p')

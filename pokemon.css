@@ -43,6 +43,7 @@ font-size: 28px;
 p{
     align-items: flex-start;
     color: black;
+    text-align: center;
    
 }
 /* .Pokemon1Name{
