@@ -2,7 +2,7 @@ body{
 background-image: url('https://i.guim.co.uk/img/media/3b962fbea708f7ca583ed67ff88119a428aaa504/0_443_1440_1440/master/1440.jpg?width=300&quality=85&auto=format&fit=max&s=bda14865f2c3976cbc163108ef92e7c1');
 background-repeat:repeat;
 }
-#getPokemon{
+#getPoke{
     background-color: rgb(248, 37, 0); 
     border: rgb(2, 0, 0);
     color: white;
@@ -16,7 +16,7 @@ background-repeat:repeat;
     top: 250px;
     border-radius: 100%;
 }
-#battlePokemon{
+#battlePoke{
     background-color: rgb(248, 55, 7); 
     border: rgb(8, 0, 0);
     color: white;
