@@ -1,5 +1,4 @@
 let allPokemonsCount = 807;
-let allPokemonsNames; //Server posponse.results is: Object, key is the id, the value is an object{name: "", url:""}
 let calledIDs = [];
 let readyForBattle = false;
 
@@ -309,16 +308,6 @@ const fightSimulation = (p1Image, p1HP, p1Attack, p2Image, p2HP) => {
     setTimeout(() => {
         fightDiv.style.display = "none";
     }, 5000);
-}
-
-
-const sleep = (time) => {
-  var start = new Date().getTime();
-  for (var i = 0; i < 1; i--) { //infinit loop
-    if ((new Date().getTime() - start) > time) {
-      break;
-    }
-  }
 }
 
 const isAWinner = (winner, loser) => {
