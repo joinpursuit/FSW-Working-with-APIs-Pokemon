@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", () => {
     let button1 = document.querySelector("#random-pokemon");
     button1.addEventListener("click", getAllPokemon)
     let button2 = document.querySelector("#battle")
@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 const coinFlip = () => {
     let fiftyFifty = Math.floor((Math.random() * 2) +1)
-    console.log(fiftyFifty)
     return fiftyFifty
 }
 
@@ -168,11 +167,13 @@ const getPokemon2 = () => {
 
 const getPp1 = () => {
     let url = oneMove1url
+    console.log(oneMove1url)
     axios.get(url)
        .then((response) => {
            let pp1 = response.data.pp
            let ppInsert = document.querySelector("#one-pp1")
            ppInsert.innerText = "PP: " + pp1
+           console.log("got the PP")
        })
        .catch(err => {
            console.log("GetPP Broken", err)
@@ -271,6 +272,8 @@ const getPp8 = () => {
 }
 
 const getAllPokemon = () => {
+    getPokemon1()
+    getPokemon2()
     getPp1()
     getPp2()
     getPp3()
@@ -279,13 +282,10 @@ const getAllPokemon = () => {
     getPp6()
     getPp7()
     getPp8()
-    getPokemon1()
-    getPokemon2()
 }
 
 const fight = () => {
     let winnerCheck = coinFlip()
-    console.log(winnerCheck)
     if(winnerCheck === 1) {
         let win1 = document.createElement("p")
         let div1 = document.querySelector("#battle-history")
