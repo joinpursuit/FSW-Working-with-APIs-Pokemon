@@ -32,8 +32,8 @@ function movePP (moveName, moveNum, currentPokemon) {
 
 function summonPokemon () {
     console.log("Pokemon Summoned")
-    let pokemonOne = Math.floor(Math.random() * 809);
-    let pokemonTwo = Math.floor(Math.random() * 809);
+    let pokemonOne = Math.floor(Math.random() * 809) + 1;
+    let pokemonTwo = Math.floor(Math.random() * 809) + 1;
     document.querySelector(".card1").style.display = "block";
     document.querySelector(".card2").style.display = "block";
 
@@ -134,7 +134,7 @@ function pokemonBattle () {
 
     let pokemonName = document.createElement('p');
 
-    let outcome = Math.floor(Math.random() * 2);
+    let outcome = Math.floor(Math.random() * 2) + 1;
 
     if (outcome === 1) {
         pokemonName.innerText = nameHolder1.innerText + " defeated " + nameHolder2.innerText;
