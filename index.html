@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokemon Battle</title>
+    <script src="index.js" text="text/javascript"></script>
+    <link href="index.css" rel="stylesheet" text="text/css">
+</head>
+
+<body>
+    <h1>Pokemon Battle Simulator</h1>
+    <div id="errorMessage"></div>
+    <div id="description">
+        <p>Ready to play Pokemon? </p>
+        <p>Click on "Get Pokemon" will load two Pokemons (randomly)</p>
+        <p>Click on "Battle" to have a random winner</p>
+        <p>Choosing your move is still on development</p>
+        <p>Thank you for understanding</p>
+        <hr>
+        <p>Click "Start" when ready ... Have Fun</p>
+    </div>
+    <button id="start">Start</button>
+
+    <div id="game">
+        <button id="getPoke">-Get Pokemon-</button>
+        <button id="battle">Pokemon Battle</button>
+
+        <div id="pokeball">
+            <img src="Pokeball.gif" alt="Pokeball Opening Gif">
+        </div>
+        <div id="battleEffect">
+            <img src="BattleEffect.gif" alt="Lights Effect">
+        </div>
+        
+        <div id="data">
+
+            <div id="left">
+                <h3></h3>
+                <img>
+                <h4 id="hp"></h4>
+                <form id="leftMoves"></form>
+            </div>
+            <div id="right">
+                <h3></h3>
+                <img>
+                <h4 id="hp"></h4>
+                <ul id="rightMoves"></ul>
+            </div>
+        </div>
+        <div id="battleHistory">
+            <h3 id="history"></h3>
+        </div>
+    </div>
+
+</body>
+</html>
