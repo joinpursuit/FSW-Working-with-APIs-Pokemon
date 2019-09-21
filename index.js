@@ -18,7 +18,7 @@ function movePP (moveName, moveNum, currentPokemon) {
         let pokemonData = document.querySelector('#poke' + currentPokemon + 'move' + moveNum);
         let pokemonMove = document.createElement('p')
 
-        pokemonMove.innerText = moveName, "PP: ", data.pp;
+        pokemonMove.innerText = moveNum + ") " + moveName + " PP: " + data.pp;
         pokemonMove.id = 'poke' + currentPokemon + 'move' + moveNum;
 
         pokemonData.parentNode.replaceChild(pokemonMove, pokemonData)
