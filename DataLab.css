@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Turret+Road&display=swap');
+
 body{
     display: grid;
     grid-auto-columns: 1fr;
     justify-items: center;
+    background-color: lightblue;
+    font-family: 'Turret Road', sans-serif;
     
 }
 h1{
     margin-top: 30px;
+    font-family: 'Turret Road', sans-serif;
+}
+h3{
+    font-weight: bolder;
 }
 #data1{
     float: left;
@@ -20,4 +28,11 @@ h1{
 }
 .power{
 display: inline;
+}
+button{
+    margin-bottom: 10px;
+}
+#poke1, #poke2{
+    width: 100px;
+    height: 100px;
 }
