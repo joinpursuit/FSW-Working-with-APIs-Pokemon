@@ -1,0 +1,41 @@
+/* body {
+    background-color: rgb(130, 197, 209);
+    background-image: url('https://www.tynker.com/projects/images/c09595c6ceedf5d11e657bca341fe768dea7f5b0/background-scene---the-backround.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
+body {
+    background-color: rgb(130, 197, 209);
+    align-items:center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.arena {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+    grid-gap: 25px;
+}
+#poke_one {
+    grid-column: 1 / 2;
+    height: 50vh;
+    width: 20vh;
+    /* border: 10px solid #ffd453; */
+
+}
+#poke_two {
+    grid-column: 2 / 3;
+    height: 50vh;
+    width: 20vh;
+}
+img {
+    height: 200px;
+    width: 200px;
+}
+#directions {
+    font-size: medium;
+}
+h2 {
+    font-family: 'Lato', sans-serif;
+    font-size: medium;
+}

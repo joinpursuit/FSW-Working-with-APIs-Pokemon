@@ -80,3 +80,46 @@ For a video of how the page changes when the buttons are clicked visit https://y
 
 
 Contributor: Mauricio Rivera, mauricio@pursuit.org
+
+README
+*Components
+    -header(h1)
+    -description(p)
+    -two buttons
+        getting pokemon
+        battle
+    -arena (div)
+        name(h2)
+        picture [sprite] (img)
+        hp (h3)
+        moves (ul)
+            move name (li)
+            move pp (li)
+        pokemon B (same as A)
+        Battle history (h3)
+            pokemon winnner and defeated names (p)
+    -background color/image
+*Find out API endpoints to get data
+Data needs:
+    2 randomly picked pokemon
+    Pokemon
+        -name
+        -sprite url
+        -hp
+        -moves
+            -name
+            -pp
+Data Sources:
+-Pokemon : 
+    name: pokemon.name,
+    sprite url : pokemon.sprites.front_default
+    HP: pokemon.stats[5].base_stat
+    Moves:
+        -Notes
+            first 4 or random 4 moves
+            what if a pokemon doesnt have 4 moves total
+            pokemon.moves[index].move.url
+            pokemon.moves[index].love.name
+3. wireframing the APP
+4. build out the HTML element
+5. code!
