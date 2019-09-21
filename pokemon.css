@@ -1,3 +1,12 @@
 body {
+    display: grid;
+    grid-auto-columns: 1fr;
+    font-family: sans-serif;
+    justify-content: center;
     background-color: lightblue;
 }
+
+h1 {
+    margin-top: 30px;
+}
+
