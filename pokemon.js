@@ -98,10 +98,6 @@ const getPokes = () => {
     hp2.innerText = "HP: " + poke2.stats[5].base_stat
     let moves = document.createElement('h4')
     moves.innerText = "Moves:"
-    let move1 = document.createElement('h4')
-    let move2 = document.createElement('h4')
-    let move3 = document.createElement('h4')
-    let move4 = document.createElement('h4')
     pokemon2.appendChild(name2)
     pokemon2.appendChild(sprite2)
     pokemon2.appendChild(hp2)
