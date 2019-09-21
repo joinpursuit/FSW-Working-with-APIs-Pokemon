@@ -1,0 +1,41 @@
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: lightblue;
+    font-family: sans-serif
+}
+
+#pokemon2 {
+    float: right;
+}
+
+#header {
+    grid-column: 1/3;
+    text-align: center;
+}
+
+#battle-history {
+    grid-column: 1/3;
+}
+
+.container {
+    justify-self: center;
+}
+
+.name {
+    font-weight: bold;
+}
+
+button {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    justify-self: center;
+    background-image: linear-gradient(gold, lightyellow);
+    border-radius: 15px;
+}
+
+button:hover {
+    background: yellow;
+    font-weight: bold;
+}
