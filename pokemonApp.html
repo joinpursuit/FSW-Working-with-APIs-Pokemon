@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href ="pokemonApp.css">
+    <script src = "pokemonApp.js"></script>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+    <title>Pokemon App</title>
+</head>
+<body>
+    <!--Container to start Pokemonn sim-->
+    <div id = 'header'>
+            <h1 id ='main-heading'>Pokemon Battle Simulator</h1>
+            <!-- instructions for the pokemon battle simulator-->
+            <p id ="instructions">Click 'Get Pokemon' to display your two fighters! Click 'Battle!' to have the Pokemons battle! </p>
+        
+            <!---buttons initiating the game inside of a form-->
+            <form id = "buttons">
+                <button id = 'get-pokemon'>Get Pokemon!</button>
+                <br>
+                <button id = 'battle'>Battle!</button>
+            </form>
+    </div>
+   
+    <!-- Container for Pokemon cards -->
+    <div id = 'arena'></div>
+
+    <!-- Container for battle history data-->
+    <div id = 'battleHistory'><h3>Battle History!</h3></div>
+    
+</body>
+</html>

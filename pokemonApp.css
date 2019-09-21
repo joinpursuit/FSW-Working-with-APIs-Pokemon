@@ -1,0 +1,18 @@
+body{
+    background-color: lightblue;
+    font-family: sans-serif; 
+    display: grid;
+    /* grid-template-columns: 1fr; */
+    justify-content: center;
+}
+/* 
+h1, p, form{
+    display: flex;
+    justify-content: center;
+}  */
+
+.data {
+    display: flex;
+    /* grid-template-columns: repeat(2,1fr); */
+    
+}
