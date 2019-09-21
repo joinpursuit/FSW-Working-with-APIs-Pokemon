@@ -102,10 +102,6 @@ const getPokes = () => {
     let move2 = document.createElement('h4')
     let move3 = document.createElement('h4')
     let move4 = document.createElement('h4')
-    move1.innerText =
-    move2.innerText =
-    move3.innerText =
-    move4.innerText =
     pokemon2.appendChild(name2)
     pokemon2.appendChild(sprite2)
     pokemon2.appendChild(hp2)
