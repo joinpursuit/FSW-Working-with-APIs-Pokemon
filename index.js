@@ -127,6 +127,8 @@ function battlePokemon(){
 			let superEffective = document.createElement('p');
 			superEffective.innerText = 'It was super effective!!!';
 			let defeated = document.createElement('p');
+			let sprite = defendingPokemon.querySelector('img');
+			sprite.src = 'https://cdn.pixabay.com/photo/2013/07/12/12/57/red-146613_960_720.png';
 			defeated.innerText = `${attackingPokemon.firstElementChild.innerText} defeated ${defendingPokemon.firstElementChild.innerText}`;
 			summary.appendChild(superEffective);
 			summary.appendChild(defeated);

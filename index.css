@@ -20,8 +20,12 @@ h2 {
 	color: darkred;
 }
 
+img{
+	width: 100px;
+}
+
 li{
-	list-style: none;
+
 }
 
 .main-game {
