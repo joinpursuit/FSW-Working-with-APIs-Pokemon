@@ -1,0 +1,76 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+}
+
+p,a,ul,ol {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.data {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 25vh 55vh 20vh; 
+}
+
+/* Intro Guide with buttons */
+.data .title {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+/* Left side of battle */
+.data .firstPokemon {
+    background-color: blue;
+    grid-column: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* grid-row: 1 / 2 */
+}
+
+.data .firstPokemon ul li {
+    list-style-type: none;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0px 0;
+    font-weight: bold;
+}
+
+/* Right side of battle */
+.data .secondPokemon {
+    background-color: red;
+    grid-column: 2 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* grid-row: 1 / 2; */
+}
+
+.data .secondPokemon ul li {
+    list-style-type: none;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0px 0;
+    font-weight: bold;
+}
+
+.data .battle-history {
+    background-color: pink;
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+button {
+    font-size: 18px;
+    line-height: 20px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-weight: bold;
+    border: 1px solid black;
+    width: 200px;
+    background-color: gold;
+    color: purple;
+}
