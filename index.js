@@ -1,6 +1,13 @@
 // Joseph P. Pasaoa
 //
 
+/* TODO
+  toggle for classic font vs modern font
+  hide pokemon cards until fully built
+  split async retrieval into simulta retrs
+*/
+
+
 let pokemonLeft = [];
 let pokemonRight = [];
 
@@ -53,20 +60,67 @@ const buildAPokemon = async () => {
       let thisMoveIndex = randomNumGen(response.data.moves.length - 1);
       outputPokemonObj.moveURLsObj[thisMoveIndex] = response.data.moves[thisMoveIndex].move.url;
     } 
-    outputPokemonObj.moves = getMoveData(Object.values(outputPokemonObj.moveURLsObj));
+    outputPokemonObj.moves = await getMoveData(Object.values(outputPokemonObj.moveURLsObj));
     return outputPokemonObj;
   } catch (err) {
     handleError(err);
   }
 }
 
-const displayPokemon = (side, pokemonObj) => {
-  console.log(side, pokemonObj);
+const makeCard = async (side) => {
+  let pokemonObj = await buildAPokemon();
+  console.log('new poke: ', pokemonObj);
+  // debugger;
+  let emptyDataDiv = document.querySelector('.data');
+
+  let newCard = document.createElement('div');
+    newCard.className = `pokemon-card ${side}`;
+    let cardHeader = document.createElement('h3');
+      cardHeader.innerText = pokemonObj.name;
+    newCard.appendChild(cardHeader);
+    let cardAvatar = document.createElement('img');
+      cardAvatar.src = pokemonObj.avatarURL;
+      cardAvatar.setAttribute('alt', `${pokemonObj.name} avatar`);
+    newCard.appendChild(cardAvatar);
+    let cardHp = document.createElement('p');
+      cardHp.className = 'hp';
+      cardHp.innerHTML = `<strong>HP:</strong> ${pokemonObj.baseHP}`;
+    newCard.appendChild(cardHp);
+    let cardMovesBox = document.createElement('div');
+      cardMovesBox.className = 'moves-box';
+      let cardMovesBoxH4 = document.createElement('h4');
+        cardMovesBoxH4.innerText = 'Moves';
+      cardMovesBox.appendChild(cardMovesBoxH4);
+      let cardMovesBoxList = document.createElement('ul');
+        for (let move of pokemonObj.moves) {
+          let cardMovesBoxListItem = document.createElement('li');
+            let moveItemHTML = `<strong>${move.name}</strong><span>PP: ${move.pp}/${move.pp}</span>`;
+            cardMovesBoxListItem.innerHTML = moveItemHTML;
+          cardMovesBoxList.appendChild(cardMovesBoxListItem);
+        }
+      cardMovesBox.appendChild(cardMovesBoxList);
+      
+    newCard.appendChild(cardMovesBox);
+
+  emptyDataDiv.appendChild(newCard);
 }
 
-const getPokemon = () => {
-  displayPokemon('left', buildAPokemon());
-  displayPokemon('right', buildAPokemon());
+const clearStage = () => {
+  const dataGrid = document.querySelector('.data');
+  while (dataGrid.firstChild) {
+    dataGrid.removeChild(dataGrid.lastChild);
+  }
+}
+
+const getPokemon = async () => {
+  clearStage();
+  await makeCard('left');
+
+  let hiddenDiv = document.createElement('div');
+    hiddenDiv.id = "hiding-space";
+  document.querySelector('.data').appendChild(hiddenDiv);
+
+  makeCard('right');
 }
 
 const battlePokemon = () => {

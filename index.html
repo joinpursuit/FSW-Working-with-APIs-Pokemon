@@ -9,26 +9,51 @@
    <title>Pokémon Battle Demo | Joseph P. Pasaoa</title>
    <script src="https://unpkg.com/axios/dist/axios.min.js" type="text/javascript"></script>
    <script src="./index.js" type="text/javascript"></script>
-   <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Press+Start+2P&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC|Nanum+Brush+Script|Press+Start+2P&display=swap" rel="stylesheet">
    <link href="./style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
 
    <div id="base-grid">
 
-      <h1>PoKeMoN BaTtLeR DEmO</h1>
+      <h1>PoKeMoN BaTtLeR</h1>
 
       <div id="bg-banner">Banner</div>
 
-      <button type="button" id="button-chooser">Get Pokémon!</button>
-      <button type="button" id="button-battle">Battle!</button>
+      <div id="stage">
+         <div class="stage-controls">
+            <button type="button" id="button-chooser">Get Pokémon!</button>
+            <button type="button" id="button-battle">Battle!</button>
+         </div>
 
-      <div class="data"></div>
+         <div class="data">
+            <!-- <div class="pokemon-card left">
+               <h3>bulbasaur</h3>
+               <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" alt="bulbasaur avatar" />
+               <p class="hp"><strong>HP:</strong> 50</p>
+               <div class="moves-box">
+                  <h4>Moves</h4>
+                  <ul>
+                     <li><strong>growth</strong><span>PP: 15/15</span></li>
+                     <li><strong>vine whip</strong><span>PP: 25/25</span></li>
+                     <li><strong>leech seed</strong><span>PP: 10/10</span></li>
+                     <li><strong>laserbeam</strong><span>PP: 15/15</span></li>
+                  </ul>
+               </div>
+            </div>
+            <div id="hiding-space"></div>
+            <div class="pokemon-card right">DATA RIGHT</div> -->
+         </div>
+      </div>
 
       <div class="battleHistory">
          <h3>Battle History</h3>
          <div id="history-log"></div>
       </div>
+
+      <div id="footer">Copyright ©2019 Joseph P. Pasaoa. All rights reserved.<br />
+         Utilizes data from <a href="https://pokeapi.co/" target="_blank">The RESTful Pokémon API</a> and special thanks to its creator Paul Hallet.</div>
+
    </div>
 
 </body>
