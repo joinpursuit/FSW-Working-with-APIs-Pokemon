@@ -72,7 +72,6 @@ function summonPokemon () {
         spriteHolder.parentNode.replaceChild(pokemonSprite, spriteHolder);
         moveHolder.parentNode.replaceChild(move, moveHolder);
 
-
         //print 4 moves
         for (let i = 1; i <= 4; i++) {
             let randomMove = Math.floor(Math.random() * data.moves.length);
@@ -102,7 +101,6 @@ function summonPokemon () {
         let pokemonSprite = document.createElement('img');
         let move = document.createElement('h4');
 
-
         pokemonName.innerText = data.name.toUpperCase();
         pokemonName.id = 'poke2Name';
         pokemonHP.innerText = "HP: " + data.stats[5].base_stat;
@@ -117,7 +115,6 @@ function summonPokemon () {
         spriteHolder.parentNode.replaceChild(pokemonSprite, spriteHolder);
         moveHolder.parentNode.replaceChild(move, moveHolder);
 
-
         //print 4 Moves
         for (let i = 1; i <= 4; i++) {
             let randomMove = Math.floor(Math.random() * data.moves.length);
@@ -128,13 +125,20 @@ function summonPokemon () {
 }
 
 function pokemonBattle () {
-    console.log("Fight it out!")
-}
+    let nameHolder1 = document.querySelector('#poke1Name');
+    let nameHolder2 = document.querySelector('#poke2Name');
+    let historyHolder = document.querySelector('#history');
 
-function displayPokemon (pokemonData) {
-    let battleGround = document.querySelector('.data');
+    let pokemonName = document.createElement('p');
 
-    let pokemonOne = document.createElement('img')
-    let pokemonTwo = document.createElement('img')
+    let outcome = Math.floor(Math.random() * 2);
 
+    if (outcome === 1) {
+        pokemonName.innerText = nameHolder1.innerText + " defeated " + nameHolder2.innerText;
+    } else {
+        pokemonName.innerText = nameHolder2.innerText + " defeated " + nameHolder1.innerText;
+    }
+    pokemonName.id = 'history';
+
+    historyHolder.parentNode.replaceChild(pokemonName, historyHolder);
 }

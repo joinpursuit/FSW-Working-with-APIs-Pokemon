@@ -12,7 +12,7 @@ p,a,ul,ol {
     height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 25vh 55vh 20vh; 
+    grid-template-rows: 25vh 60vh 15vh; 
 }
 
 /* Intro Guide with buttons */
