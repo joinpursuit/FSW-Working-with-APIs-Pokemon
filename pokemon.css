@@ -1,0 +1,38 @@
+body{
+background-image: url('https://i.guim.co.uk/img/media/3b962fbea708f7ca583ed67ff88119a428aaa504/0_443_1440_1440/master/1440.jpg?width=300&quality=85&auto=format&fit=max&s=bda14865f2c3976cbc163108ef92e7c1');
+background-repeat:repeat;
+}
+#getPokemon{
+    background-color: rgb(248, 37, 0); 
+    border: rgb(2, 0, 0);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position: absolute;
+    left: 500px;
+    top: 250px;
+    border-radius: 100%;
+}
+#battlePokemon{
+    background-color: rgb(248, 55, 7); 
+    border: rgb(8, 0, 0);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: black;
+    display: inline-block;
+    font-size: 16px;
+    position: absolute;
+    left: 500px;
+    top: 350px;
+    border-radius: 100%;
+}
+h1{
+text-align: center;
+}
+p{
+    text-align: center;
+}
