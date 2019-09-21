@@ -8,8 +8,8 @@
     <title>Pokemon Battle Simulator</title>
     <script src="index.js"></script>
   </head>
+
   <body>
-    <div class="container">
       <div class="tittle_button">
         <h1>Pokemon Battle Simulator</h1>
         <p>
@@ -23,43 +23,42 @@
 
       <div class="data">
         <div class="left">
-          <p id="pokemon-name1"></p>
-          <!-- <img class="image" alt="pkemon-image" /> -->
+          <p id="p1Name"></p>
+          <img alt="" id="p1Img">
 
           <div>
             <ul class="information1">
-              <li class="HP1">hp</li>
-              <li class="moves1">moves</li>
-              <li class="pp1">pp</li>
-              <li class="pp1">pp</li>
-              <li class="pp1">pp</li>
-              <li class="pp1">pp</li>
+              <li id="p1Hp">hp</li>
+              <li>moves:
+                <ul id="p1Moves">
+                    <li>NAME PP: 00</li>
+                </ul>
+              </li>
+              
             </ul>
           </div>
         </div>
 
         <div class="right">
-          <p id="pokemon-name2"></p>
-          <!-- <img src="" alt="" /> -->
+          <p id="p2Name"></p>
+          <img alt="" id="p2Img">
 
           <div>
-            <ul class="information2">
-              <li class="HP2">hp2</li>
-              <li class="moves2">moves</li>
-              <li class="pp2">pp</li>
-              <li class="pp2">pp</li>
-              <li class="pp2">pp</li>
-              <li class="pp2">pp</li>
+            <ul class="information1">
+              <li id="p2Hp">hp</li>
+              <li>moves:
+                <ul id="p2Moves">
+                    <li>NAME PP: 00</li>
+                </ul>
+              </li>
+              
             </ul>
           </div>
-        </div>
-      </div>
-      <div class="battleHistory">
-        <h3>Battle History</h3>
-        <p>history 1</p>
-        <p>history 2</p>
-        <p>history 3</p>
       </div>
     </div>
+    <hr>
+      <div class="battleHistory">
+        <h3>Battle History</h3>
+      </div>
   </body>
 </html>
