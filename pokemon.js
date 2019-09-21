@@ -1,27 +1,22 @@
+const url = "https://pokeapi.co/api/v2/pokemon"
 document.addEventListener("DOMContendLoaded", () => {
     let button = document.querySelector('#get-pokemon')
-    button.addEventListener('click', getPokemon)
+    button.addEventListener('click', getTwoPokemon)
     let button2 = document.querySelector('#battle')
     button2.addEventListener('click', battlePokemon)
 })
 
-function getRandom() {
-    return Math.floor(Math.random() * (809 - 1) + 1);
-}
-const getPokemon = () => {
+const pokemon1 = async () => {
+    let randNum1 = Math.floor(Math.random() * (809 - 1) + 1);
 
-    let randomId = getRandom()
+    let p1 = `${url}/${randNum1}`
 
-    let url = `http://pokeapi.co/api/v2/pokemon/${randomId}`
-
-    axios.get(url)
-        .then(response => {
-            let key = response.data.name
-            console.log("response", response)
-        })
-        .catch(error => {
-            console.log("there's an error", error)
-        })
-}
-
-
+    await axios.get(p1).then(res => {
+        try {
+            let first_Poke = res.data;
+            console.log(first_Poke.name)
+        }
+     })
+    .catch (err => {
+    console.log('Error Alert!', err)
+} 
