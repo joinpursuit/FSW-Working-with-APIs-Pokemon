@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokemon Battle Simulator</title>
+    <link rel="stylesheet" href="data.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="data.js"></script>
+    <style>
+            @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Pokemon Battle Simulator</h1>
+        <p id="directions">Click 'get pokemon' to choose rivals and 'battle' to fight! </p>
+        <button id="get_pokemon" onclick="getPokemon()">Get Pokemon</button>
+        <button id="battle_pokemon" onclick="battlePokemon()">Battle</button>
+    </div>
+    <div class="arena">
+        <div id="poke_one" class="first"></div>
+        <div id="poke_two"></div>
+    </div>
+    <div class="footer">
+        <h3>Battle History</h3>
+    </div>
+</body>
+</html>
