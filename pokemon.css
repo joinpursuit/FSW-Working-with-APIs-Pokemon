@@ -1,0 +1,83 @@
+body{
+background-image: url('https://s3.amazonaws.com/prod-media.gameinformer.com/styles/full/s3/2018/12/02/6a13488e/trainer_battles_arena.jpg');
+background-repeat:no-repeat;
+}
+#getPoke{
+    background-color: rgb(248, 37, 0); 
+    border: rgb(2, 0, 0);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position: absolute;
+    left: 150px;
+    top: 200px;
+    border-radius: 100%;
+}
+#battlePoke{
+    background-color: rgb(248, 55, 7); 
+    border: rgb(8, 0, 0);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: black;
+    display: inline-block;
+    font-size: 16px;
+    position: absolute;
+    left: 950px;
+    top: 200px;
+    border-radius: 100%;
+}
+h1{
+text-align: center;
+color: white;
+text-shadow: 4px 2px #013109;
+z-index: 2;
+font-size: 28px;
+
+
+
+}
+p{
+    align-items: flex-start;
+    color: black;
+    text-align: center;
+   
+}
+/* .Pokemon1Name{
+    text-align: left;
+    color: white;
+    text-shadow: 2px 2px #000000;
+}
+.Pokemon2Name{
+ 
+   
+    color: white;
+    text-shadow: 2px 2px #000000;
+} */
+h3{
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px #000000;
+    bottom:200;
+
+}
+h2{
+    display:absolute;
+    top: 400px;
+}
+footer{
+    bottom: 600px;
+}
+.moves-list{
+    display: block;
+}
+.li{
+right: 50 50;
+}
+#arena{
+    display: grid;
+    grid-template-columns: 50% 50%
+}
