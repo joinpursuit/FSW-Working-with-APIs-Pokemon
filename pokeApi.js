@@ -1,7 +1,15 @@
+// //global variables
+let pokeBattleHistory = [];
+let currentPokeArr = [];
+let container;
+let pp1Moves
+let pp2Moves
+let pp3Moves
+
 document.addEventListener('DOMContentLoaded', () => {
     let getPoke = document.querySelector('#getPoke')
     let battle = document.querySelector('#battleButton')
-    battle.disabled = true
+    getPokemon()
     getPoke.addEventListener('click', () => {
         battle.disabled = false
         getPokemon()
@@ -12,9 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
-// //global arrays
-let pokeBattleHistory = [];
-let currentPokeArr = [];
 
 //this function gets the pokemon from the pokeApi pokemon endpoint
 async function getPokemon() {
@@ -36,11 +41,8 @@ const battlePokemon = async () => {
     let randomBattleNum = Math.floor((Math.random() * 2) + 0);
     console.log(randomBattleNum);
 
-    if (currentPokeArr[0] !== currentPokeArr[randomBattleNum]) {
-        pokeBattleHistory.push(`${currentPokeArr[randomBattleNum]} defeated ${currentPokeArr[0]}`)
-    } else {
-        pokeBattleHistory.push(`${currentPokeArr[randomBattleNum]} defeated ${currentPokeArr[1]}`)
-    }
+    const loser = currentPokeArr[0] !== currentPokeArr[randomBattleNum] ? currentPokeArr[0] : currentPokeArr[1]
+    pokeBattleHistory.push(`${currentPokeArr[randomBattleNum]} defeated ${loser}`)
 
     //this block loops through the array of the battle history and adds the last element to the screen
     for (let i = 0; i < pokeBattleHistory.length; i++) {
@@ -68,7 +70,6 @@ async function pushPoke2Array(par, par2) {
     console.log(currentPokeArr);
     console.log(par.name + ' ' + 'hello');
     console.log(par2.name + ' ' + 'hello');
-    return currentPokeArr
 }
 
 //this function looks into the pokemon moves array and gets the url to 
@@ -93,14 +94,14 @@ async function getRandomNum() {
 
 //this is a simple function teh brings the container over into the js
 function getContainer() {
-    const container = document.querySelector('#container')
+    container = document.querySelector('#container')
     return container;
 }
 
 //function that will replace the pokemon the are already on the screen
 function replacePoke() {
     currentPokeArr.length = 0
-    const container = getContainer()
+    container = getContainer()
     // container.innerHTML = ''
     while (container.firstChild) {
         container.removeChild(container.firstChild)
@@ -109,12 +110,13 @@ function replacePoke() {
 
 //This function create the elements on the create that will hold the pokemon information
 async function creatingCard(pokemon) {
-    getContainer()
+    container = getContainer()
 
     //creating the elements that will hold the information on the pokemon
-    const subContainer = document.createElement('div');
+    const subContainer = creatingElem('div')
+    // document.createElement('div');
     subContainer.className = 'pokeContainer'
-    const pokePic = document.createElement('img')
+    const pokePic = creatingElem('img')
     const pokeName = document.createElement('p')
     pokeName.className = 'pokemonName'
     const pokeHp = document.createElement('p')
@@ -123,6 +125,12 @@ async function creatingCard(pokemon) {
     const pokePowerPoint2 = document.createElement('p')
     const pokePowerPoint3 = document.createElement('p')
 
+    let ppMovesArray = [pp1Moves, pp2Moves, pp3Moves]
+    let pokePPPara = [pokePowerPoint1, pokePowerPoint2, pokePowerPoint3]
+    let subContainerArray = [pokeName, pokePic, pokeHp, pokeMoves, pokePowerPoint1, pokePowerPoint2, pokePowerPoint3]
+    // for (let i = 0; i < subContainerArray.length; i++) {
+    //     subContainerArray[i] = creatingElem('p')
+    // }
     //assigning the innerText of the elements created to display the information
     pokeName.innerText = pokemon.name
 
@@ -135,24 +143,21 @@ async function creatingCard(pokemon) {
     pokeMoves.innerText = 'Moves:'
 
     //getting the moves from the moves endpoint function
-    const pp1Moves = await getMoves(pokemon);
-    const pp2Moves = await getMoves(pokemon);
-    const pp3Moves = await getMoves(pokemon);
-
     //assigning the power point elements with the power info from the moves endpoint
-    pokePowerPoint1.innerText = `${pp1Moves.name} PP:${pp1Moves.pp}`
-    pokePowerPoint2.innerText = `${pp2Moves.name} PP:${pp2Moves.pp}`
-    pokePowerPoint3.innerText = `${pp3Moves.name} PP:${pp3Moves.pp}`
-
+    for (let i = 0; i < ppMovesArray.length; i++) {
+        ppMovesArray[i] = await getMoves(pokemon);
+        console.log(ppMovesArray[i]);
+        pokePPPara[i].innerText = `${ppMovesArray[i].name} PP:${ppMovesArray[i].pp}`
+    }
     //now appending the newly created elements to the subContainer   
-    subContainer.appendChild(pokeName)
-    subContainer.appendChild(pokePic)
-    subContainer.appendChild(pokeHp)
-    subContainer.appendChild(pokeMoves)
-    subContainer.appendChild(pokePowerPoint1)
-    subContainer.appendChild(pokePowerPoint2)
-    subContainer.appendChild(pokePowerPoint3)
-
+    for (let i = 0; i < subContainerArray.length; i++) {
+        subContainer.appendChild(subContainerArray[i])
+        console.log(i + 'hello');
+    }
     //appending thd subContainer that holds the created elements to the container
     container.appendChild(subContainer)
+}
+
+function creatingElem(elem) {
+    return document.createElement(`${elem}`)
 }

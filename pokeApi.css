@@ -44,16 +44,18 @@ h3 {
     position: relative;
     top: 90px;
     font-weight: bold;
-    width: 600px;
+    /* width: 55vw; */
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 200px;
+    grid-template-columns: repeat(2, 50%);
+    grid-gap: 90px;
     /* align-items: center; */
+    justify-content: center;
 }
 
 .data:first-child {
     position: relative;
     float: left;
+    left: 200px;
 }
 
 .data:last-child {
@@ -61,11 +63,19 @@ h3 {
 }
 
 .pokeContainer {
+    position: relative;
+    left: 2px;
+    background-color: rgb(255, 230, 0);
     width: 300px;
     display: grid;
+    justify-content: center;
     grid-auto-columns: 200px;
     /* background-color: cadetblue; */
     grid-gap: 10px;
+    border: 1px solid brown;
+    border-radius: 10%;
+    background-image: url(https://www.tynker.com/projects/images/5ac3a8c176f293a60d8b456c/background-scene---or-as-battle-background-1-by-phoenixoflight92-d83m36e.png);
+    background-repeat: no-repeat;
 }
 
 .battleHistory {
@@ -73,7 +83,7 @@ h3 {
     width: 500px;
     font-weight: bold;
     position: absolute;
-    top: 670px;
+    top: 690px;
     display: grid;
     grid-template-columns: 200px;
     grid-gap: 10px;
