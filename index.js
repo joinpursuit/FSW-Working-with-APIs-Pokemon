@@ -54,26 +54,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let movesFrom = document.querySelector("form");
     movesFrom.addEventListener("click", (event) => {
-        let selectedMove = event.target
-        if (selectedMove.parentNode.parentNode === movesFrom) {
-            let leftSide = document.querySelector("#left");
-            let leftPokemonHPText = leftSide.querySelector("h4").innerText;
-            let leftPokemonHP = parseInt(leftPokemonHPText.slice(leftPokemonHPText.lastIndexOf(" ")));
-            let leftPokemonImage = leftSide.querySelector("img").src;
+        // let selectedMove = event.target
+        // if (selectedMove.parentNode.parentNode === movesFrom) {
+        //     let leftSide = document.querySelector("#left");
+        //     let leftPokemonHPText = leftSide.querySelector("h4").innerText;
+        //     let leftPokemonHP = parseInt(leftPokemonHPText.slice(leftPokemonHPText.lastIndexOf(" ")));
+        //     let leftPokemonImage = leftSide.querySelector("img").src;
         
-            let rightSide = document.querySelector("#right");
-            let rightPokemonHPText = rightSide.querySelector("h4").innerText;
-            let rightPokemonHP  = parseInt(rightPokemonHPText.slice(rightPokemonHPText.lastIndexOf(" ")));
-            let rightPokemonImage = rightSide.querySelector("img").src;
+        //     let rightSide = document.querySelector("#right");
+        //     let rightPokemonHPText = rightSide.querySelector("h4").innerText;
+        //     let rightPokemonHP  = parseInt(rightPokemonHPText.slice(rightPokemonHPText.lastIndexOf(" ")));
+        //     let rightPokemonImage = rightSide.querySelector("img").src;
 
-            if (readyForBattle) {
-                fightSimulation(leftPokemonImage, leftPokemonHP, selectedMove.value, rightPokemonImage, rightPokemonHP);
-            }
+        //     if (readyForBattle) {
+        //         fightSimulation(leftPokemonImage, leftPokemonHP, selectedMove.value, rightPokemonImage, rightPokemonHP);
+        //     }
             
-            setTimeout(() => {
-                selectedMove.checked = false; 
-            }, 500);
-        }
+        //     setTimeout(() => {
+        //         selectedMove.checked = false; 
+        //     }, 500);
+        // }
     })
 }) ///////////////// END OF DOMContentLoaded EVENT LISTNER
 
@@ -194,7 +194,6 @@ const getRandomIndex = (num, selectedIndeces) => {
 const getMovesInfo = (side, parent, url) => {
     let errorDiv = document.querySelector("#errorMessage");
     let moveContainer;
-    let lable;
 
     fetch(url)
         .then(response => {
@@ -211,7 +210,7 @@ const getMovesInfo = (side, parent, url) => {
             }
             if (side === "left") {
                 moveContainer = document.createElement("label");
-                moveContainer.innerHTML = `<input type="radio" name="${resp.name}" value="${resp.pp}">${resp.name} (PP): ${resp.pp}`;
+                moveContainer.innerHTML = `<input type="radio" name="move" value="${resp.pp}">${resp.name} (PP): ${resp.pp}`;
                 parent.appendChild(moveContainer);
             }
 
