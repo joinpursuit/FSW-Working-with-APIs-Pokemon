@@ -4,8 +4,8 @@ body,html {
     background-color: gray;
 }
 
-p,a,ul,ol {
-    font-family: 'Open Sans', sans-serif;
+body {
+    font-family: "Arial";
 }
 
 .data {
@@ -23,7 +23,7 @@ p,a,ul,ol {
 
 /* Left side of battle */
 .data .firstPokemon {
-    background-color: blue;
+    background-image: url("https://cdna.artstation.com/p/assets/images/images/006/580/020/large/marcel-kolbenschlag-iceword-background-05small.jpg?1499693005");
     grid-column: 1 / 2;
     display: flex;
     justify-content: center;
@@ -41,7 +41,7 @@ p,a,ul,ol {
 
 /* Right side of battle */
 .data .secondPokemon {
-    background-color: red;
+    background-image: url("https://vignette.wikia.nocookie.net/dotd/images/d/d2/Doppleganger_background_magma.jpg/revision/latest?cb=20140223230620");
     grid-column: 2 / -1;
     display: flex;
     justify-content: center;
@@ -73,4 +73,67 @@ button {
     width: 200px;
     background-color: gold;
     color: purple;
+}
+
+/* Working on pokemon cards */
+.card {
+    background: linear-gradient(to right, rgb(197, 191, 8), rgb(255, 238, 4));
+    width: 250px;
+    height: 350px;
+    margin: 10%;
+    padding: 8px;
+    border-radius: 10px;
+}
+
+#background1 {
+    text-align: center;
+    background: linear-gradient(to right, rgb(208, 216, 240), rgb(27, 69, 184));
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#background2 {
+    text-align: center;
+    background: linear-gradient(to right, rgb(240, 208, 208), rgb(184, 27, 27));
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.content {
+    background: linear-gradient(to right, rgb(247, 247, 215), rgb(233, 228, 176));
+    height: 150px;
+    padding: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#poke1Img, #poke2Img {
+    width: 175px;
+    height: 175px;
+}
+
+#poke1Name, #poke2Name {
+    text-align: center;
+    font-size: 19px;
+    font-weight: lighter;
+    padding: 10px;
+}
+
+#poke1HP, #poke2HP {
+    background-color: black;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    width: 100px;
+    display: block;
+    text-align: center;
+    position: relative;
+    top: -90px;
+}
+
+.pokemonMoves p {
+    margin: 10px;
+    display: block;
+    position: relative;
+    top: -53px;
 }

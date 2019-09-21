@@ -16,7 +16,7 @@ function movePP (moveName, moveNum, currentPokemon) {
         // console.log("PP Expectation:", data.pp) //return this
         // console.log(moveName, "PP: ", data.pp);
         let pokemonData = document.querySelector('#poke' + currentPokemon + 'move' + moveNum);
-        let pokemonMove = document.createElement('ol')
+        let pokemonMove = document.createElement('p')
 
         pokemonMove.innerText = moveName, "PP: ", data.pp;
         pokemonMove.id = 'poke' + currentPokemon + 'move' + moveNum;
@@ -51,12 +51,12 @@ function summonPokemon () {
         let nameHolder = document.querySelector('#poke1Name');
         let hpHolder = document.querySelector('#poke1HP');
         let spriteHolder = document.querySelector('#poke1Img');
-        let moveHolder = document.querySelector('#moveTitle');
+        // let moveHolder = document.querySelector('#moveTitle');
 
-        let pokemonName = document.createElement('h3');
-        let pokemonHP = document.createElement('li');
+        let pokemonName = document.createElement('h1');
+        let pokemonHP = document.createElement('span');
         let pokemonSprite = document.createElement('img');
-        let move = document.createElement('h4');
+        // let move = document.createElement('p');
 
         pokemonName.innerText = data.name.toUpperCase();
         pokemonName.id = 'poke1Name';
@@ -64,13 +64,13 @@ function summonPokemon () {
         pokemonHP.id = 'poke1HP';
         pokemonSprite.src = data.sprites.front_shiny;
         pokemonSprite.id = 'poke1Img';
-        move.innerText = 'Attacks:';
-        move.id = 'moveTitle';
+        // move.innerText = 'Attacks:';
+        // move.id = 'moveTitle';
 
         nameHolder.parentNode.replaceChild(pokemonName, nameHolder);
         hpHolder.parentNode.replaceChild(pokemonHP, hpHolder);
         spriteHolder.parentNode.replaceChild(pokemonSprite, spriteHolder);
-        moveHolder.parentNode.replaceChild(move, moveHolder);
+        // moveHolder.parentNode.replaceChild(move, moveHolder);
 
         //print 4 moves
         for (let i = 1; i <= 4; i++) {
@@ -96,10 +96,10 @@ function summonPokemon () {
         let spriteHolder = document.querySelector('#poke2Img');
         let moveHolder = document.querySelector('#moveTitle2');
 
-        let pokemonName = document.createElement('h3');
-        let pokemonHP = document.createElement('li');
+        let pokemonName = document.createElement('h1');
+        let pokemonHP = document.createElement('span');
         let pokemonSprite = document.createElement('img');
-        let move = document.createElement('h4');
+        // let move = document.createElement('h4');
 
         pokemonName.innerText = data.name.toUpperCase();
         pokemonName.id = 'poke2Name';
@@ -107,13 +107,13 @@ function summonPokemon () {
         pokemonHP.id = 'poke2HP';
         pokemonSprite.src = data.sprites.front_shiny;
         pokemonSprite.id = 'poke2Img';
-        move.innerText = 'Attacks:';
-        move.id = 'moveTitle';
+        // move.innerText = 'Attacks:';
+        // move.id = 'moveTitle';
 
         nameHolder.parentNode.replaceChild(pokemonName, nameHolder);
         hpHolder.parentNode.replaceChild(pokemonHP, hpHolder);
         spriteHolder.parentNode.replaceChild(pokemonSprite, spriteHolder);
-        moveHolder.parentNode.replaceChild(move, moveHolder);
+        // moveHolder.parentNode.replaceChild(move, moveHolder);
 
         //print 4 Moves
         for (let i = 1; i <= 4; i++) {
