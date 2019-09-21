@@ -1,0 +1,70 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    text-align: center;
+    background-image: url("https://assets.pokemon.com/assets/cms2/img/watch-pokemon-tv/seasons/season15/season15_ep42_ss01.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:black;
+
+}
+
+
+#arena {
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+}
+
+ul {
+    list-style-type: none;
+    font-weight: normal;
+}
+
+#poke1 {
+    grid-column: 2;
+}
+
+#poke2 {
+    grid-column: 4;
+}
+
+.nameClass {
+    margin: 4%;
+    font-size: 18px;
+}
+
+.picClass {
+    margin: 20px;
+    height: 90px;
+    width: 90px;
+}
+
+.hpClass {
+    margin: 3px;
+}
+
+.listClass {
+    padding: 0px;
+    margin-top: -5px;
+    margin-bottom: 60px;
+    font-size: 14px;
+}
+
+#pokeBanner {
+    height: 110px;
+}
+
+#battleHistory {
+
+    font-family: "Rockwell Extra Bold", Rockwell Bold, monospace; 
+}
+
+.card {
+    text-align: center;
+    background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/592ec50f-7a98-4675-a8f2-7915168c695f/d6i23et-4a07c741-cd19-47ab-a5d6-61dcc6b15caf.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzU5MmVjNTBmLTdhOTgtNDY3NS1hOGYyLTc5MTUxNjhjNjk1ZlwvZDZpMjNldC00YTA3Yzc0MS1jZDE5LTQ3YWItYTVkNi02MWRjYzZiMTVjYWYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.OAXRvmB9EF99tzu1dBoK2f7JswF45G664loC67Up9Xo");
+    background-size: cover;
+    height: 336px;
+    width: 240px;
+}
