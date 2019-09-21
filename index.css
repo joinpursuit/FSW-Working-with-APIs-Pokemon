@@ -24,7 +24,7 @@ body {
 
 /* Left side of battle */
 .data .firstPokemon {
-    background-image: url("https://cdna.artstation.com/p/assets/images/images/006/580/020/large/marcel-kolbenschlag-iceword-background-05small.jpg?1499693005");
+    background-image: url("./IceBackground.jpg");
     grid-column: 1 / 2;
     display: flex;
     justify-content: center;
@@ -42,7 +42,7 @@ body {
 
 /* Right side of battle */
 .data .secondPokemon {
-    background-image: url("https://vignette.wikia.nocookie.net/dotd/images/d/d2/Doppleganger_background_magma.jpg/revision/latest?cb=20140223230620");
+    background-image: url("./FireBackground.jpg");
     grid-column: 2 / -1;
     display: flex;
     justify-content: center;
