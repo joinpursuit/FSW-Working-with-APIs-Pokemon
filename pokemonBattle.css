@@ -1,0 +1,60 @@
+body {
+    background-color: lightblue;
+    font-family: sans-serif;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    margin: auto;
+}
+
+#poke-battle {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+button {
+    margin: center;
+}
+
+#data,
+#data2 {
+    margin: 100px;
+
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#getPokemon,
+#battle {
+    flex-direction: column;
+    width: auto;
+    margin: auto;
+}
+
+
+#header h1 {
+    margin: auto;
+}
+
+.data,
+.data2 {
+    display: grid;
+    font-weight: bolder;
+    width: 600px;
+    grid-template-columns: 1fr, 1fr;
+    justify-content: center;
+
+}
+
+#winners {
+    font-weight: bolder;
+}
