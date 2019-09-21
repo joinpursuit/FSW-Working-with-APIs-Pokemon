@@ -45,13 +45,10 @@ document.addEventListener("DOMContentLoaded", () => {
             
             let battleEffectDiv = document.querySelector("#battleEffect");
             battleEffectDiv.style.display = "block";
-            let dataDiv = document.querySelector("#data");
-            dataDiv.style.visibility = "hidden";
             
             setTimeout(() => {
                 displayBattleResult(myTwoPokemons);
-                battleEffectDiv.style.display = "none"; 
-                dataDiv.style.visibility = "visible";
+                battleEffectDiv.style.display = "none";
             }, 1000);
         }
     })
@@ -59,9 +56,21 @@ document.addEventListener("DOMContentLoaded", () => {
     let movesFrom = document.querySelector("form");
     movesFrom.addEventListener("click", (event) => {
         let selectedMove = event.target
-        if (
-            selectedMove.parentNode.parentNode === movesFrom) {
-            console.log(selectedMove.value) //WILL USE THIS FOR BATTLE SIMULATION
+        if (selectedMove.parentNode.parentNode === movesFrom) {
+            let leftSide = document.querySelector("#left");
+            let leftPokemonHPText = leftSide.querySelector("h4").innerText;
+            let leftPokemonHP = parseInt(leftPokemonHPText.slice(leftPokemonHPText.lastIndexOf(" ")));
+            let leftPokemonImage = leftSide.querySelector("img").src;
+        
+            let rightSide = document.querySelector("#right");
+            let rightPokemonHPText = rightSide.querySelector("h4").innerText;
+            let rightPokemonHP  = parseInt(rightPokemonHPText.slice(rightPokemonHPText.lastIndexOf(" ")));
+            let rightPokemonImage = rightSide.querySelector("img").src;
+
+            if (readyForBattle) {
+                fightSimulation(leftPokemonImage, leftPokemonHP, selectedMove.value, rightPokemonImage, rightPokemonHP);
+            }
+            
             setTimeout(() => {
                 selectedMove.checked = false; 
             }, 500);
@@ -114,12 +123,11 @@ const getRandomId = () => {
 
 const getPokemonInfo = (side, id, pokemonInfo, nameOfPokemon) => {
     let errorDiv = document.querySelector("#errorMessage");
-    console.log(`Pokemon's id: ${id}`)
     
     fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         .then(response => {
             if (!response) {
-                errorDiv.innerText = "Sorry \nSomething went wrong";
+                console.log("Sorry \nSomething went wrong");
             }
             return response.json();
         })
@@ -129,7 +137,8 @@ const getPokemonInfo = (side, id, pokemonInfo, nameOfPokemon) => {
             displayPokemonIntoDOM(side, pokemonInfo, nameOfPokemon);
         })
         .catch(err => {
-            errorDiv.innerText += "Sorry ... An Error Occured:\n" + err;
+            errorDiv.innerText += `Sorry ... An Error Occured:\n${err}`;
+            console.log(err);
         })        
 }
 
@@ -191,7 +200,7 @@ const getMovesInfo = (side, parent, url) => {
     fetch(url)
         .then(response => {
             if(!response) {
-                errorDiv.innerText = "Sorry \nSomething went wrong";
+                console.log("Sorry \nSomething went wrong");
             }
             return response.json();
         })
@@ -210,13 +219,9 @@ const getMovesInfo = (side, parent, url) => {
             readyForBattle = true;
         })
         .catch(err => {
-            errorDiv.innerText += "Sorry ... An Error Occured:\n" + err;
+            errorDiv.innerText += `Sorry ... An Error Occured:\n${err}`;
             console.log(err)
         })
-}
-
-const stylePokemonCard = (side, type) => {
-
 }
 
 const displayBattleResult = (twoNamesArray) => {
@@ -231,4 +236,157 @@ const displayBattleResult = (twoNamesArray) => {
     battleHistoryDiv.appendChild(newParagraph);
 
     readyForBattle = false;
+}
+
+const fightSimulation = (p1Image, p1HP, p1Attack, p2Image, p2HP) => {
+    let winner;
+    let loser;
+
+    let fightDiv = document.querySelector("#battleImage");
+    fightDiv.innerHTML = "";
+    fightDiv.style.display = "block";
+
+    let pImage = document.createElement("img");
+    pImage.src = p2Image;
+    fightDiv.appendChild(pImage);
+    let HealthPoints = document.createElement("h3");
+    HealthPoints.innerText = "Health Points:"
+    fightDiv.appendChild(HealthPoints);
+    let hp = document.createElement("h4");
+    hp.innerText = p2HP;
+    fightDiv.appendChild(hp);
+    
+    setTimeout(() => {
+        if (p2HP > 0 && readyForBattle) {
+            p2HP -= p1Attack;
+            if (p2HP < 0) {
+                p2HP = 0;
+            }
+            hp.innerText = `${hp.innerText} ➡ ${p2HP}`;
+            let p2H4Health = document.querySelector("#right").querySelector("h4");
+            p2H4Health.innerText = "Health (HP): " + p2HP;
+            if (p2HP <= 0) {
+                readyForBattle = false;
+                winner = document.querySelector("#left").querySelector("h3").innerText;
+                loser = document.querySelector("#right").querySelector("h3").innerText;
+                isAWinner(winner, loser);
+            }   
+        }
+
+        setTimeout(() => {
+            if (p1HP > 0 && readyForBattle) {
+                fightDiv.innerHTML = "";
+                let pImage = document.createElement("img");
+                pImage.src = p1Image;
+                fightDiv.appendChild(pImage);
+                let HealthPoints = document.createElement("h3");
+                HealthPoints.innerText = "Health Points:"
+                fightDiv.appendChild(HealthPoints);
+                let hp = document.createElement("h4");
+                hp.innerText = p1HP;
+                fightDiv.appendChild(hp);
+                
+                let allAttacks = document.querySelector("#right").querySelectorAll("li");
+                let p2Attack = allAttacks[Math.floor(Math.random() * allAttacks.length)].innerText;
+                p2Attack = parseInt(p2Attack.slice(p2Attack.lastIndexOf(" ")));
+                    p1HP -= p2Attack;
+                    if (p1HP < 0) {
+                        p1HP = 0;
+                    }
+                    hp.innerText = `${hp.innerText} ➡ ${p1HP}`;
+                    let p1H4Health = document.querySelector("#left").querySelector("h4");
+                    p1H4Health.innerText = "Health (HP): " + p1HP;
+                    
+                if (p1HP <= 0) {
+                    readyForBattle = false;
+                    winner = document.querySelector("#right").querySelector("h3").innerText;
+                    loser = document.querySelector("#left").querySelector("h3").innerText;
+                    isAWinner(winner, loser);
+                }
+            } 
+        }, 2000);
+    }, 200);
+    setTimeout(() => {
+        fightDiv.style.display = "none";
+    }, 5000);
+}
+
+
+const sleep = (time) => {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1; i--) { //infinit loop
+    if ((new Date().getTime() - start) > time) {
+      break;
+    }
+  }
+}
+
+const isAWinner = (winner, loser) => {
+    let battleHistoryDiv = document.querySelector("#battleHistory");
+    let newParagraph = document.createElement("p");
+    newParagraph.innerText = winner + " defeated " + loser;
+    battleHistoryDiv.appendChild(newParagraph);
+}
+
+const stylePokemonCard = (side, type) => { //NEED TO DO THIS FUNCTION
+    let pokemonDiv = document.querySelector(`#${side}`);
+    
+    switch (type) {
+    case "fire":
+        pokemonDiv.style.backgroundColor = "#F08030";
+        break;
+    case "water":
+        pokemonDiv.style.backgroundColor = "#6890F0";
+        break;
+    case "grass":
+        pokemonDiv.style.backgroundColor = "#78C850";
+        break;
+    case "eletric":
+        pokemonDiv.style.backgroundColor = "#F8D030";
+        break;
+    case "psychic":
+        pokemonDiv.style.backgroundColor = "#F85888";
+        break;
+    case "steel":
+        pokemonDiv.style.backgroundColor = "#B8B8D0";
+        break;
+    case "normal":
+        pokemonDiv.style.backgroundColor = "#A8A878";
+        break;
+    case "fairy":
+        pokemonDiv.style.backgroundColor = "#EE99AC";
+        break;
+    case "dark":
+        pokemonDiv.style.backgroundColor = "#705848";
+        break;
+    case "flying":
+        pokemonDiv.style.backgroundColor = "#A890F0";
+        break;
+    case "ghost":
+        pokemonDiv.style.backgroundColor = "#705898";
+        break;
+    case "poison":
+        pokemonDiv.style.backgroundColor = "#A040A0";
+        break;
+    case "ice":
+        pokemonDiv.style.backgroundColor = "#98D8D8";
+        break;
+    case "ground":
+        pokemonDiv.style.backgroundColor = "#E0C068";
+        break;
+    case "rock":
+        pokemonDiv.style.backgroundColor = "#B8A038";
+        break;
+    case "dragon":
+        pokemonDiv.style.backgroundColor = "#7038F8";
+        break;
+    case "fighting":
+        pokemonDiv.style.backgroundColor = "#C03028";
+        break;
+    case "bug":
+        pokemonDiv.style.backgroundColor = "#A8B820";
+        break;
+    default :
+        pokemonDiv.style.backgroundColor = "lightblue"
+    }
 }

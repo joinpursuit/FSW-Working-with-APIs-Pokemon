@@ -4,6 +4,12 @@ html, body {
     font-family: sans-serif;
     text-align: center;
 }
+body {
+    background-image: url("Pokemon.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
 
 h1 {
     padding-top: 30px;
@@ -17,6 +23,13 @@ h1 {
 
 #description {
     padding: 10px 5px;
+    background-color: rgba(173, 216, 230, 0.438);
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-size: large;
+    font-weight: bolder;
 }
 
 button {
@@ -56,7 +69,7 @@ button {
     margin-left: auto;
     margin-right: auto;
     border: solid lightseagreen 3px;
-    border-radius: 50px
+    border-radius: 50px;
 }
 #battleEffect {
     position: absolute;
@@ -69,9 +82,31 @@ button {
     margin-left: auto;
     margin-right: auto;
     border: solid lightseagreen 3px;
-    border-radius: 50px
+    border-radius: 50px;
 }
 
+#battleImage {
+    position: absolute;
+    width: 600px;
+    z-index: 2;
+    border: double 5px white;
+    border-radius: 30px;
+    display: none;
+    background-image: url("BattleEffect2.gif");
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    color: yellow;
+    font-size: x-large;
+    font-weight: bold;
+}
+#battleImage img {
+    height: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid lightseagreen 3px;
+    border-radius: 50px;
+}
 
 #data {
     display: grid;
