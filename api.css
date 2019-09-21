@@ -1,3 +1,14 @@
 body {
     background-color: lightblue;
+   font-family: sans-serif;
+   display: flex;
+   flex-flow: column;
+ align-items: center;
+
 }
+
+.data {
+    display:flex;
+    justify-content: space-between
+}
+
