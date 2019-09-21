@@ -34,6 +34,9 @@ function summonPokemon () {
     console.log("Pokemon Summoned")
     let pokemonOne = Math.floor(Math.random() * 809);
     let pokemonTwo = Math.floor(Math.random() * 809);
+    document.querySelector(".card1").style.display = "block";
+    document.querySelector(".card2").style.display = "block";
+
 
     //pokemon one endpoints
     //This endpoint gets name and base hp
