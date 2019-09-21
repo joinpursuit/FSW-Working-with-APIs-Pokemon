@@ -1,0 +1,55 @@
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+  background: lightblue;
+  justify-content: center;
+  text-align: center;
+}
+
+h1{
+  padding-top: 30px;
+}
+
+button {
+  margin: 10px 0;
+}
+
+.data{
+  width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 0
+}
+
+.left{
+  float: left;
+  text-justify: center;
+  justify-content: center;
+  border: ridge white 3px;
+}
+
+.right{
+  float: right;
+  text-justify: center;
+  justify-items: center;
+  border: ridge white 3px;
+}
+
+hr {
+  height: 3px;
+  color: white;
+}
+
+.battleHistory{
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul, li {
+  margin-left: 0;
+  text-align: left
+}
