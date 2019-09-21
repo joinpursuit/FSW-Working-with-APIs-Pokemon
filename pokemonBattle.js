@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => { // everything needs to be 
         // this condition is selecting a winners and loser
         li.innerText = `${battleWinner} defeated ${battleLoser}`
         winners.appendChild(li)
-        // creating an "li" and its appended to an ul
+        // creating an "li" and its appended to an div
 
     }
 
@@ -104,12 +104,13 @@ document.addEventListener("DOMContentLoaded", () => { // everything needs to be 
         return (Math.floor(Math.random() * (809 - 1)) + 1);
     } // randomly selecting a flowing point that its round down to a whole number
 
+
     function getMoves(array, num) {
         let div = document.querySelector(`#p${num}-attributes`)
         while (div.firstChild) {
             div.removeChild(div.firstChild)
         }
-        // if 'ul' has children it deletes them, to avoid override information in the ul
+        // if 'div' has children it deletes them, to avoid override information in the div
         let p = document.createElement("p")
         p.innerText = "move"
         div.appendChild(p)
@@ -131,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => { // everything needs to be 
                 })
 
             // it sets li content to pokemon move-names and pp(power-point)
-            // then append it to the 'ul'
+            // then append it to the 'div'
 
         }
 
