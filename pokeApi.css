@@ -65,11 +65,10 @@ h3 {
 .pokeContainer {
     position: relative;
     left: 2px;
-    background-color: rgb(255, 230, 0);
     width: 300px;
     display: grid;
     justify-content: center;
-    grid-auto-columns: 200px;
+    grid-auto-columns: 150px;
     /* background-color: cadetblue; */
     grid-gap: 10px;
     border: 1px solid brown;

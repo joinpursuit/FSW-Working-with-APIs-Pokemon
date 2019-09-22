@@ -5,6 +5,9 @@ let container;
 let pp1Moves
 let pp2Moves
 let pp3Moves
+let pokePowerPoint1
+let pokePowerPoint2
+let pokePowerPoint3
 
 document.addEventListener('DOMContentLoaded', () => {
     let getPoke = document.querySelector('#getPoke')
@@ -20,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
-
 //this function gets the pokemon from the pokeApi pokemon endpoint
 async function getPokemon() {
     replacePoke()
@@ -28,7 +30,6 @@ async function getPokemon() {
     const poke2 = await generatePoke()
 
     pushPoke2Array(poke1, poke2)
-
 }
 
 //battle function
@@ -38,9 +39,8 @@ const battlePokemon = async () => {
 
     //this random number generator generates either 0 or 1 to pick
     //between the two pokemon in the current array
-    let randomBattleNum = Math.floor((Math.random() * 2) + 0);
+    let randomBattleNum = await getRandomNum(2, 0)
     console.log(randomBattleNum);
-
     const loser = currentPokeArr[0] !== currentPokeArr[randomBattleNum] ? currentPokeArr[0] : currentPokeArr[1]
     pokeBattleHistory.push(`${currentPokeArr[randomBattleNum]} defeated ${loser}`)
 
@@ -53,8 +53,8 @@ const battlePokemon = async () => {
 }
 
 //this function gets the pokemon information
-async function generatePoke() {
-    const randNum = await getRandomNum()
+const generatePoke = async () => {
+    const randNum = await getRandomNum(810, 1)
     //getting the pokemon from pokemon end point with random number
     const poke = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randNum}`)
     console.log(poke.data.name);
@@ -65,7 +65,7 @@ async function generatePoke() {
 
 //this function pushes the two pokemon names into a global array
 //that will be used to store the two current pokemon on the screen
-async function pushPoke2Array(par, par2) {
+const pushPoke2Array = async (par, par2) => {
     currentPokeArr.push(par.name, par2.name)
     console.log(currentPokeArr);
     console.log(par.name + ' ' + 'hello');
@@ -77,7 +77,7 @@ async function pushPoke2Array(par, par2) {
 const getMoves = async (pokeInfo) => {
     //getting the moves of the pokemon generated
     console.log(pokeInfo.moves);
-    let randomIndex = Math.floor((Math.random() * (pokeInfo.moves).length) + 0);
+    let randomIndex = await getRandomNum(pokeInfo.moves.length, 0)
     console.log(randomIndex);
 
     let url = pokeInfo.moves[`${randomIndex}`].move.url;
@@ -87,9 +87,8 @@ const getMoves = async (pokeInfo) => {
 }
 
 //This function generates a random number
-async function getRandomNum() {
-    let randomNumber = Math.floor((Math.random() * 809) + 1);
-    return randomNumber;
+async function getRandomNum(max, min) {
+    return Math.floor((Math.random() * max) + min);
 }
 
 //this is a simple function teh brings the container over into the js
@@ -99,19 +98,18 @@ function getContainer() {
 }
 
 //function that will replace the pokemon the are already on the screen
-function replacePoke() {
+const replacePoke = async () => {
     currentPokeArr.length = 0
     container = getContainer()
-    // container.innerHTML = ''
-    while (container.firstChild) {
-        container.removeChild(container.firstChild)
-    }
+    container.innerHTML = ''
+    // while (container.firstChild) {
+    //     container.removeChild(container.firstChild)
+    // }
 }
 
 //This function create the elements on the create that will hold the pokemon information
 async function creatingCard(pokemon) {
     container = getContainer()
-
     //creating the elements that will hold the information on the pokemon
     const subContainer = creatingElem('div')
     // document.createElement('div');
@@ -121,16 +119,12 @@ async function creatingCard(pokemon) {
     pokeName.className = 'pokemonName'
     const pokeHp = document.createElement('p')
     const pokeMoves = document.createElement('p')
-    const pokePowerPoint1 = document.createElement('p')
-    const pokePowerPoint2 = document.createElement('p')
-    const pokePowerPoint3 = document.createElement('p')
-
     let ppMovesArray = [pp1Moves, pp2Moves, pp3Moves]
     let pokePPPara = [pokePowerPoint1, pokePowerPoint2, pokePowerPoint3]
-    let subContainerArray = [pokeName, pokePic, pokeHp, pokeMoves, pokePowerPoint1, pokePowerPoint2, pokePowerPoint3]
-    // for (let i = 0; i < subContainerArray.length; i++) {
-    //     subContainerArray[i] = creatingElem('p')
-    // }
+    let subContainerArray = [pokeName, pokePic, pokeHp, pokeMoves]
+    for (let i = 0; i < pokePPPara.length; i++) {
+        pokePPPara[i] = creatingElem('p')
+    }
     //assigning the innerText of the elements created to display the information
     pokeName.innerText = pokemon.name
 
@@ -148,6 +142,7 @@ async function creatingCard(pokemon) {
         ppMovesArray[i] = await getMoves(pokemon);
         console.log(ppMovesArray[i]);
         pokePPPara[i].innerText = `${ppMovesArray[i].name} PP:${ppMovesArray[i].pp}`
+        subContainerArray.push(pokePPPara[i])
     }
     //now appending the newly created elements to the subContainer   
     for (let i = 0; i < subContainerArray.length; i++) {
