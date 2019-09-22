@@ -1,9 +1,10 @@
-body {
+ body {
     background-image: url("assets/battle-image.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     filter: contrast()
 }
+
 
 h1 {
     text-align: center;
@@ -11,23 +12,90 @@ h1 {
     text-shadow: 3px 3px black;
 }
 
-button {
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px black;
+}
+
+h3 {
+    color: white;
+    text-shadow: 3px 3px black;
+}
+
+ul {
+    color: white;
+    text-shadow: 3px 3px black;
+    
+    list-style: none;
+
+}
+li {
+    border: solid black 2px;
+    background-color: rgb(107, 107, 107, 0.5) ;
+}
+
+
+/* button {
     height:20px; 
     width:100px; 
     margin: -20px -50px; 
     position:relative;
     top:50%; 
     left:50%;
-    
+    justify-content: space-between
+} */
+
+#get-pokemon-btn {
+    height:20px; 
+    width:100px; 
+    margin-left: auto; 
+    margin-right: auto;
+    position:relative;
+    top:50%; 
+    left:300px;
+    justify-content: space-between;
+    border: 1px solid red;
+
 }
 
-h3 {
+#battle-pokemon-btn {
+    height:20px; 
+    width:100px; 
+    margin-left: auto; 
+    margin-right: auto;
+    position:relative;
+    top:50%; 
+    left:1000px;
+    border: 1px solid red;
+}
+
+
+p {
     text-align: center;
     color: white;
     text-shadow: 3px 3px black;
+    border: solid black 2px;
+    background-color: rgb(107, 107, 107, 0.5) ;
+} 
+
+#arena {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    justify-content: flex-end;
+    align-content: center;
+    text-align: center;
 }
 
-p {
+#footer {
     text-align: center;
     color: white;
     text-shadow: 3px 3px black;
