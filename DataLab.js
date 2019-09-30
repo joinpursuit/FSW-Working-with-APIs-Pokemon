@@ -291,7 +291,8 @@ const battlePokemon = () => {
     let num = Math.floor(Math.random() * 2);
     let firstPokemon = document.querySelector('#name1').innerText;
     let secondPokemon = document.querySelector('#name2').innerText;
-    let win = document.createElement('p');
+    let win = document.createElement('p')
+    win.setAttribute('id', 'winner');
     totalHistory.innerText = ''
 
     if (num === 0) {
