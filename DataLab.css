@@ -152,3 +152,6 @@ iframe{
 ul{
     padding-left: 0;
 }
+#tid-bit{
+    visibility: hidden;
+}

@@ -9,12 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 //make directions to load like a typewriter
-
 let txt = 'Click "Get Pokémon" to display your fighters. Click "Battle" to start the battle.';
 let speed = 30;
 let i = 0;
 let directions = document.createElement('p');
-
 function typeWriter() {
     let instructions = document.querySelector('#instructions');
     let text = "";
@@ -28,8 +26,18 @@ function typeWriter() {
 
 }
 
+//function that hides fake card when user presses 'get pokemon' button
+const hideMysteryCardShowTidBit = () => {
+    let mysteryCard1 = document.querySelector('#load1');
+    let mysteryCard2 = document.querySelector('#load2');
+    let tidBit = document.querySelector('#tid-bit');
+    mysteryCard1.style.display = 'none';
+    mysteryCard2.style.display = 'none';
+    tidBit.style.visibility = 'visible';
+}
 
-const colortypes = {
+// object of pokemon types and their corresponding color
+const colorTypes = {
     fire: 'orangered',
     water: 'lightskyblue',
     grass: 'greenyellow',
@@ -51,7 +59,7 @@ const colortypes = {
 
 }
 
-
+//function that retrieves the first pokemon and all corresponding data
 const firstPokemon = async () => {
     let pic1 = document.createElement('img');
     pic1.setAttribute('id', 'poke1');
@@ -59,44 +67,46 @@ const firstPokemon = async () => {
     let p1 = `https://pokeapi.co/api/v2/pokemon/${first}`;
     let div = document.querySelector('.data');
 
+    //load data from pokeAPI
     await axios.get(p1).then((response) => {
         try {
             let pokemon1 = response.data;
             let data = document.querySelector('#pokeCard1');
 
             if (!data) {
+                //create the pokeCard
                 let pokeCard1 = document.createElement('div');
-                pokeCard1.setAttribute('id', 'pokeCard1')
-                div.appendChild(pokeCard1)
+                pokeCard1.setAttribute('id', 'pokeCard1');
+                div.appendChild(pokeCard1);
 
+                //change background color of pokeCard based on type
                 let type = pokemon1.types[0].type.name;
-                console.log(type)
-                pokeCard1.style.backgroundColor = colortypes[type];
+                pokeCard1.style.backgroundColor = colorTypes[type];
 
+                //create element for pokemon type
                 let typeName = document.createElement('h3');
                 typeName.innerText = `${pokemon1.types[0].type.name} `;
                 typeName.setAttribute('class', 'type1');
-                pokeCard1.appendChild(typeName)
+                pokeCard1.appendChild(typeName);
 
+                //create element for pokemon name
                 let name1 = document.createElement('h2');
                 name1.innerText = pokemon1.name;
                 name1.setAttribute('id', 'name1');
                 pokeCard1.appendChild(name1);
-                div.appendChild(pokeCard1)
 
+                //create element for pokemon stats (HP)
                 let hp1 = document.createElement('p');
                 hp1.innerText = `HP: ${pokemon1.stats[5].base_stat}`;
-                hp1.setAttribute('id', 'hp1')
+                hp1.setAttribute('id', 'hp1');
                 pokeCard1.appendChild(hp1);
 
+                //create element for pokemon picture
                 pic1.src = `${pokemon1.sprites.front_shiny}`;
-                let moves = pokemon1.moves;
                 pokeCard1.appendChild(pic1);
+                let moves = pokemon1.moves;
 
-
-
-
-
+                //loop for 4 pokemon moves and power points (PP)
                 for (i = 0; i < 4; i++) {
                     let move = document.createElement('p');
                     move.setAttribute('id', 'move')
@@ -105,46 +115,39 @@ const firstPokemon = async () => {
                     let moveURL = moves[i].move.url;
                     axios.get(moveURL).then((response) => {
                         let eachMove = document.createElement('p');
-                        eachMove.setAttribute('class', 'power')
+                        eachMove.setAttribute('class', 'power');
                         eachMove.innerText = `PP: ${response.data.pp}`;
-                        move.appendChild(eachMove)
+                        move.appendChild(eachMove);
                     })
-
                 }
-
-
+                //same as above but if there is an existing pokemon being displayed
             } else {
                 newPokeCard1 = document.createElement('div');
                 newPokeCard1.setAttribute('id', 'pokeCard1');
-                pokeCard1.parentNode.replaceChild(newPokeCard1, pokeCard1)
+                pokeCard1.parentNode.replaceChild(newPokeCard1, pokeCard1);
 
                 let type = pokemon1.types[0].type.name;
-                newPokeCard1.style.backgroundColor = colortypes[type];
-                console.log(type)
+                newPokeCard1.style.backgroundColor = colorTypes[type];
 
                 let newTypeName = document.createElement('h3');
                 newTypeName.innerText = `${pokemon1.types[0].type.name} `;
                 newTypeName.setAttribute('class', 'type1');
-                newPokeCard1.appendChild(newTypeName)
+                newPokeCard1.appendChild(newTypeName);
 
                 let name1 = document.createElement('h2');
                 name1.innerText = pokemon1.name;
                 name1.setAttribute('id', 'name1');
                 newPokeCard1.appendChild(name1);
-                div.appendChild(pokeCard1);
+                div.appendChild(newPokeCard1);
 
                 let hp1 = document.createElement('p');
                 hp1.innerText = `HP: ${pokemon1.stats[5].base_stat}`;
-                hp1.setAttribute('id', 'hp1')
+                hp1.setAttribute('id', 'hp1');
                 newPokeCard1.appendChild(hp1);
 
                 pic1.src = `${pokemon1.sprites.front_shiny}`;
-                let moves = pokemon1.moves;
                 newPokeCard1.appendChild(pic1);
-
-
-
-
+                let moves = pokemon1.moves;
 
                 for (i = 0; i < 4; i++) {
                     let move = document.createElement('p');
@@ -166,12 +169,11 @@ const firstPokemon = async () => {
     })
 }
 
-
+//function that retrieves the second pokemon and all corresponding data
 const secondPokemon = async () => {
     let pic2 = document.createElement('img');
     pic2.setAttribute('id', 'poke2');
     let second = Math.floor(Math.random() * (810 - 1) + 1);
-    console.log(second)
     let p2 = `https://pokeapi.co/api/v2/pokemon/${second}`;
     let div = document.querySelector('.data')
 
@@ -186,60 +188,54 @@ const secondPokemon = async () => {
                 div.appendChild(pokeCard2)
 
                 let type = pokemon2.types[0].type.name;
-                console.log(type)
-                pokeCard2.style.backgroundColor = colortypes[type];
+                pokeCard2.style.backgroundColor = colorTypes[type];
 
                 let typeName = document.createElement('h3');
                 typeName.innerText = pokemon2.types[0].type.name;
                 typeName.setAttribute('class', 'type2');
-                pokeCard2.appendChild(typeName)
+                pokeCard2.appendChild(typeName);
 
                 let name2 = document.createElement('h2');
                 name2.setAttribute('id', 'name2');
                 name2.innerText = `${pokemon2.name} `;
                 pokeCard2.appendChild(name2);
 
-                div.appendChild(pokeCard2)
+
+                //create element for pokemon stats (HP)
                 let hp2 = document.createElement('p');
                 hp2.innerText = `HP: ${pokemon2.stats[5].base_stat}`;
-                hp2.setAttribute('id', 'hp2')
+                hp2.setAttribute('id', 'hp2');
                 pokeCard2.appendChild(hp2);
 
-
+                //create element for pokemon picture
                 pic2.src = `${pokemon2.sprites.front_shiny}`;
-                let moves = pokemon2.moves;
                 pokeCard2.appendChild(pic2);
+                let moves = pokemon2.moves;
 
-
-
-
-
+                //loop for 4 pokemon moves and power points (PP)
                 for (i = 0; i < 4; i++) {
                     let move = document.createElement('p');
                     move.innerText = `${moves[i].move.name}`;
-                    move.setAttribute('id', 'move')
+                    move.setAttribute('id', 'move');
                     pokeCard2.appendChild(move);
 
                     let moveURL = moves[i].move.url;
                     axios.get(moveURL).then((response) => {
                         let eachMove = document.createElement('p');
-                        eachMove.setAttribute('class', 'power')
+                        eachMove.setAttribute('class', 'power');
                         eachMove.innerText = `PP: ${response.data.pp}`;
-                        move.appendChild(eachMove)
-                        console.log(eachMove)
+                        move.appendChild(eachMove);
                     })
-
                 }
-
+                //same as above but if there is an existing pokemon being displayed
             } else {
                 newPokeCard2 = document.createElement('div');
                 newPokeCard2.setAttribute('id', 'pokeCard2');
                 pokeCard2.parentNode.replaceChild(newPokeCard2, pokeCard2)
 
                 let type = pokemon2.types[0].type.name;
-                console.log(type)
-                newPokeCard2.style.backgroundColor = colortypes[type];
-                div.appendChild(newPokeCard2)
+                newPokeCard2.style.backgroundColor = colorTypes[type];
+                div.appendChild(newPokeCard2);
 
                 let newTypeName = document.createElement('h3');
                 newTypeName.innerText = `${pokemon2.types[0].type.name} `;
@@ -253,29 +249,24 @@ const secondPokemon = async () => {
 
                 let hp2 = document.createElement('p');
                 hp2.innerText = `HP: ${pokemon2.stats[5].base_stat}`;
-                hp2.setAttribute('id', 'hp2')
+                hp2.setAttribute('id', 'hp2');
                 newPokeCard2.appendChild(hp2);
 
-
                 pic2.src = `${pokemon2.sprites.front_shiny}`;
-                let moves = pokemon2.moves;
                 newPokeCard2.appendChild(pic2);
-
-
-
-
+                let moves = pokemon2.moves;
 
                 for (i = 0; i < 4; i++) {
                     let move = document.createElement('p');
                     move.innerText = `${moves[i].move.name}`;
-                    move.setAttribute('id', 'move')
+                    move.setAttribute('id', 'move');
                     newPokeCard2.appendChild(move);
                     let moveURL = moves[i].move.url;
                     axios.get(moveURL).then((response) => {
                         let eachMove = document.createElement('p');
-                        eachMove.setAttribute('class', 'power')
+                        eachMove.setAttribute('class', 'power');
                         eachMove.innerText = ` PP: ${response.data.pp}`;
-                        move.appendChild(eachMove)
+                        move.appendChild(eachMove);
                     })
                 }
             }
@@ -285,41 +276,29 @@ const secondPokemon = async () => {
     })
 }
 
+// function that displays pokemon functions, hide temporary cards and plays battle music
 const get2Pokemon = () => {
     firstPokemon();
     secondPokemon();
     let audio = document.querySelector('audio');
     audio.play();
-    hideMysteryPokemon();
+    hideMysteryCardShowTidBit();
 }
 
-
-
-
+// function that allow pokemon to "battle" and randomly declares a winner
 const battlePokemon = () => {
+    let totalHistory = document.querySelector('#battle-info');
     let num = Math.floor(Math.random() * 2);
-    console.log(num)
     let firstPokemon = document.querySelector('#name1').innerText;
     let secondPokemon = document.querySelector('#name2').innerText;
-    let totalHistory = document.querySelector('.battleHistory');
     let win = document.createElement('p');
-    totalHistory.appendChild(win)
-    
+    totalHistory.innerText = ''
+
     if (num === 0) {
-
         win.innerText = `${firstPokemon} defeats ${secondPokemon}!`;
-        totalHistory.replaceChild(win);
-
+        totalHistory.appendChild(win);
     } else {
         win.innerText = `${secondPokemon} defeats ${firstPokemon}!`;
-        totalHistory.replaceChild(win, win);
+        totalHistory.appendChild(win);
     }
-
-}
-
-const hideMysteryPokemon = () => {
-    let mysteryCard1 = document.querySelector('#load1')
-    let mysteryCard2 = document.querySelector('#load2')
-    mysteryCard1.style.display = 'none'
-    mysteryCard2.style.display = 'none'
 }
