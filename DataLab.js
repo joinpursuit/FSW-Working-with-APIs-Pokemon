@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //make directions to load like a typewriter
 
 let txt = 'Click "Get Pokémon" to display your fighters. Click "Battle" to start the battle.';
-let speed = 100;
+let speed = 150;
 let i = 0;
 let directions = document.createElement('p');
 
@@ -25,6 +25,7 @@ function typeWriter() {
         setTimeout(typeWriter, speed);
     }
     instructions.appendChild(directions);
+
 }
 
 
@@ -72,7 +73,7 @@ const firstPokemon = async () => {
                 console.log(type)
                 pokeCard1.style.backgroundColor = colortypes[type];
 
-                let typeName = document.createElement('h3'); 
+                let typeName = document.createElement('h3');
                 typeName.innerText = `${pokemon1.types[0].type.name} `;
                 typeName.setAttribute('class', 'type1');
                 pokeCard1.appendChild(typeName)
@@ -121,7 +122,7 @@ const firstPokemon = async () => {
                 newPokeCard1.style.backgroundColor = colortypes[type];
                 console.log(type)
 
-                let newTypeName = document.createElement('h3'); 
+                let newTypeName = document.createElement('h3');
                 newTypeName.innerText = `${pokemon1.types[0].type.name} `;
                 newTypeName.setAttribute('class', 'type1');
                 newPokeCard1.appendChild(newTypeName)
@@ -188,7 +189,7 @@ const secondPokemon = async () => {
                 console.log(type)
                 pokeCard2.style.backgroundColor = colortypes[type];
 
-                let typeName = document.createElement('h3'); 
+                let typeName = document.createElement('h3');
                 typeName.innerText = pokemon2.types[0].type.name;
                 typeName.setAttribute('class', 'type2');
                 pokeCard2.appendChild(typeName)
@@ -240,7 +241,7 @@ const secondPokemon = async () => {
                 newPokeCard2.style.backgroundColor = colortypes[type];
                 div.appendChild(newPokeCard2)
 
-                let newTypeName = document.createElement('h3'); 
+                let newTypeName = document.createElement('h3');
                 newTypeName.innerText = `${pokemon2.types[0].type.name} `;
                 newTypeName.setAttribute('class', 'type2');
                 newPokeCard2.appendChild(newTypeName)
@@ -287,6 +288,8 @@ const secondPokemon = async () => {
 const get2Pokemon = () => {
     firstPokemon();
     secondPokemon();
+    let audio = document.querySelector('audio');
+    audio.play();
 }
 
 
