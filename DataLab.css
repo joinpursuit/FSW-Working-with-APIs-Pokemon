@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Turret+Road&display=swap');
+
 html{
+    height: inherit; 
+    padding: 0px;
+     background-color: #FA4545;
     
-    overflow-x: hidden;
-    width: 100%;
-    height: 100%;
-    background-color: #FA4545;
 }
+
 body{
     display:flex;
     flex-direction: row;
     align-items: start;
-    background-color: lightblue;
+    background-color:#4563FA;
     font-family: 'Turret Road', sans-serif;
     justify-content: space-around;
     border: 20px solid #FA4545;
@@ -22,7 +23,6 @@ width: 300px;
 height: 500px;
 position: relative;
 top: 200px;
-
 }
 
 #game{
@@ -39,14 +39,18 @@ h1{
     margin-top: 30px;
     margin-bottom: 0px;
     font-family: 'Turret Road', sans-serif;
+    color: white;
 }
-#buttons{
-    display:flex;
-    flex-direction: column;
+
+#instructions{
+    color: white;
 }
+
 
 button{
     margin-bottom: 10px;
+    font-size: 12px;
+    background-color:white;
 }
 
 audio{
@@ -126,11 +130,14 @@ h3{
 }
 
 .battleHistory{
+    visibility: hidden;
     text-align: center;
     margin-top: 0;
+    color: white;
 }
 #battle-info p{
     margin-top: 0;
+    color: white;
 }
 
 iframe{

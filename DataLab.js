@@ -31,9 +31,11 @@ const hideMysteryCardShowTidBit = () => {
     let mysteryCard1 = document.querySelector('#load1');
     let mysteryCard2 = document.querySelector('#load2');
     let tidBit = document.querySelector('#tid-bit');
+    let battleHistory = document.querySelector('.battleHistory');
     mysteryCard1.style.display = 'none';
     mysteryCard2.style.display = 'none';
     tidBit.style.visibility = 'visible';
+    battleHistory.style.visibility = 'visible';
 }
 
 // object of pokemon types and their corresponding color
