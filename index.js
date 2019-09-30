@@ -4,125 +4,195 @@
 /* TODO
   toggle for classic font vs modern font
   hide pokemon cards until fully built
-  split async retrieval into simulta retrs
+  X split async retrieval into simulta retrs
 */
 
 
-let pokemonLeft = [];
-let pokemonRight = [];
+
+let game = {
+  round: 0,
+  pokemonCreated: 0,
+  pokemonLoaded: 0,
+  pokemonThrown: 0,
+  pokemonBuffer: [],
+  historyLeft: [],
+  historyRight: []
+};
 
 /* DOM-Loaded executes */
 document.addEventListener("DOMContentLoaded", () => {
-    document.querySelector('#button-chooser').addEventListener('click', () => {
-        getPokemon();
-    });
+  createEmptyBuffer();
+
+  createCard('left', true);
+  createCard('right', true);
+  game.historyLeft.push(loadPokemonToCard());
+  game.pokemonBuffer.shift();
+  game.pokemonLoaded += 1;
+  game.historyRight.push(loadPokemonToCard());
+  game.pokemonBuffer.shift();
+  game.pokemonLoaded += 1;
+
+  document.querySelector('#button-chooser').addEventListener('click', () => {
+    cycleOneRound();
+    game.round += 1;
+    game.pokemonThrown += 2;
+  });
+  document.querySelector('#button-battle').addEventListener('click', () => {
+
+  });
 });
 
 
 
-const handleError = (error) => {
-  console.log(`The error that was thrown: `, error);
+const handleError = (msgStr, error, id) => {
+  console.log(msgStr, error, ' Trying again');
 }
 
-const randomNumGen = (max) => {
-  return Math.floor(Math.random() * max) + 1
+const genRandomNum = (max) => { /* MIN: 1 inclusive, MAX: inclusive */
+  return Math.floor(Math.random() * max) + 1;
 }
 
-const getMoveData = async (urlArray) => {
-  try {
-    let movesArray = [];
-    for (let url of urlArray) {
-      let response = await axios.get(url);
-      let moveObj = {
-        name: response.data.name,
-        pp: response.data.pp
-      }
-      movesArray.push(moveObj);
-    }
-    return movesArray;
-  } catch (err) {
-    handleError(err);
+const createEmptyBuffer = () => {
+  let hiddenDiv = document.createElement('div');
+  hiddenDiv.className = "hiding-space";
+  document.querySelector('.data').appendChild(hiddenDiv);
+}
+
+const clearStage = () => {
+  const revealedCards = document.querySelectorAll('.revealed');
+  for (let i = revealedCards.length - 1; i >= 0; i--) {
+    revealedCards[i].remove();
   }
 }
 
-const buildAPokemon = async () => {
+const getMonsterData = async (id) => {
   try {
-    let outputPokemonObj = {
-      id: randomNumGen(151),
+    let response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`);
+    return response.data;
+  } catch (err) {
+    handleError('getError: ', err, id);
+  }
+}
+
+const getMovesDataArr = async (urlsArr) => {
+  try {
+    let movesDataArr = await Promise.all(
+      urlsArr.map(url => {
+          return axios.get(url)
+            .then(response => {
+                return response.data;
+            })
+      })
+    )
+    return movesDataArr;
+  } catch (error) {
+      handleError('getError: ', err, id);
+  }
+}
+
+const createAPokemon = async () => {
+    let outputObj = {
+      id: genRandomNum(151), /* Only using First-Generation Pokemon! */
       moveURLsObj: {},
       moves: []
     };
-    let response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${outputPokemonObj.id}/`);
-    outputPokemonObj['name'] = response.data.name;
-    outputPokemonObj['avatarURL'] = response.data.sprites.front_default;
-    outputPokemonObj['baseHP'] = response.data.stats[5].base_stat;
-    while (Object.keys(outputPokemonObj.moveURLsObj).length < 4) {
-      let thisMoveIndex = randomNumGen(response.data.moves.length - 1);
-      outputPokemonObj.moveURLsObj[thisMoveIndex] = response.data.moves[thisMoveIndex].move.url;
-    } 
-    outputPokemonObj.moves = await getMoveData(Object.values(outputPokemonObj.moveURLsObj));
-    return outputPokemonObj;
-  } catch (err) {
-    handleError(err);
-  }
+    let monsterData = await getMonsterData(outputObj.id); /* NETWORK REQ POKEMON MONSTER DATA */
+    while (Object.values(outputObj.moveURLsObj).length < 4) {
+      let randomMoveNum = genRandomNum(monsterData.moves.length - 1);
+      outputObj.moveURLsObj[randomMoveNum] = monsterData.moves[randomMoveNum].move.url;
+    }
+    let moveURLsArr = Object.values(outputObj.moveURLsObj);
+    outputObj.moves = await getMovesDataArr(moveURLsArr); /* NETWORK REQs MOVE DATA x4 */
+    outputObj['name'] = monsterData.name;
+    outputObj['avatarURL'] = monsterData.sprites.front_default;
+    outputObj['baseHP'] = monsterData.stats[5].base_stat;
+    return outputObj;
 }
 
-const makeCard = async (side) => {
-  let pokemonObj = await buildAPokemon();
-  console.log('new poke: ', pokemonObj);
-  // debugger;
-  let emptyDataDiv = document.querySelector('.data');
+const createCard = (side, hiddenBool) => {
+  let dataGrid = document.querySelector('.data');
 
   let newCard = document.createElement('div');
-    newCard.className = `pokemon-card ${side}`;
+  if (hiddenBool) {
+    newCard.className = `pokemoncard ${side}`;
+  } else {
+    newCard.className = `pokemoncard ${side} revealed`;
+  }
+  newCard.id = 'card' + game.pokemonCreated;
+  game.pokemonCreated += 1;
+
     let cardHeader = document.createElement('h3');
-      cardHeader.innerText = pokemonObj.name;
     newCard.appendChild(cardHeader);
     let cardAvatar = document.createElement('img');
-      cardAvatar.src = pokemonObj.avatarURL;
-      cardAvatar.setAttribute('alt', `${pokemonObj.name} avatar`);
     newCard.appendChild(cardAvatar);
     let cardHp = document.createElement('p');
-      cardHp.className = 'hp';
-      cardHp.innerHTML = `<strong>HP:</strong> ${pokemonObj.baseHP}`;
+    cardHp.className = 'hp';
     newCard.appendChild(cardHp);
     let cardMovesBox = document.createElement('div');
-      cardMovesBox.className = 'moves-box';
+    cardMovesBox.className = 'moves-box';
+
       let cardMovesBoxH4 = document.createElement('h4');
-        cardMovesBoxH4.innerText = 'Moves';
+      cardMovesBoxH4.innerText = 'Moves';
       cardMovesBox.appendChild(cardMovesBoxH4);
       let cardMovesBoxList = document.createElement('ul');
-        for (let move of pokemonObj.moves) {
-          let cardMovesBoxListItem = document.createElement('li');
-            let moveItemHTML = `<strong>${move.name}</strong><span>PP: ${move.pp}/${move.pp}</span>`;
-            cardMovesBoxListItem.innerHTML = moveItemHTML;
-          cardMovesBoxList.appendChild(cardMovesBoxListItem);
-        }
       cardMovesBox.appendChild(cardMovesBoxList);
       
     newCard.appendChild(cardMovesBox);
 
-  emptyDataDiv.appendChild(newCard);
+  dataGrid.appendChild(newCard);
 }
 
-const clearStage = () => {
-  const dataGrid = document.querySelector('.data');
-  while (dataGrid.firstChild) {
-    dataGrid.removeChild(dataGrid.lastChild);
+const loadPokemonToCard = async () => {
+  let card = document.querySelector('#card' + game.pokemonLoaded);
+  let pokemon = await game.pokemonBuffer[0];
+
+  card.querySelector('h3').innerText = pokemon.name;
+  
+  card.querySelector('img').src = pokemon.avatarURL;
+  card.querySelector('img').setAttribute('alt', `${pokemon.name} avatar`);
+
+  card.querySelector('p').innerHTML = `<strong>HP:</strong> ${pokemon.baseHP}`;
+
+  for (let move of pokemon.moves) {
+    let cardMovesBoxListItem = document.createElement('li');
+      let moveItemHTML = `<strong>${move.name}</strong><span>PP: ${move.pp}/${move.pp}</span>`;
+      cardMovesBoxListItem.innerHTML = moveItemHTML;
+      card.querySelector('ul').appendChild(cardMovesBoxListItem);
   }
+
+  return pokemon;
 }
 
-const getPokemon = async () => {
+
+const cycleOneRound = () => {
+  let start = Date.now();
   clearStage();
-  await makeCard('left');
+ 
+  let hiddenCards = document.querySelectorAll('.pokemoncard');
+  hiddenCards[0].className += ' revealed';
+  hiddenCards[1].className += ' revealed';
 
-  let hiddenDiv = document.createElement('div');
-    hiddenDiv.id = "hiding-space";
-  document.querySelector('.data').appendChild(hiddenDiv);
+  game.pokemonBuffer.push(createAPokemon());
+  game.pokemonBuffer.push(createAPokemon());
+  createCard('left', true);
+  createCard('right', true);
+  game.historyLeft.push(loadPokemonToCard());
+  game.pokemonBuffer.shift();
+  game.pokemonLoaded += 1;
+  game.historyRight.push(loadPokemonToCard());
+  game.pokemonBuffer.shift();
+  game.pokemonLoaded += 1;
 
-  makeCard('right');
+  console.log('drawTime: ', (Date.now() - start));
+  console.log('gameHistories: ', game.historyLeft, game.historyRight);
 }
 
-const battlePokemon = () => {
+// const battlePokemon = () => {
 
-}
+// }
+
+
+
+/* IMMEDIATE EXECUTES - BUILD TWO POKEMON FROM NETWORK REQS ASAP */
+game.pokemonBuffer.push(createAPokemon());
+game.pokemonBuffer.push(createAPokemon());

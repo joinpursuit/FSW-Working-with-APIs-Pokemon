@@ -73,7 +73,7 @@ body {
 div#base-grid {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 70px 130px auto auto 55px;
+  grid-template-rows: 58px 130px auto 95px 55px;
 }
 
 h1 {
@@ -89,6 +89,8 @@ div#stage {
   position: relative;
 
   height: 400px; /* TEMP for visual init */
+
+  padding-top: 12px;
 
   display: grid;
   grid-template-rows: 1fr;
@@ -113,40 +115,39 @@ div.stage-controls {
 }
 
 button#button-chooser {
-  margin-top: 8px;
+  margin-top: 44px;
 
-  width: 11vw;
+  width: 9vw;
   height: 3vw;
-  border-radius: 30px;
+  border-radius: 8px;
 }
 
 button#button-battle {
-  margin-top: 8px;
+  margin-top: 2px;
 
-  width: 11vw;
-  height: 11vw;
-  border-radius: 30px;
+  width: 9vw;
+  height: 9vw;
+  border-radius: 8px;
 }
 
-#hiding-space {
+div.hiding-space {
+  grid-column: 2;
 }
 
 div.data {
   position: relative;
-  height: 100%;
-  width: auto;
+  width: 600px;
 
-  padding: 0 100px;
+  margin: 0 auto;
 
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-columns: 1fr 14vw 1fr; /* WIDTH of middle column MUST be same as WIDTH of div.stage-controls */
- 
-  /* padding: 8px 30%; */
-  /* background-color: orange; */
+  grid-template-columns: 1fr 9vw 1fr; /* WIDTH of middle column MUST be same as WIDTH of div.stage-controls */
 }
 
-div.pokemon-card {
+div.pokemoncard {
+  display: none;
+
   width: 220px;
   height: auto;
   margin: 0 auto;
@@ -157,15 +158,27 @@ div.pokemon-card {
 
   color: #111;
   font-size: 12px;
+  opacity: 0;
+  transition: opacity 1s;
   /* font-family: 'Press Start 2P', sans-serif; */
+}
+
+div.revealed {
+  display: block;
+  opacity: 1;
+  grid-row: 1;
+
+  transition: opacity 1s;
 }
 
 div.left {
   float: left;
+  grid-column: 1;
 }
 
 div.right {
   float: right;
+  grid-column: 3;
 }
 
 h3 {
@@ -200,12 +213,11 @@ div.moves-box {
   position: relative;
   top: -15px;
   z-index: 100;
-  /* margin: auto; */
-  padding: 8px 30px;
+  padding: 8px 26px;
 
   color: white;
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 div.moves-box h4 {
