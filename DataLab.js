@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //make directions to load like a typewriter
 
 let txt = 'Click "Get Pokémon" to display your fighters. Click "Battle" to start the battle.';
-let speed = 150;
+let speed = 30;
 let i = 0;
 let directions = document.createElement('p');
 
@@ -301,16 +301,17 @@ const battlePokemon = () => {
     let firstPokemon = document.querySelector('#name1').innerText;
     let secondPokemon = document.querySelector('#name2').innerText;
     let totalHistory = document.querySelector('.battleHistory');
-
+    let win = document.createElement('p');
+    totalHistory.appendChild(win)
+    
     if (num === 0) {
-        let win1 = document.createElement('p');
-        win1.innerText = `${firstPokemon} defeats ${secondPokemon}!`;
-        totalHistory.appendChild(win1);
+
+        win.innerText = `${firstPokemon} defeats ${secondPokemon}!`;
+        totalHistory.replaceChild(win);
 
     } else {
-        let win2 = document.createElement('p');
-        win2.innerText = `${secondPokemon} defeats ${firstPokemon}!`;
-        totalHistory.appendChild(win2);
+        win.innerText = `${secondPokemon} defeats ${firstPokemon}!`;
+        totalHistory.replaceChild(win, win);
     }
 
 }

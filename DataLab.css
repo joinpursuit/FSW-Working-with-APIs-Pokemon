@@ -66,12 +66,14 @@ audio{
     border: 10px solid gold;
     padding: 5px;
     opacity: 1;
+    box-shadow: 6px 6px 5px  #888888;
+    border-radius: 10px;
 }
 
 #poke1, #poke2{
     width: 200px;
     height: 200px;
-    border: 4px outset gold;
+    border: 4.5px outset gold;
     box-shadow: 4px 4px 3px  #888888;
     background-color: white;
 }
