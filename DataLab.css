@@ -5,6 +5,7 @@ html{
     padding: 0px;
      background-color: #FA4545;
     
+    
 }
 
 body{
@@ -15,6 +16,7 @@ body{
     font-family: 'Turret Road', sans-serif;
     justify-content: space-around;
     border: 20px solid #FA4545;
+    border-radius: 10px;
     
 }
 
@@ -22,7 +24,7 @@ body{
 width: 300px;
 height: 500px;
 position: relative;
-top: 200px;
+top: 168px;
 }
 
 #game{
@@ -49,8 +51,15 @@ h1{
 
 button{
     margin-bottom: 10px;
+    margin-right: 100px;
+    margin-left: 100px;
     font-size: 12px;
     background-color:white;
+    border: 1px solid #FA4545;
+    color: black;
+    padding: 12px;
+    border-radius: 100px;
+    font-weight: bold;
 }
 
 audio{
