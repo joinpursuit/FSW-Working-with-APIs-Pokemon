@@ -78,27 +78,28 @@ audio{
     background-color: white;
 }
 
-#hp1, #hp2{
+#hp1, #hp2, #fake-hp1, #fake-hp2{
     margin-bottom: 10px;
     margin-top: 0px;
 }
 
-#name1, #name2{
+#name1, #name2, .fake-name1, .fake-name2{
     display: inline;
     position: relative;
     margin: 0px;
 }
 
-.power{
+.power, .pp{
 display: inline;
 margin-left: 20px;
 }
 
-#move{
+#move, .mm{
     margin-bottom: 0px;
+    list-style-type: none;
 }
 
-.type1, .type2{
+.type1, .type2, .fake-type1, .fake-type2{
     font-weight: bolder;
     position: absolute;
     z-index: 1;
@@ -118,5 +119,36 @@ h3{
     text-align: center;
 }
 
-
-   
+iframe{
+    /* position: relative;
+    top: 147px;
+    width: 50px;*/
+     height: 400px; 
+     
+}
+#load1{
+    float: left;
+}
+#load2{
+    float: right;
+}
+#load1, #load2{
+    display: grid;
+    width: 40%;
+    justify-items: center;
+    border: 10px solid gold;
+    padding: 5px;
+    opacity: 1;
+    box-shadow: 6px 6px 5px  #888888;
+    border-radius: 10px;
+    background-color: white;
+}
+#mystery1, #mystery2{
+    width: 200px;
+    height: 200px;
+    border: 4.5px outset gold;
+    box-shadow: 4px 4px 3px  #888888;
+}
+ul{
+    padding-left: 0;
+}

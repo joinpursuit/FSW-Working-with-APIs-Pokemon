@@ -290,6 +290,7 @@ const get2Pokemon = () => {
     secondPokemon();
     let audio = document.querySelector('audio');
     audio.play();
+    hideMysteryPokemon();
 }
 
 
@@ -314,4 +315,11 @@ const battlePokemon = () => {
         totalHistory.replaceChild(win, win);
     }
 
+}
+
+const hideMysteryPokemon = () => {
+    let mysteryCard1 = document.querySelector('#load1')
+    let mysteryCard2 = document.querySelector('#load2')
+    mysteryCard1.style.display = 'none'
+    mysteryCard2.style.display = 'none'
 }
