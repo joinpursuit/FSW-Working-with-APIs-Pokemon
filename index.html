@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pokemon Battle</title>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+    <div class='data'>
+        <div class="title">
+            <ul>
+                <h1>Pokemon Battle Simulator</h1>
+                <p>Click 'Get Pokemon' to display your two champions. Then click Battle to fight!</p>
+                <button id="get-pokemon">Get Pokemon</button>
+                <button id="battle-time">Battle!</button>
+            </ul>
+        </div>
+        
+        <div class="firstPokemon">
+            <div class="card1">
+                <div id="background1">
+                        <img id="poke1Img"></img>
+                    </div>
+                        <div class="content">
+                            <h1 id="poke1Name"></h1>
+                            <span id="poke1HP"></span>
+
+                            <div class="pokemonMoves">
+                                    <p id="poke1move1"></p>
+                                    <p id="poke1move2"></p>
+                                    <p id="poke1move3"></p>
+                                    <p id="poke1move4"></p>
+                            </div>
+                        </div>
+            </div>
+        </div>
+        <!-- old way of displaying pokemon -->
+                    <!-- <ul>
+                        <li id="poke1Name"></li>
+                        <li><img id="poke1Img"></img></li>
+                        <li id="poke1HP"></li>
+                        <li id="moveTitle"></li>
+                        <li id="poke1move1"></li>
+                        <li id="poke1move2"></li>
+                        <li id="poke1move3"></li>
+                        <li id="poke1move4"></li>
+                    </ul> -->
+        <div class="secondPokemon">
+                <div class="card2">
+                        <div id="background2">
+                                <img id="poke2Img"></img>
+                            </div>
+                                <div class="content">
+                                    <h1 id="poke2Name"></h1>
+                                    <span id="poke2HP"></span>
+        
+                                    <div class="pokemonMoves">
+                                            <p id="poke2move1"></p>
+                                            <p id="poke2move2"></p>
+                                            <p id="poke2move3"></p>
+                                            <p id="poke2move4"></p>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                <div class='battle-history'>
+                        <h3>Battle History</h3>
+                        <p id="history"></p>
+                    </div>
+        </div>    
+        <!-- Old way of displaying pokemon -->
+                    <!-- <ul>
+                <li id="poke2Name"></li>
+                <li><img id="poke2Img"></img></li>
+                <li id="poke2HP"></li>
+                <li id="moveTitle2"></li>
+                <li id="poke2move1"></li>
+                <li id="poke2move2"></li>
+                <li id="poke2move3"></li>
+                <li id="poke2move4"></li>
+            </ul> -->
+</body>
+</html>
