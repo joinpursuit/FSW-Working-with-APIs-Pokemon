@@ -2,6 +2,7 @@
 //
 
 /* TODO
+  PORT STAGE CONTROLS TO DOM CREATION AND TO REPLACE HIDDEN BUFFER SHIM
   toggle for classic font vs modern font
   hide pokemon cards until fully built
   X split async retrieval into simulta retrs
@@ -25,10 +26,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createCard('left', true);
   createCard('right', true);
-  game.historyLeft.push(loadPokemonToCard());
+  let anotherLeftPokemon = meldPokemonToCard();
+  game.historyLeft.push(anotherLeftPokemon);
   game.pokemonBuffer.shift();
   game.pokemonLoaded += 1;
-  game.historyRight.push(loadPokemonToCard());
+  let anotherRightPokemon = meldPokemonToCard();
+  game.historyRight.push(anotherRightPokemon);
   game.pokemonBuffer.shift();
   game.pokemonLoaded += 1;
 
@@ -38,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
     game.pokemonThrown += 2;
   });
   document.querySelector('#button-battle').addEventListener('click', () => {
-
+    let newEvent = runBattle();
+    addEventToHistory(newEvent);
   });
 });
 
@@ -63,6 +67,14 @@ const clearStage = () => {
   for (let i = revealedCards.length - 1; i >= 0; i--) {
     revealedCards[i].remove();
   }
+}
+
+const addEventToHistory = (str) => {
+  const historyList = document.querySelector('#historylog');
+  let makingLI = document.createElement('li');
+  makingLI.className = 'historyitem';
+  makingLI.innerHTML = str;
+  historyList.appendChild(makingLI);
 }
 
 const getMonsterData = async (id) => {
@@ -90,7 +102,7 @@ const getMovesDataArr = async (urlsArr) => {
   }
 }
 
-const createAPokemon = async () => {
+const buildAPokemon = async () => {
     let outputObj = {
       id: genRandomNum(151), /* Only using First-Generation Pokemon! */
       moveURLsObj: {},
@@ -142,7 +154,7 @@ const createCard = (side, hiddenBool) => {
   dataGrid.appendChild(newCard);
 }
 
-const loadPokemonToCard = async () => {
+const meldPokemonToCard = async () => {
   let card = document.querySelector('#card' + game.pokemonLoaded);
   let pokemon = await game.pokemonBuffer[0];
 
@@ -172,14 +184,16 @@ const cycleOneRound = () => {
   hiddenCards[0].className += ' revealed';
   hiddenCards[1].className += ' revealed';
 
-  game.pokemonBuffer.push(createAPokemon());
-  game.pokemonBuffer.push(createAPokemon());
+  game.pokemonBuffer.push(buildAPokemon());
+  game.pokemonBuffer.push(buildAPokemon());
   createCard('left', true);
   createCard('right', true);
-  game.historyLeft.push(loadPokemonToCard());
+  let anotherLeftPokemon = meldPokemonToCard();
+  game.historyLeft.push(anotherLeftPokemon);
   game.pokemonBuffer.shift();
   game.pokemonLoaded += 1;
-  game.historyRight.push(loadPokemonToCard());
+  let anotherRightPokemon = meldPokemonToCard();
+  game.historyRight.push(anotherRightPokemon);
   game.pokemonBuffer.shift();
   game.pokemonLoaded += 1;
 
@@ -187,12 +201,18 @@ const cycleOneRound = () => {
   console.log('gameHistories: ', game.historyLeft, game.historyRight);
 }
 
-// const battlePokemon = () => {
-
-// }
+const runBattle = () => {
+  let playerLeft = document.querySelectorAll('.pokemoncard')[0].querySelector('h3').innerText;
+  let playerRight = document.querySelectorAll('.pokemoncard')[1].querySelector('h3').innerText;
+  if (genRandomNum(2) === 1) {
+    return `<strong>${playerLeft}</strong> defeats <strong>${playerRight}</strong>`;
+  } else {
+    return `<strong>${playerRight}</strong> defeats <strong>${playerLeft}</strong>`;
+  }
+}
 
 
 
 /* IMMEDIATE EXECUTES - BUILD TWO POKEMON FROM NETWORK REQS ASAP */
-game.pokemonBuffer.push(createAPokemon());
-game.pokemonBuffer.push(createAPokemon());
+game.pokemonBuffer.push(buildAPokemon());
+game.pokemonBuffer.push(buildAPokemon());

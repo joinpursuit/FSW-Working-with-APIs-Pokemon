@@ -73,7 +73,7 @@ body {
 div#base-grid {
   display: grid;
   grid-template-columns: 100vw;
-  grid-template-rows: 58px 130px auto 95px 55px;
+  grid-template-rows: 58px 130px min-content auto 55px;
 }
 
 h1 {
@@ -150,7 +150,7 @@ div.pokemoncard {
 
   width: 220px;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 24px auto;
   text-align: center;
   padding: 12px;
   background-color: #fff;
@@ -203,16 +203,13 @@ p.hp, li span {
 
 p.hp {
   position: relative;
-  top: -30px;
+  top: -11px;
   z-index: 100;
 
   font-size: 25px;
 }
 
 div.moves-box {
-  position: relative;
-  top: -15px;
-  z-index: 100;
   padding: 8px 26px;
 
   color: white;
@@ -241,7 +238,7 @@ div.moves-box li {
   padding: 0px 30px;
 }
 
-li strong {
+div.data li strong {
   display: block;
   text-align: left;
   width: auto;
