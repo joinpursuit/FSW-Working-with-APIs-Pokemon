@@ -1,0 +1,251 @@
+/* Joseph P. Pasaoa
+*/
+
+
+
+/* CSS RESET -- begins --
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* CSS RESET -- ends -- */
+
+
+
+html, body, div#base-grid {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: lightblue;
+  font-size: 22px;
+  font-family: 'Nanum Brush Script', sans-serif;
+}
+
+div#base-grid {
+  display: grid;
+  grid-template-columns: 100vw;
+  grid-template-rows: 58px 130px min-content auto 55px;
+}
+
+h1 {
+  font-size: 55px;
+  font-family: 'Bowlby One SC', sans-serif;
+}
+
+div#bg-banner {
+  background-color: darkslategray;
+}
+
+div#stage {
+  position: relative;
+
+  height: 400px; /* TEMP for visual init */
+
+  padding-top: 12px;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 100vw;
+  /* background-color: red; */
+  /* background-image: url('http://66.media.tumblr.com/67512acf21ef7e7dff8ddfc8992aca39/tumblr_n9o0trx60u1qf53jeo6_500.png');
+  background-repeat: repeat; */
+}
+
+div.stage-controls {
+  position: absolute;
+  z-index: 500;
+  top: 0px;
+  left: 50%;
+  width: 14vw;
+  margin-left:-7vw; /* THIS MUST BE HALF of this.WIDTH to center on page */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+button#button-chooser {
+  margin-top: 44px;
+
+  width: 9vw;
+  height: 3vw;
+  border-radius: 8px;
+}
+
+button#button-battle {
+  margin-top: 2px;
+
+  width: 9vw;
+  height: 9vw;
+  border-radius: 8px;
+}
+
+div.hiding-space {
+  grid-column: 2;
+}
+
+div.data {
+  position: relative;
+  width: 600px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 9vw 1fr; /* WIDTH of middle column MUST be same as WIDTH of div.stage-controls */
+}
+
+div.pokemoncard {
+  display: none;
+
+  width: 220px;
+  height: auto;
+  margin: 0 auto 24px auto;
+  text-align: center;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 30px;
+
+  color: #111;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 1s;
+  /* font-family: 'Press Start 2P', sans-serif; */
+}
+
+div.revealed {
+  display: block;
+  opacity: 1;
+  grid-row: 1;
+
+  transition: opacity 1s;
+}
+
+div.left {
+  float: left;
+  grid-column: 1;
+}
+
+div.right {
+  float: right;
+  grid-column: 3;
+}
+
+h3 {
+  position: relative;
+  z-index: 100;
+
+  color: #000;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+div.pokemon-card img {
+  width: 60%;
+  position: relative;
+  top: -5px;
+  z-index: 0;
+}
+
+p.hp, li span {
+  color: green;
+}
+
+p.hp {
+  position: relative;
+  top: -11px;
+  z-index: 100;
+
+  font-size: 25px;
+}
+
+div.moves-box {
+  padding: 8px 26px;
+
+  color: white;
+  text-align: center;
+  font-size: 18px;
+}
+
+div.moves-box h4 {
+  margin-bottom: 15px;
+  border-radius: 20px;
+
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 15px;
+  background-color: blue;
+}
+
+strong {
+  font-weight: 900;
+  color: #000;
+}
+
+div.moves-box li {
+  padding: 0px 30px;
+}
+
+div.data li strong {
+  display: block;
+  text-align: left;
+  width: auto;
+  text-transform: capitalize;
+}
+
+li span {
+  display: block;
+  text-align: right;
+}
