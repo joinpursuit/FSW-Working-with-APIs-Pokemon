@@ -1,0 +1,100 @@
+// 1. Read README
+//     * COMPONENTS
+//         - Header
+//         - Description (p)
+//         - Two Buttons (button)
+//             - Getting Pokemon
+//             - Battle
+//         - Arena (class)
+//             - Pokemon A (div)
+//                 - Name (h2)
+//                 - Picture [sprite](img)
+//                 - HP (h3)
+//                 - Moves
+//                     - Move Name (li)
+//                     - Move PP (li)
+//             - Pokemon B (Same as A)
+//         - Battle History (h3)
+//             - Pokemon Winner and defeated names (p)
+//         - Background
+// 2. Find out API endpoints to get data
+    
+//     * Data Needs
+//         * Two Randomly picked pokemon
+//         - Pokemon
+//             - Name
+//             - Sprite url
+//             - HP
+//             - Moves
+//                 - Name
+//                 - PP
+//     * Data Sources
+//         - Pokemon: https://pokeapi.co/api/v2/pokemon/1/
+//             * name: pokemon.name
+//             * sprite url: pokemon.sprites.front_default
+//             * HP: pokemon.stats[5].base_stat
+//             * Moves: 
+//                 - Notes
+//                     - Move PP: https://pokeapi.co/api/v2/move/13/
+//                     - first 4 or random 4 moves only
+//                     - What if pokemon doesn thave 4 moves total
+//                 - pokemon.moves[index].move.name
+//                 - pokemon.moves[index].move.url
+// 3. Wireframing the APP
+
+// 4. Building HTML Skeleton
+// 5. Code!!!
+// --------------index.js-----------------
+// -Listen for button  clicks
+
+//    - Summon /GET/FETCH pokemon
+//       - GET Request to API
+//    - GET/FETCH pokemon move's API
+//       - GET Request to API
+//    - Create Pokemon Cards/Display pokemon
+//    - Battle Pokemon
+//       - Random Winner Picker
+//       - Update Battle History
+
+document.addEventListener('DOMContentLoaded', () => {
+   //code  that needs/touches the DOM
+   setupButtonListeners()
+})
+
+const setupButtonListeners = () => {
+   // console.log('setting up button listeners')
+const getPokemonBtn = document.querySelector('#get-pokemon-btn')
+
+getPokemonBtn.addEventListener('click', fetchPokemon)
+}
+const fetchTwoPokemon = () => {
+   console.log('we got 2!!!')
+   fetchSinglePokemon()
+   fetchSinglePokemon()
+}
+
+const fetchSinglePokemon =  () =>  {
+   const  pokemonId = generateRandomPokemonId
+   const url  = `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`
+   fetch (url)
+   .then(response => response.json())
+   .then(dataObj => { 
+      consol.log (dataObj)
+      // response.data
+   })
+}
+//range from 1 to 809
+const generateRandomPokemonId = () => {
+   const MIN = 1
+   const MAX = 809
+   const id = Math.floor(Math.random() * (MAX - MIN) + MIN )
+   //const id2 = Math.floor(Math.random()* MAX) + MIN
+   return id
+}
+
+const displayMove = (move, pokemon) => {
+   const pokeCard = document.querySelector(`#${pokemon.name}`)
+   const movesList = pokeCard.querySelector('.moves-list')
+   console.log('pokeCard', pokeCard)
+   console.log('movesList', movesList)
+}
