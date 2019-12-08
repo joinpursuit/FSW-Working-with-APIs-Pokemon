@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 //this function gets the pokemon from the pokeApi pokemon endpoint
-async function getPokemon() {
+const getPokemon = async () => {
     replacePoke()
     const poke1 = await generatePoke()
     const poke2 = await generatePoke()
@@ -65,12 +65,7 @@ const generatePoke = async () => {
 
 //this function pushes the two pokemon names into a global array
 //that will be used to store the two current pokemon on the screen
-const pushPoke2Array = async (par, par2) => {
-    currentPokeArr.push(par.name, par2.name)
-    console.log(currentPokeArr);
-    console.log(par.name + ' ' + 'hello');
-    console.log(par2.name + ' ' + 'hello');
-}
+const pushPoke2Array = async (par, par2) => currentPokeArr.push(par.name, par2.name)
 
 //this function looks into the pokemon moves array and gets the url to 
 // to the detailed information on the specific moves at the index position on the moves array
@@ -87,28 +82,24 @@ const getMoves = async (pokeInfo) => {
 }
 
 //This function generates a random number
-async function getRandomNum(max, min) {
-    return Math.floor((Math.random() * max) + min);
-}
+const getRandomNum = (max, min) => Math.floor((Math.random() * max) + min);
+
 
 //this is a simple function teh brings the container over into the js
-function getContainer() {
-    container = document.querySelector('#container')
-    return container;
-}
+const getContainer = () => document.querySelector('#container');
 
 //function that will replace the pokemon the are already on the screen
 const replacePoke = async () => {
     currentPokeArr.length = 0
     container = getContainer()
-    container.innerHTML = ''
-    // while (container.firstChild) {
-    //     container.removeChild(container.firstChild)
-    // }
+    // container.innerHTML = ''
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    }
 }
 
 //This function create the elements on the create that will hold the pokemon information
-async function creatingCard(pokemon) {
+const creatingCard = async (pokemon) => {
     container = getContainer()
     //creating the elements that will hold the information on the pokemon
     const subContainer = creatingElem('div')
@@ -153,6 +144,4 @@ async function creatingCard(pokemon) {
     container.appendChild(subContainer)
 }
 
-function creatingElem(elem) {
-    return document.createElement(`${elem}`)
-}
+const creatingElem = (elem) => document.createElement(`${elem}`);

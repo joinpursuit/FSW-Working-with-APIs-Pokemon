@@ -1,107 +1,106 @@
 body {
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png);
-    background-repeat: no-repeat;
-    /* background-size: cover; */
-    font-family: sans-serif;
-    background-color: lightblue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: whitesmoke;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png);
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  font-family: sans-serif;
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 button {
-    font-size: 20px;
-    border: 1px solid black;
-    border-radius: 5%;
-    background-color: beige;
+  font-size: 20px;
+  border: 1px solid black;
+  border-radius: 5%;
+  background-color: beige;
 }
 
 #battleButton {
-    position: relative;
-
+  position: relative;
 }
 
 h1 {
-    padding: 30px;
-    font-size: 90px;
+  padding: 30px;
+  font-size: 90px;
 }
 
 h3 {
-    background-color: bisque;
-    border: 1px solid black;
-    text-align: center;
+  background-color: bisque;
+  border: 1px solid black;
+  text-align: center;
 }
 
 #top_heading {
-    font-size: 30px;
-
+  font-size: 30px;
 }
 
 .data {
-    position: relative;
-    top: 90px;
-    font-weight: bold;
-    /* width: 55vw; */
-    display: grid;
-    grid-template-columns: repeat(2, 50%);
-    grid-gap: 90px;
-    /* align-items: center; */
-    justify-content: center;
+  position: relative;
+  top: 90px;
+  font-weight: bold;
+  /* width: 55vw; */
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-gap: 90px;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 .data:first-child {
-    position: relative;
-    float: left;
-    left: 200px;
+  position: relative;
+  float: left;
+  left: 200px;
 }
 
 .data:last-child {
-    float: right;
+  float: right;
 }
 
 .pokeContainer {
-    position: relative;
-    left: 2px;
-    width: 300px;
-    display: grid;
-    justify-content: center;
-    grid-auto-columns: 150px;
-    /* background-color: cadetblue; */
-    grid-gap: 10px;
-    border: 1px solid brown;
-    border-radius: 10%;
-    background-image: url(https://www.tynker.com/projects/images/5ac3a8c176f293a60d8b456c/background-scene---or-as-battle-background-1-by-phoenixoflight92-d83m36e.png);
-    background-repeat: no-repeat;
+  position: relative;
+  left: 2px;
+  width: 300px;
+  display: grid;
+  justify-content: center;
+  grid-auto-columns: 150px;
+  /* background-color: cadetblue; */
+  grid-gap: 10px;
+  border: 1px solid brown;
+  border-radius: 10%;
+  background-image: url(https://www.tynker.com/projects/images/5ac3a8c176f293a60d8b456c/background-scene---or-as-battle-background-1-by-phoenixoflight92-d83m36e.png);
+  background-repeat: no-repeat;
 }
 
 .battleHistory {
-    justify-content: center;
-    width: 500px;
-    font-weight: bold;
-    position: absolute;
-    top: 690px;
-    display: grid;
-    grid-template-columns: 200px;
-    grid-gap: 10px;
+  justify-content: center;
+  width: 500px;
+  font-weight: bold;
+  position: absolute;
+  top: 690px;
+  display: grid;
+  grid-template-columns: 200px;
+  grid-gap: 10px;
+  overflow: hidden;
 }
 
 .battleHistory p {
-    width: 300px;
+  width: 300px;
 }
 
 #battleButton {
-    position: relative;
-    top: 20px;
+  position: relative;
+  top: 20px;
 }
 
 .pokemonName {
-    font-size: 30px;
+  font-size: 30px;
 }
 
 img {
-    height: 150px;
-    width: 150px;
+  height: 150px;
+  width: 150px;
 }
