@@ -76,19 +76,19 @@ h3 {
 }
 
 .battleHistory {
-  justify-content: center;
+  text-align: center;
   width: 500px;
   font-weight: bold;
   position: absolute;
-  top: 690px;
-  display: grid;
-  grid-template-columns: 200px;
-  grid-gap: 10px;
-  overflow: hidden;
+  top: 680px;
+  overflow: scroll;
+  height: 20vh;
 }
 
 .battleHistory p {
   width: 300px;
+  margin-left: 100px;
+  margin-top: 5px;
 }
 
 #battleButton {
