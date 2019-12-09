@@ -1,0 +1,21 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-size: cover;
+}
+
+#heading {
+    padding: 30px;
+}
+
+#data {
+    width: 600px;
+}
+

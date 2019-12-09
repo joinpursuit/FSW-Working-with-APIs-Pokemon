@@ -1,4 +1,4 @@
-# Loading Data from API Lab - Pokemon Battle Simulator
+    # Loading Data from API Lab - Pokemon Battle Simulator
 
 ![gif](./pokemonGif.gif)
 
@@ -31,7 +31,7 @@ Each time your user clicks the 'battle' button, one of your two pokemon should b
 ## Endpoints
 
 The PokéAPI is documented at https://pokeapi.co.
-
+    
 The two endpoints will be useful:
 
 - api/v2/pokemon/{$pokemonID} endpoint documentation: https://pokeapi.co/docs/v2.html#pokemon
