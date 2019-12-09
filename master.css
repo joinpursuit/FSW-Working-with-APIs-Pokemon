@@ -1,0 +1,19 @@
+body{
+    background-color: lightblue;
+    text-align: center;
+    font-family: sans-serif;
+}
+h1{
+    padding: 30px;
+    margin-top: 30px;
+}
+.data{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    /* border:solid beige 1px; */
+}
+
