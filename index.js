@@ -50,6 +50,7 @@ const getPokemon = async () => {
         pokemon1.appendChild(img);
         let hp=document.createElement("h5");
         hp.innerText=`HP: ${pokeHP}`;
+        hp.id="pk1HP"
         pokemon1.appendChild(hp);
         let moveText=document.createElement("h5")
         moveText.innerHTML="Moves:"
@@ -81,9 +82,6 @@ const getPokemon2 = async () => {
         let pokeImg=res.data.sprites.front_default;
         let pokeHP =res.data.stats[5].base_stat;
         let newMove=shuffleMove(res.data.moves);
-        // console.log(res.data.moves)
-        // console.log(newMove)
-        // debugger;
         
         let move1 = newMove[0].move.name;
         let move1Url = newMove[0].move.url;
@@ -119,6 +117,7 @@ const getPokemon2 = async () => {
         pokemon2.appendChild(img);
         let hp=document.createElement("h5");
         hp.innerText=`HP: ${pokeHP}`;
+        hp.id="pk2HP"
         pokemon2.appendChild(hp);
         let moveText=document.createElement("h5")
         moveText.innerHTML="Moves:"
@@ -135,19 +134,18 @@ const getPokemon2 = async () => {
         let action4=document.createElement("h5");
         action4.innerText=`${move4} [ power: ${move4Power}, PP: ${move4PP} ]`;
         pokemon2.appendChild(action4)
-
-
-        
-        
-        // let pokemon2=document.querySelector("#pokemon2")
-        // console.log(move1)
-        // console.log(move2)
-        // console.log(move3)
-        // console.log(move4)
  
     } catch (err) {
         console.log(err);
         debugger
+    }
+}
+
+const battle = () =>{
+    let pokemon1 = document.querySelector("#pk1HP");
+    let pokemon2 = document.querySelector("#pk2HP");
+    if(pokemon1>pokemon2){
+        console.log(pokemon1)
     }
 }
 
