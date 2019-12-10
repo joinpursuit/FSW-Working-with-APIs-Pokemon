@@ -1,0 +1,23 @@
+body{
+    background-image: url("https://cdn.dribbble.com/users/184593/screenshots/2839736/pokeball.gif");
+    background-size: cover;
+}
+
+
+h1{
+    margin-left: 500px;
+}
+p{
+    margin-left: 400px;
+}
+#getPokemon{
+    margin-left: 600px;
+    
+    
+}
+#battle{
+    margin-left: 600px;
+    
+    
+
+}
