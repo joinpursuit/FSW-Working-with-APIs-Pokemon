@@ -1,0 +1,21 @@
+HTML, body{
+  background: skyblue;
+}
+
+h1, h3{
+  font: sans-serif;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+#buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button {
+ 
+  margin: 10px;
+}
