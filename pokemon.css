@@ -1,0 +1,18 @@
+#icon {
+width: 45%;
+}
+
+body {
+    background-image: url("https://media.giphy.com/media/uWLJEGCSWdmvK/giphy.gif");
+    background-size: cover;
+    image-orientation: initial;
+    height: 100vh;
+    background-repeat: no-repeat;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    font-family: ;
+}
