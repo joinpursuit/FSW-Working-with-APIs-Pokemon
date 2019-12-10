@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 )
 
 const getTwoPoke = ()=>{
-    return setTimeout(getPokemon2(),2000, getPokemon())
+    setTimeout(getPokemon2(),2000, getPokemon())
 }
 
 const getPokemon = async () => {
@@ -154,20 +154,24 @@ const getPokemon2 = async () => {
 }
 
 const battle = () =>{
-    let battleHis=document.querySelector(".battleHistory")
-    let pokemon1 = document.querySelector("#HP1");
-    let pokemon2 = document.querySelector("#HP2");
-    let log=document.createElement("li")
-    if(pokemon1.value>pokemon2.value){
-        log.innerText=`${pokemon1.title} defeated ${pokemon2.title}`
-        battleHis.appendChild(log)
-    }else if(pokemon1.value===pokemon2.value) {
-        log.innerText=`${pokemon2.title} tie ${pokemon1.title}`
-        battleHis.appendChild(log)
-    }else{
-        log.innerText=`${pokemon2.title} defeated ${pokemon1.title}`
-        battleHis.appendChild(log)
-    }
+
+        let battleHis=document.querySelector(".battleHistory")
+        let pokemon1 = document.querySelector("#HP1");
+        let pokemon2 = document.querySelector("#HP2");
+        let log=document.createElement("li")
+
+        if(!pokemon1){
+            alert("please get Pokemon first")
+         }else if(pokemon1.value>pokemon2.value){
+            log.innerText=`${pokemon1.title} defeated ${pokemon2.title}`
+            battleHis.appendChild(log)
+        }else if(pokemon1.value===pokemon2.value) {
+            log.innerText=`${pokemon2.title} tie ${pokemon1.title}`
+            battleHis.appendChild(log)
+        }else{
+            log.innerText=`${pokemon2.title} defeated ${pokemon1.title}`
+            battleHis.appendChild(log)
+        }
 }
 
 const shuffleMove=(arr)=> {
