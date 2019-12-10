@@ -1,15 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
     let get = document.querySelector("#get");
-    get.addEventListener("click", getPokemon);
-    get.addEventListener("click", getPokemon2);
+    get.addEventListener("click", getTwoPoke);
     let fight = document.querySelector("#fight");
-    fight.addEventListener("click",battle)
-})
+    fight.addEventListener("click",battle);
+}
+)
+
+const getTwoPoke = ()=>{
+    return setTimeout(getPokemon2(),2000, getPokemon())
+}
 
 const getPokemon = async () => {
     try {
-        let random = Math.floor((Math.random() * 964) + 1);
-        let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random}/`);
+        let random = Math.floor((Math.random() * 151) + 1);
+        let res = await axios.get(`https://cors-anywhere.herokuapp.com/https://pokeapi.co/api/v2/pokemon/${random}/`);
         // debugger;
         let pokeName=res.data.name;
         let pokeImg=res.data.sprites.front_default;
@@ -48,23 +52,27 @@ const getPokemon = async () => {
         let img=document.createElement("img");
         img.src=pokeImg;
         pokemon1.appendChild(img);
-        let hp=document.createElement("h5");
+        let hp=document.createElement("li");
         hp.innerText=`HP: ${pokeHP}`;
-        hp.id="pk1HP"
+        hp.id="HP1";
+        hp.value=pokeHP
+        hp.title=pokeName
+        hp.style="list-style-type: none";
         pokemon1.appendChild(hp);
-        let moveText=document.createElement("h5")
+        let moveText=document.createElement("li")
         moveText.innerHTML="Moves:"
+        moveText.style="list-style-type: none";
         pokemon1.appendChild(moveText);
-        let action1=document.createElement("h5");
+        let action1=document.createElement("li");
         action1.innerText=`${move1} [ power: ${move1Power}, PP: ${move1PP} ]`;
         pokemon1.appendChild(action1)
-        let action2=document.createElement("h5");
+        let action2=document.createElement("li");
         action2.innerText=`${move2} [ power: ${move2Power}, PP: ${move2PP} ]`;
         pokemon1.appendChild(action2)
-        let action3=document.createElement("h5");
+        let action3=document.createElement("li");
         action3.innerText=`${move3} [ power: ${move3Power}, PP: ${move3PP} ]`;
         pokemon1.appendChild(action3)
-        let action4=document.createElement("h5");
+        let action4=document.createElement("li");
         action4.innerText=`${move4} [ power: ${move4Power}, PP: ${move4PP} ]`;
         pokemon1.appendChild(action4)
     } catch (err) {
@@ -75,8 +83,9 @@ const getPokemon = async () => {
 
 const getPokemon2 = async () => {
     try {
-        let random = Math.floor((Math.random() * 964) + 1);
-        let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random}/`);
+        let random = Math.floor((Math.random() * 151) + 1);
+
+        let res = await axios.get(`https://cors-anywhere.herokuapp.com/https://pokeapi.co/api/v2/pokemon/${random}/`);
         // debugger;
         let pokeName=res.data.name;
         let pokeImg=res.data.sprites.front_default;
@@ -115,26 +124,29 @@ const getPokemon2 = async () => {
         let img=document.createElement("img");
         img.src=pokeImg;
         pokemon2.appendChild(img);
-        let hp=document.createElement("h5");
+        let hp=document.createElement("li");
         hp.innerText=`HP: ${pokeHP}`;
-        hp.id="pk2HP"
+        hp.id="HP2"
+        hp.title=pokeName
+        hp.style="list-style-type: none";
+        hp.value=pokeHP;
         pokemon2.appendChild(hp);
-        let moveText=document.createElement("h5")
+        let moveText=document.createElement("li")
         moveText.innerHTML="Moves:"
+        moveText.style="list-style-type: none";
         pokemon2.appendChild(moveText);
-        let action1=document.createElement("h5");
+        let action1=document.createElement("li");
         action1.innerText=`${move1} [ power: ${move1Power}, PP: ${move1PP} ]`;
         pokemon2.appendChild(action1)
-        let action2=document.createElement("h5");
+        let action2=document.createElement("li");
         action2.innerText=`${move2} [ power: ${move2Power}, PP: ${move2PP} ]`;
         pokemon2.appendChild(action2)
-        let action3=document.createElement("h5");
+        let action3=document.createElement("li");
         action3.innerText=`${move3} [ power: ${move3Power}, PP: ${move3PP} ]`;
         pokemon2.appendChild(action3)
-        let action4=document.createElement("h5");
+        let action4=document.createElement("li");
         action4.innerText=`${move4} [ power: ${move4Power}, PP: ${move4PP} ]`;
         pokemon2.appendChild(action4)
- 
     } catch (err) {
         console.log(err);
         debugger
@@ -142,10 +154,19 @@ const getPokemon2 = async () => {
 }
 
 const battle = () =>{
-    let pokemon1 = document.querySelector("#pk1HP");
-    let pokemon2 = document.querySelector("#pk2HP");
-    if(pokemon1>pokemon2){
-        console.log(pokemon1)
+    let battleHis=document.querySelector(".battleHistory")
+    let pokemon1 = document.querySelector("#HP1");
+    let pokemon2 = document.querySelector("#HP2");
+    let log=document.createElement("li")
+    if(pokemon1.value>pokemon2.value){
+        log.innerText=`${pokemon1.title} defeated ${pokemon2.title}`
+        battleHis.appendChild(log)
+    }else if(pokemon1.value===pokemon2.value) {
+        log.innerText=`${pokemon2.title} tie ${pokemon1.title}`
+        battleHis.appendChild(log)
+    }else{
+        log.innerText=`${pokemon2.title} defeated ${pokemon1.title}`
+        battleHis.appendChild(log)
     }
 }
 
