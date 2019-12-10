@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         const getCharacter = async()=>{
             try{
                 let res = await axios.get("https://pokeapi.co/api/v2/pokemon")
+                
                 //debugger
                  let character = res.data.results
                  let characters = character[Math.floor(Math.random() * character.length)]
@@ -20,12 +21,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
          }
          const getCharacter2 = async ()=>{
              try{
-                 let res2 = await axios.get("https://pokeapi.co/api/v2/pokemon")
-                 let character2 = res2.data.results
-                 let characters2 = character2[Math.floor(Math.random() * character2.length)]
-                 let name2 = document.querySelector("#name2")
-                     name2.InnerText = characters2.name
-                     body.appendChild(name2)
+                 let res2 = await axios.get("https://pokeapi.co/api/v2/move/")
+                 let move = res2.data.results
+                 let moves = move[Math.floor(Math.random() * character2.length)]
+                 let name = document.querySelector("#name")
+                     name.InnerText = moves.name
+                     body.appendChild(name)
              } catch(err){
                  console.log("Error")
              }

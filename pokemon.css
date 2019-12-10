@@ -5,19 +5,25 @@ body{
 
 
 h1{
-    margin-left: 500px;
+    margin-left: 0px;
+    
 }
 p{
     margin-left: 400px;
 }
 #getPokemon{
-    margin-left: 600px;
+    margin-left: 400px;
+    background-color: rgb(254, 224, 49);
+    border-color: rgb(57, 107, 186);
+    
     
     
 }
 #battle{
-    margin-left: 600px;
-    
+    margin-left: 400px;
+    background-color:rgb(254, 224, 49) ;
+    border-color:rgb(57, 107, 186);
+    position: relative;
     
 
 }
