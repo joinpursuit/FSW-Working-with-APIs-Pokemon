@@ -31,7 +31,7 @@ Each time your user clicks the 'battle' button, one of your two pokemon should b
 ## Endpoints
 
 The PokéAPI is documented at https://pokeapi.co.
-    
+
 The two endpoints will be useful:
 
 - api/v2/pokemon/{$pokemonID} endpoint documentation: https://pokeapi.co/docs/v2.html#pokemon
@@ -65,7 +65,7 @@ On top of default HTML styling, the app should have the following styles:
   - Should have a width of 600px.
   - The first pokemon should float left, the second pokemon should float right. 
 
-For a video of how the page changes when the buttons are clicked visit https://youtu.be/_XVy4hRZ_Ig
+For a video of how the page changes when the buttons are clicked visit https:// youtu.be/_XVy4hRZ_Ig
 
 ## Rubric
 

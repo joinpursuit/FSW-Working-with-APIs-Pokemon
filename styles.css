@@ -11,11 +11,14 @@ body {
     background-size: cover;
 }
 
-#heading {
+/* #heading {
     padding: 30px;
-}
+} */
 
 #data {
     width: 600px;
 }
 
+h4 {
+    color: blue;
+}
