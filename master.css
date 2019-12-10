@@ -1,0 +1,33 @@
+body{
+    font-family: sans-serif;
+    background-image: url('http://www.kabu-load.net/data/out/100/IMG_57513.gif');
+    background-size: cover;
+    /* height: 100vh; */
+    /* padding:0;
+    margin:0; */
+    /* color: white; */
+    
+    
+}
+h1{
+    display: flex;
+    justify-content: center;
+    /* margin-top: 30px;
+    margin-left: 400px; */
+}
+img{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    width: 800px;
+    margin-left: 250px;
+}
+#button{
+    display: flex;
+    justify-content: center;
+    /* margin-left: 500px; */
+}
+.battleHistory{
+    display: flex;
+    justify-content: center;
+}
