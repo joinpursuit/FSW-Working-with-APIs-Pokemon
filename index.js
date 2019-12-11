@@ -4,18 +4,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const getPokemon = async () => {
             try {
                 let res = await axios.get("https://pokeapi.co/api/v2/pokemon/");
-                let pokemon = res.data.results
-                debugger
-                let poke = pokemon[Math.floor(Math.random()*pokemon.length)]
-                let poke2 = pokemon[Math.floor(Math.random()*pokemon.length)]
+                let pokemonCount = res.data.count
+
+                let pokeID = Math.floor((Math.random() * pokemonCount) + 1);
+                let pokeID2 = Math.floor((Math.random() * pokemonCount) + 1);
+
+                let random = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeID}/`)
+                let random2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeID2}/`)
+
                 let data = document.querySelector("#data");
+
                 let info = document.createElement("P")
                 let info2 = document.createElement("P")
-                info.innerText = poke.name;
-                info2.innerText = poke2.name;
+
+                info.innerText = random.data.name;
+                info2.innerText = random2.data.name;
+
                 data.appendChild(info)
                 data.appendChild(info2)
 
+                // let moves = await axios.get("https://pokeapi.co/api/v2/move")
 
             } 
             catch(err){
