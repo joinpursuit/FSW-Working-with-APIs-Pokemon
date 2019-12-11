@@ -29,6 +29,7 @@ const getPokemon = async () => {
         let move2 = newMove[1].move.name;
         let move2Url = newMove[1].move.url;
         let moveSat2= await axios.get(move2Url);
+        // debugger
         let move2Power=moveSat2.data.power;
         let move2PP=moveSat2.data.pp;
         
@@ -45,10 +46,46 @@ const getPokemon = async () => {
         let move4PP=moveSat4.data.pp;
         
         let pokemon1=document.querySelector("#pokemon1");
-        console.log(pokemon1.innerText.length)
-        if(pokemon1.innerText.length>0){
-            
-        }
+        let data=document.querySelector("body > div.data")
+
+        if(pokemon1.innerText.length>1){
+            pokemon1.parentNode.removeChild(pokemon1)
+            let newPoke1=document.createElement("div")
+            newPoke1.id="pokemon1"
+
+            let name=document.createElement("h3");
+            name.innerText=pokeName;
+            newPoke1.appendChild(name);
+            // debugger;
+            let img=document.createElement("img");
+            img.src=pokeImg;
+            newPoke1.appendChild(img);
+            let hp=document.createElement("li");
+            hp.innerText=`HP: ${pokeHP}`;
+            hp.id="HP1";
+            hp.value=pokeHP
+            hp.title=pokeName
+            hp.style="list-style-type: none";
+            newPoke1.appendChild(hp);
+            let moveText=document.createElement("li")
+            moveText.innerHTML="Moves:"
+            moveText.style="list-style-type: none";
+            newPoke1.appendChild(moveText);
+            let action1=document.createElement("li");
+            action1.innerText=`${move1} [ power: ${move1Power}, PP: ${move1PP} ]`;
+            newPoke1.appendChild(action1)
+            let action2=document.createElement("li");
+            action2.innerText=`${move2} [ power: ${move2Power}, PP: ${move2PP} ]`;
+            newPoke1.appendChild(action2)
+            let action3=document.createElement("li");
+            action3.innerText=`${move3} [ power: ${move3Power}, PP: ${move3PP} ]`;
+            newPoke1.appendChild(action3)
+            let action4=document.createElement("li");
+            action4.innerText=`${move4} [ power: ${move4Power}, PP: ${move4PP} ]`;
+            newPoke1.appendChild(action4)
+
+            data.appendChild(newPoke1)
+        }else{ 
         let name=document.createElement("h3");
         name.innerText=pokeName;
         pokemon1.appendChild(name);
@@ -79,6 +116,8 @@ const getPokemon = async () => {
         let action4=document.createElement("li");
         action4.innerText=`${move4} [ power: ${move4Power}, PP: ${move4PP} ]`;
         pokemon1.appendChild(action4)
+        }
+        
     } catch (err) {
         console.log(err);
         debugger
@@ -120,7 +159,49 @@ const getPokemon2 = async () => {
         let move4Power=moveSat4.data.power;
         let move4PP=moveSat4.data.pp;
 
+        
+        
         let pokemon2=document.querySelector("#pokemon2");
+        let data=document.querySelector("body > div.data")
+
+        if(pokemon2.innerText.length>1){
+            pokemon2.parentNode.removeChild(pokemon2)
+            let newPoke2=document.createElement("div")
+            newPoke2.id="pokemon2"
+
+            let name=document.createElement("h3");
+            name.innerText=pokeName;
+            newPoke2.appendChild(name);
+            // debugger;
+            let img=document.createElement("img");
+            img.src=pokeImg;
+            newPoke2.appendChild(img);
+            let hp=document.createElement("li");
+            hp.innerText=`HP: ${pokeHP}`;
+            hp.id="HP2"
+            hp.title=pokeName
+            hp.style="list-style-type: none";
+            hp.value=pokeHP;
+            newPoke2.appendChild(hp);
+            let moveText=document.createElement("li")
+            moveText.innerHTML="Moves:"
+            moveText.style="list-style-type: none";
+            newPoke2.appendChild(moveText);
+            let action1=document.createElement("li");
+            action1.innerText=`${move1} [ power: ${move1Power}, PP: ${move1PP} ]`;
+            newPoke2.appendChild(action1)
+            let action2=document.createElement("li");
+            action2.innerText=`${move2} [ power: ${move2Power}, PP: ${move2PP} ]`;
+            newPoke2.appendChild(action2)
+            let action3=document.createElement("li");
+            action3.innerText=`${move3} [ power: ${move3Power}, PP: ${move3PP} ]`;
+            newPoke2.appendChild(action3)
+            let action4=document.createElement("li");
+            action4.innerText=`${move4} [ power: ${move4Power}, PP: ${move4PP} ]`;
+            newPoke2.appendChild(action4)
+            data.appendChild(newPoke2)
+
+        }else{
         let name=document.createElement("h3");
         name.innerText=pokeName;
         pokemon2.appendChild(name);
@@ -151,6 +232,7 @@ const getPokemon2 = async () => {
         let action4=document.createElement("li");
         action4.innerText=`${move4} [ power: ${move4Power}, PP: ${move4PP} ]`;
         pokemon2.appendChild(action4)
+        }
     } catch (err) {
         console.log(err);
         debugger
