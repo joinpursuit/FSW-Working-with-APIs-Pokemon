@@ -19,3 +19,7 @@ h1, h3{
  
   margin: 10px;
 }
+.data{
+  display: flex;
+  justify-content: space-around;
+}
