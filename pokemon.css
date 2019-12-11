@@ -10,9 +10,9 @@
 }
 
 body {
-  background-image: url("https://media.giphy.com/media/uWLJEGCSWdmvK/giphy.gif");
+  /* background-image: url("https://media.giphy.com/media/uWLJEGCSWdmvK/giphy.gif");*/
   background-size: cover;
-  image-orientation: initial;
+  image-orientation: initial; 
   height: 100vh;
   background-repeat: no-repeat;
 }
@@ -23,66 +23,118 @@ h1 {
   justify-content: center;
   margin-top: 10%;
   font-size: 35pt;
-  border-image: fill;
+  border-color: red;
 }
 
-#buttons {
+
+#action {
+    width: 25%;
+    margin: auto;
     display: flex;
     flex-flow: wrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     height: 20%;
-    width: 15%;
-    width: 50%;
-}
-
-#action {
+    /* width: 15%; */
+    margin: auto;
+    padding: 10px 10px 25px 25px;
     border: 7pt;
     border-color: gold;
     border-style: dotted;
-    border-radius: 15%;
     text-align: center;
-    /* border-block-start-width: 50%; */
-    margin: 20pt;
-}
-#data{
-    display: flex;
-    flex-direction: column;
-    border: gold;
-    border-style: dashed;
+    padding: 20pt;
 }
 
-.battleHistory {
-    display: flex;
-    position: fixed;
-    flex-direction: column;
-    flex-flow: wrap;
+#stats {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+}
+
+#data {
+  /* display: flex;
+  flex-direction: column; */
+  border: gold;
+  border-style: dashed;
 }
 
 #leftScreen {
-    display: flex;
+  /* display: flex; */
+  align-content: center;
+  background-color: (lightblue);
+  /* width: 50%; */
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: lightblue;
+  margin-left: 20px;
+  margin-right: 1400px;
+  width: 25%;
+  /* position: absolute; */
+  opacity: 30%;
+  border: black;
+  border-style: ridge;
+  z-index: 4;
+}
+
+#rightScreen {
+    align-content: center;
     background-color: (lightblue);
-    width: 50%;
+    /* width: 50%; */
     height: 100%;
     align-items: center;
     justify-content: center;
     background-color: lightblue;
+    margin-right: 20px;
+    margin-left: 1400px;
+    width: 25%;
     /* position: absolute; */
     opacity: 30%;
     border: black;
     border-style: ridge;
-    z-index: 2;
-}
+    z-index: 4;
+  }
+  /* width: 50%;
+  height: 100%;
+  align-content: flex-end;
+  background-color: lightblue;
+  position: absolute;
+  opacity: 30%;
+  z-index: 4;
+} */
 
-#rightScreen {
-    width: 50%;
-    height: 100%;
-    align-content: flex-end;
-    background-color: lightblue;
-    position: absolute;
-    opacity: 30%;
-    z-index: 1;
+.battleHistory {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
 
-}
+  background-color: white;
+  width: 100%;
 
+  justify-content: baseline;
+
+  padding-left: 0%;
+  position: fixed;
+  padding-top: 1%;
+  flex-shrink: 0;
+  left: 0%;
+  right: 0%;
+  bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+  flex: 0 1 100%;
+
+  padding-bottom: 1%;
+  min-width: fit-content;
+  justify-content: space-around;
+  word-spacing: 10%;
+  flex-direction: row;
+  font-family: Helvetica;
+  font-size: small;
+  color: grey;
+  word-spacing: 10%;
+  flex: 0 1 100%;
+  list-style-type: none;
+
+  text-align-last: center;
 }

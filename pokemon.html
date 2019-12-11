@@ -6,8 +6,8 @@
     <link id="icon" rel="shortcut icon"
         href="https://icon-library.net/images/pokeball-icon-transparent/pokeball-icon-transparent-20.jpg" />
     <title>Pokemon Gotta Catchem All!</title>
+    <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
     <script src="./pokemon.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="./pokemon.css" />
 </head>
 
@@ -16,26 +16,28 @@
     <h1>
         <img id="title" src="https://fontmeme.com/permalink/191210/e1bde66208fb6cf5a4496356128250f5.png" />
     </h1>
+    <!-- <p id="buttons">
+            </p> -->
 
+    <div id="action">
+        <button id="getPokemon">Get Pokemon!</button>
+        <button id="battle">Battle!</button>
+    </div>
 
     <div id="content">
-        <div id="buttons">
-            <div id="action">
-                <form action="">
-                    <button id="getPokemon">Get Pokemon!</button>
-                    <button id="battle">Battle!</button>
-                </form>
-            </div>
-        </div>
 
 
         <div id="stats">
-            <div class="data">
-                <div id="leftScreen">
-                    <!-- data will go here -->
+
+            <div id="leftScreen">
+                <div class="data">
+                    <p id="p1">
+                        
+                    </p>
                 </div>
+
                 <div id="rightScreen">
-                    <!-- data will go here -->
+                    <p id="p2"></p>
                 </div>
             </div>
 
