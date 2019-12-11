@@ -22,3 +22,15 @@ body {
 h4 {
     color: blue;
 }
+
+#pokemon1 {
+    display: block;
+    float: left; 
+    margin-left: 30%;  
+}
+
+#pokemon2 {
+    display: block;
+    float: right;
+    margin-right: 30%;
+}
