@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             let image = document.createElement("img");
             image.id = `image1`
             image.src = imgUrl
+            image.style = "height: 200px"
             leftPokemonStats.appendChild(p);
             leftImage.appendChild(image);
             leftPokemonStats.appendChild(p2);
@@ -66,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             let image = document.createElement("img");
             image.id = `image2`
             image.src = imgUrl;
+            image.style = "height: 200px"
             rightPokemonStats.appendChild(p);
             rightImage.appendChild(image);
             rightPokemonStats.appendChild(p2);
