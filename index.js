@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 )
 
 const getTwoPoke = ()=>{
-    setTimeout(getPokemon2(),2000, getPokemon())
+    return getPokemon2(), getPokemon()
 }
 
 const getPokemon = async () => {
@@ -159,7 +159,6 @@ const battle = () =>{
         let pokemon1 = document.querySelector("#HP1");
         let pokemon2 = document.querySelector("#HP2");
         let log=document.createElement("li")
-
         if(!pokemon1){
             alert("please get Pokemon first")
          }else if(pokemon1.value>pokemon2.value){
