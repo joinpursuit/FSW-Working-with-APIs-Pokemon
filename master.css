@@ -23,3 +23,8 @@ h1, h3{
   display: flex;
   justify-content: space-around;
 }
+#displayPicture {
+  padding-top: 20px;
+  align-content: space-between;
+  margin-top: 60px;
+}
