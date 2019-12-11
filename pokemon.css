@@ -1,0 +1,39 @@
+body {
+    background: lightblue;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+h1 {
+    padding: 0px 30px 30px 30px;
+}
+
+
+#getBtn{
+    color: white;
+    background: darkslategrey;
+    border-color: white;
+    width: 15%;
+    padding: 16px;
+    font-weight: bold;
+}
+
+#battlePokemon {
+    color: white;
+    background: darkslategrey;
+    border-color: white;
+    width: 15%;
+    padding: 16px;
+    font-weight: bold;
+}
+
+.data {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    /* width: 600px; */
+}
+
+li {
+    list-style-type: none;
+}
