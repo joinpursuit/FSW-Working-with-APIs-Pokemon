@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let body = document.querySelector("body")
     //let pokemon1 = document.createElement("ul")
     //let pokemon2 = document.createElement("ul")
-    const getCharacter = async()=>{
+    const getCharacter = async(element)=>{
         try{
             let num = Math.floor(Math.random() * 807)
             let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
@@ -14,20 +14,25 @@ document.addEventListener("DOMContentLoaded", ()=>{
              let sprite = pokemon.sprites.front_default
              let health = pokemon.stats[5].base_stat
              let moves = pokemon.moves.slice(0,4)
-             let pokeSprite = document.querySelector("#pic")
-             let pokeHealth = document.querySelector("#health")
-             let name = document.querySelector("#name")
+             let pokeSprite = document.createElement("img")
+             let pokeHealth = document.createElement("p")
+             let name = document.createElement("p")
              pokeSprite.src = sprite
              name.innerText = pokemonName
              pokeHealth.innerText = health
-             body.appendChild(name)
-             body.appendChild(pokeSprite)
-             body.appendChild(pokeHealth)
+             element.appendChild(name)
+             element.appendChild(pokeSprite)
+             element.appendChild(pokeHealth)
+             let ul = document.createElement("ul")
              moves.forEach(async(move, i) => {
                 let moveData = await axios.get(move.move.url);
-                let li = document.querySelector("#move" + (i + 1));
+                let li = document.createElement("li");
                 li.innerText = move.move.name;
+                ul.appendChild(li)
+
+
                 })
+                element.appendChild(ul)
             } catch(err)  {
                 console.log("Error")
                //  debugger
@@ -35,8 +40,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
     
     getPokemon.addEventListener("click", () => {
-        secondPokemon = getCharacter()
-        getCharacter(secondPokemon)
+        let pokemon1 = document.querySelector("#pokemon1")
+        let pokemon2 = document.querySelector("#pokemon2")
+        getCharacter(pokemon2)
+        getCharacter(pokemon1)
     })
     })
            

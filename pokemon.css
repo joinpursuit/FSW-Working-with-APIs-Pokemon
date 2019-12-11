@@ -27,6 +27,7 @@ body{
     background-color:rgb(254, 224, 49) ;
     border-color:rgb(57, 107, 186);
     position: relative;
+}
     
 
 /* }
@@ -37,6 +38,9 @@ body{
 #pokemonMoves{
     margin-left:200px;
     margin-top:50px;
-    margin-bottom:
+    margin-bottom;
     
+}
+#pokemon2{
+    margin-left: 1200px;s
 }
