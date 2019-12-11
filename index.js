@@ -43,8 +43,12 @@ const getPokemon = async () => {
         let moveSat4= await axios.get(move4Url);
         let move4Power=moveSat4.data.power;
         let move4PP=moveSat4.data.pp;
-
+        
         let pokemon1=document.querySelector("#pokemon1");
+        console.log(pokemon1.innerText.length)
+        if(pokemon1.innerText.length>0){
+            
+        }
         let name=document.createElement("h3");
         name.innerText=pokeName;
         pokemon1.appendChild(name);
