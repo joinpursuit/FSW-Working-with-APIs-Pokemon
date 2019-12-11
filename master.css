@@ -1,0 +1,13 @@
+.bodyHeader {
+    text-align: center;
+}
+#BH {
+    position: absolute;
+    bottom: 20%;
+    left: 47%;
+
+    /* left: 0%; */
+}
+li {
+    list-style: none;
+}
