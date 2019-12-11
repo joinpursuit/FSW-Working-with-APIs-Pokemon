@@ -8,21 +8,19 @@ document.addEventListener("DOMContentLoaded",async()=>{
             let random = Math.floor(Math.random()* 809) +1;
             let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${random}`)
             let data = res.data
-            // data.forEach(data =>{
-                let poke = document.createElement("h2")
-                poke.innerText = data.name
-                let div1 = document.querySelector("#pokemonA")
-                div1.appendChild(poke)
+            let poke = document.createElement("h2")
+            let div1 = document.querySelector("#pokemonB")
             let sprite = document.createElement("img")
-            sprite.src = data.sprites.front_default;
-            let display = document.querySelector("#pokemonA")
-            display.appendChild(sprite)
-            // })
+            let display = document.querySelector("#pokemonB")
             let hp = document.createElement("li")
-            hp.innerText = data.stats[5].base_stat
             let ul = document.createElement("ul")
+            let health = document.querySelector("#pokemonA")
+            poke.innerText = data.name
+            sprite.src = data.sprites.front_default;
+            hp.innerText = data.stats[5].base_stat;
+            div1.appendChild(poke)
+            display.appendChild(sprite)
             ul.appendChild(hp)
-            let health = document.querySelector("#battleHistory")
             health.appendChild(ul)
         }catch(err){
             console.log("error")
