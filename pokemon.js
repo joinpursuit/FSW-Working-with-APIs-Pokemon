@@ -3,37 +3,54 @@ document.addEventListener("DOMContentLoaded", ()=>{
     //let battle = document.querySelector("#battle")
     let getPokemon = document.querySelector("#getPokemon")
     let body = document.querySelector("body")
+    //let pokemon1 = document.createElement("ul")
+    //let pokemon2 = document.createElement("ul")
+    const getCharacter = async()=>{
+        try{
+            let num = Math.floor(Math.random() * 807)
+            let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
+             let pokemon = res.data
+             let pokemonName = pokemon.name
+             let sprite = pokemon.sprites.front_default
+             let health = pokemon.stats[5].base_stat
+             let moves = pokemon.moves.slice(0,4)
+             let pokeSprite = document.querySelector("#pic")
+             let pokeHealth = document.querySelector("#health")
+             let name = document.querySelector("#name")
+             pokeSprite.src = sprite
+             name.innerText = pokemonName
+             pokeHealth.innerText = health
+             body.appendChild(name)
+             body.appendChild(pokeSprite)
+             body.appendChild(pokeHealth)
+             moves.forEach(async(move, i) => {
+                let moveData = await axios.get(move.move.url);
+                let li = document.querySelector("#move" + (i + 1));
+                li.innerText = move.move.name;
+                })
+            } catch(err)  {
+                console.log("Error")
+               //  debugger
+            }
+        }
     
-    getPokemon.addEventListener("click", ()=>{
-        const getCharacter = async()=>{
-            try{
-                let res = await axios.get("https://pokeapi.co/api/v2/pokemon")
+    getPokemon.addEventListener("click", () => {
+        secondPokemon = getCharacter()
+        getCharacter(secondPokemon)
+    })
+    })
+           
                 
-                //debugger
-                 let character = res.data.results
-                 let characters = character[Math.floor(Math.random() * character.length)]
-                 let name = document.querySelector("#name")
-                 name.innerText = characters.name
-                 body.appendChild(name)
-             } catch(err)  {
-                 console.log("Error")
-             }
-         }
-         const getCharacter2 = async ()=>{
-             try{
-                 let res2 = await axios.get("https://pokeapi.co/api/v2/move/")
-                 let move = res2.data.results
-                 let moves = move[Math.floor(Math.random() * character2.length)]
-                 let name = document.querySelector("#name")
-                     name.InnerText = moves.name
-                     body.appendChild(name)
-             } catch(err){
-                 console.log("Error")
-             }
-         }
-             getCharacter() && getCharacter2()
-         })
-     })
+                 
+                 
+                 
+                 
+                
+
+
+                 
+                
+                 
                  
                 
             

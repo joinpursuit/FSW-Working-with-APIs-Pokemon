@@ -4,17 +4,20 @@ body{
 }
 
 
-h1{
+/* h1{
     margin-left: 0px;
     
-}
-p{
-    margin-left: 400px;
-}
+} */
+/* p{
+    margin-left: 220px;
+    font-size: 20px;
+    margin-bottom: -50px;
+} */
 #getPokemon{
     margin-left: 400px;
     background-color: rgb(254, 224, 49);
     border-color: rgb(57, 107, 186);
+    color: white;
     
     
     
@@ -26,4 +29,14 @@ p{
     position: relative;
     
 
+/* }
+#pic{
+    margin-left: 200px;
+    margin-top: 50px
+} */
+#pokemonMoves{
+    margin-left:200px;
+    margin-top:50px;
+    margin-bottom:
+    
 }
