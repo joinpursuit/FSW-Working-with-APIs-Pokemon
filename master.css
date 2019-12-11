@@ -1,0 +1,45 @@
+body{
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+    width: 100wh;
+    background-color: rgb(185,222,236);
+}
+h1{
+    align-self: center;
+    text-align: center;
+}
+
+#holder{
+
+    margin:auto;
+    width: 50%;
+    align-self: center;
+    text-align: center;
+}
+#pokemon1{
+    margin: auto;
+}
+ #pokemon2{ 
+    margin: auto;
+} 
+
+
+
+.history{
+  
+    width: 100%;
+    text-align: center;
+}
+#main{
+    display: flex;
+
+    flex-direction: row;
+    width: 100%;
+
+    align-content: space-around;
+    
+}
+ul{
+    list-style-type: none;
+}
