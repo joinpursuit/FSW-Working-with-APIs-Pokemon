@@ -1,0 +1,84 @@
+*,
+*::before,
+*::after{box-sizing:border-box;}
+a{text-decoration:none; color:inherit; cursor:pointer;}
+button{background-color:transparent; color:inherit; border-width:0; padding:0; cursor:pointer;}
+figure{margin:0;}
+input::-moz-focus-inner {border:0; padding:0; margin:0;}
+ul, ol, dd, li {margin:0; padding:0; list-style:none;}
+h1, h2, h3, h4, h5, h6{margin:0; font-size:inherit; font-weight:inherit;}
+p{margin:0;}
+cite {font-style:normal;}
+fieldset{border-width:0; padding:0; margin:0;}
+/* CSS Reset code provided by Elad Shechter */
+
+html { 
+    font-size: 1px;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 2fr 1fr 3fr 2fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "form"
+        "data"
+        "footer";
+    background-image: url("./Pokemon_Background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.headimg {
+    grid-area: header;
+    display: block;
+    height: 250px;
+}
+
+.image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.subimage{
+    position: absolute;
+    bottom: -50px
+}
+
+.headtitle {
+    position: relative;
+    height: 250px;
+    z-index: 0
+}
+
+.headsubtitle {
+    height: 200px;
+    z-index:1
+}
+
+.gameInput {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.getForm {
+    grid-area: form;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 100px;
+
+}
+
+.
+
+
+
