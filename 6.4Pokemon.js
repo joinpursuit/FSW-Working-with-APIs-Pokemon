@@ -26,13 +26,11 @@ document.addEventListener("DOMContentLoaded",async()=>{
             console.log("error")
         }
     }
-
     const get2Pokemon =async()=>{
         displayOne()
         displayOne()
     }
     get2Pokemon()
-
     })
     
 
