@@ -1,0 +1,25 @@
+.data{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#left{
+    grid-column: 1 / 2;
+}
+
+#right{
+    grid-column: 3 / 4;
+}
+
+#buttons{
+    align-items: center;
+}
+
+body{
+    text-align: center;
+}
+
