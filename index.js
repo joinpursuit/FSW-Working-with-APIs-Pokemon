@@ -159,8 +159,6 @@ const getPokemon2 = async () => {
         let move4Power=moveSat4.data.power;
         let move4PP=moveSat4.data.pp;
 
-        
-        
         let pokemon2=document.querySelector("#pokemon2");
         let data=document.querySelector("body > div.data")
 
