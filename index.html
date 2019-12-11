@@ -7,11 +7,14 @@
     <title>Pokemon Battle Simulator</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./index.js"></script>
+    <link rel="stylesheet" href="./master.css">
 </head>
 <body>
     <h1>Pokemon Battle Simulator</h1>
-    <button onclick="getPokemon()">get pokemon!</button>
-    <button onclick="battlePokemon()">battle!</button>
+    <section id="buttons">
+        <button onclick="getPokemon()">get pokemon!</button>
+        <button onclick="battlePokemon()">battle!</button>
+    </section>
     <section class="data"></section>
     <section class="battleHistory">
         <h3>Battle History</h3>
