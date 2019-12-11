@@ -9,18 +9,27 @@ const createElements = (pokemon) => {
     } else {
         ul.id = "left"
     }
+
     let name = document.createElement("li")
     let h4 = document.createElement("h4")
     h4.innerText = pokemon.name
     name.appendChild(h4)
     ul.appendChild(name)
+
     let image = document.createElement("li")
+
     let hp = document.createElement("li")
+
     let moves = document.createElement("li")
+
     let move1 = document.createElement("li")
+
     let move2 = document.createElement("li")
+
     let move3 = document.createElement("li")
+
     let move4 = document.createElement("li")
+    
     document.body.appendChild(ul)
 
 }
