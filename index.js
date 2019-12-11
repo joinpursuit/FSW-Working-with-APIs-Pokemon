@@ -18,11 +18,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 let src = random.data.sprites.front_default
                 sprite1.src = src
                 let challbase = document.createElement("li")
-                challbase.innerText = random.data.stats[0]["base_stat"]
-                debugger
+                challbase.innerText = "HP: " + random.data.stats[0]["base_stat"]
+                let challMovesList = random.data.moves.slice(1, 5)
+    
                 challengerinfo.appendChild(info)
                 challengerinfo.appendChild(sprite1)
                 challengerinfo.appendChild(challbase)
+                
+                challMovesList.forEach(move => {
+                    let challMoves = document.createElement("li")
+                    challMoves.innerText = move.move.name
+                    challengerinfo.appendChild(challMoves)
+                })
                 
                 
                 // POKEMON 2
@@ -35,10 +42,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 sprite2.src = src2
                 info2.innerText = random2.data.name;
                 let champbase = document.createElement("li")
-                champbase.innerText = random2.data.stats[0]["base_stat"]
+                champbase.innerText = "HP: " + random2.data.stats[0]["base_stat"]
+                let champMovesList = random2.data.moves.slice(1, 5)
                 championinfo.appendChild(info2)
                 championinfo.appendChild(sprite2)
                 championinfo.appendChild(champbase)
+                champMovesList.forEach(move => {
+                    let champMoves = document.createElement("li")
+                    champMoves.innerText = move.move.name
+                    championinfo.appendChild(champMoves)
+                })
                 // let moves = await axios.get("https://pokeapi.co/api/v2/move")
             } 
             catch(err){
