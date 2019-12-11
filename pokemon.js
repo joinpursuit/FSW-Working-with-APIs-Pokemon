@@ -11,8 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
       let name1 = character.name
       let pokemonOne = document.querySelector("p");
       pokemonOne.innerText = name1
-      let sprite = pokemon.sprites.front_default
-
+      let img = document.createElement("img")
+      img.src = res.data.sprites.front_default
+    //   let sprite = pokemon.sprites.front_default
+    pokemonOne.appendChild(img);
       
     } catch (err) {
       console.log("ERROR")
@@ -22,5 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   button.addEventListener("click", () => {
     getPokemon()
+
+    
   })
+
+
 })
+
