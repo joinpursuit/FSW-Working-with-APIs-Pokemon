@@ -1,0 +1,28 @@
+body {
+   font-family: sans-serif;
+   background-color: lightblue;
+   display: flex;
+   flex-basis: column;
+   justify-content: center;
+   text-align: center;
+}
+
+h1 {
+   padding: 30px;
+}
+
+.data {
+   width: 600px;
+}
+
+#pokemonCard1{
+   float: left;
+}
+
+#pokemonCard2{
+   float: right;
+}
+
+.battleHistory{
+   text-align: center;
+}

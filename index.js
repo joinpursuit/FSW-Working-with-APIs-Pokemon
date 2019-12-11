@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-   setupBtns()
+ setupBtns()
+   
 })
 
 const setupBtns = () => {
    let btnPokemon = document.querySelector("#getPokemon")
    btnPokemon.addEventListener('click', () => {
-      getPokemon()
+     getPokemon()
+   //   getPokemon()
    })
    let btnBattle = document.querySelector("#battlePokemon")
    btnBattle.addEventListener('click', () => {
@@ -19,25 +21,45 @@ const getPokemon = async () => {
       let pokemonID = Math.floor((Math.random() * 964) + 1)
       let res = await axios.get(`${url}/${pokemonID}/`)
       res.data
-      // debugger 
+      
+      //getPokemonName
+      let pokeName = document.querySelector('#pokemonCard1')
+      let pokemonName1 = document.createElement('h2')
+      let pokemonName1.innerText = res.data.name;
+      // pokemonName.innerText
+      // console.log(pokemonName)
+      pokeName.appendChild(pokemonName1)
 
-      let pokemonName = res.data.name;
-      pokemonName.innerText
+      //getImage
       let img = document.createElement('img')
       img.src = res.data.sprites.front_default
+      // console.log(img)
       // debugger
-      let pokemonStats = res.data.stats[5].base_stat
-      pokemonStats.innerText 
-      // debugger
+      pokeName.appendChild(img)
 
-      let ranMoveNum = Math.floor((Math.random() * 77) + 1);
-      let pokemonMove =res.data.moves[ranMoveNum].move.name
-      pokemonMove.innerText;
-      let moveUrl =res.data.moves[ranMoveNum].move.url
+      //getPokeStats
+      let displayPokeStat = document.createElement('p')
+      displayPokeStat.innerText = res.data.stats[5].base_stat
+      pokeName.appendChild(displayPokeStat)
+       
+      // console.log('HP: '+pokemonStats)
+      // debugger
       
-      let pokePP = await axios.get(moveUrl)
-      pokePP;
-      debugger
+      //getMoves
+      let ul = document.createElement('ul')
+      moveArr = res.data.moves.length;
+      let ranMoveNum = Math.floor((Math.random() * res.data.moves.length) + 1);
+      let moveUrl =res.data.moves[ranMoveNum].move.url
+      let pokePPNum = await axios.get(moveUrl)
+      let pokemonMoveName =res.data.moves[ranMoveNum].move.name
+      pokemonMoveName.innerText;
+      // console.log("Move Name:" +pokemonMoveName)
+      pokePPNum = pokePPNum.data.pp
+      // console.log("PP:" + pokePPNum)
+      
+      
+      
+
       
    }
    catch  (err) {
