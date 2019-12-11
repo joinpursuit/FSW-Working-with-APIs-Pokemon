@@ -1,5 +1,6 @@
 html body{
 background-color: aqua;
+text-align: center;
 }
 #getPokemon{ background-color: rgb(248, 37, 0); 
 border: rgb(2, 0, 0);
