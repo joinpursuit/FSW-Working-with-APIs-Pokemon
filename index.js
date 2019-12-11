@@ -2,6 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
- const getPokemon = 22 => {
+ const getPokemon = => {
 
  }
