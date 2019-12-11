@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 info2.innerText = poke2.name;
                 data.appendChild(info)
                 data.appendChild(info2)
+                debugger
 
 
             } 
