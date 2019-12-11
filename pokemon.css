@@ -1,9 +1,88 @@
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+html {
+    min-height: 100%;
+}
+
+html, body{
+    overflow:auto;
+    /* min-height: 100%; */
     height: 100vh;
-    width: 100vw;
+
+}
+
+body {
+    height: 100vh;
+    display: grid;
+     grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
     background-size: cover;
+    font-family: sans-serif;
+}
+/* title name */
+#title {
+    grid-row: 8;
+    grid-column-start: 3;
+    grid-column-end: 9;
+    color: white;
+    text-decoration: underline;
+    justify-self: center;
+    background-color: black;
+}
+/* get pokemon button */
+#getPokemon {
+    grid-row: 9;
+    grid-column: 4;
+    height: 35px;
+    width: 80px;
+    justify-self: center;
+    align-self: flex-end;
+    border-radius: 5%;
+    background:lightblue
+}
+/* battle pokemon button */
+#battle {
+    grid-row: 9;
+    grid-column: 7;
+    height: 35px;
+    width: 80px;
+    justify-self: center;
+    align-self: flex-end;
+    border-radius: 5%;
+    background:red
+}
+.battleHistory {
+    grid-row: 8;
+    grid-column: 1;
+    color: white;
+    text-decoration: underline;
+}
+#battlelist{
+    list-style: none;
+}
+#leftImage{
+    grid-row: 6;
+    grid-column: 4;
+}
+#leftPokemonStats {
+    display: grid;
+    grid-row: 1;
+    grid-column: 2;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    list-style: none;
+    gap: 10px;
+}
+#rightImage {
+    grid-row: 6;
+    grid-column: 7;
+}
+#rightPokemonStats {
+    display: grid;
+    grid-row: 1;
+    grid-column: 9;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    list-style: none;
+    gap: 10px;
 }
