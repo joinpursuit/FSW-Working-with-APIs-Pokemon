@@ -28,19 +28,32 @@ body{
     border-color:rgb(57, 107, 186);
     position: relative;
 }
-    
 
 /* }
 #pic{
     margin-left: 200px;
     margin-top: 50px
 } */
-#pokemonMoves{
+#pokemon1{
     margin-left:200px;
     margin-top:50px;
-    margin-bottom;
+ 
+    margin-left: 100px;
     
 }
 #pokemon2{
-    margin-left: 1200px;s
+    margin-left: 1200px;
+    margin-left: 1200px;
+    margin-top: -250px;
+}
+.footer{
+    
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.8;
+  color: white;
+  text-align: center;
+
 }

@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", ()=>{
-    //let display = document.querySelector("#display")
-    //let battle = document.querySelector("#battle")
+    let battle = document.querySelector("#battle")
     let getPokemon = document.querySelector("#getPokemon")
-    let body = document.querySelector("body")
-    //let pokemon1 = document.createElement("ul")
-    //let pokemon2 = document.createElement("ul")
+    //let body = document.querySelector("body")
     const getCharacter = async(element)=>{
         try{
             let num = Math.floor(Math.random() * 807)
@@ -29,10 +26,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 let li = document.createElement("li");
                 li.innerText = move.move.name;
                 ul.appendChild(li)
+                
+
 
 
                 })
                 element.appendChild(ul)
+                
             } catch(err)  {
                 console.log("Error")
                //  debugger
@@ -45,7 +45,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
         getCharacter(pokemon2)
         getCharacter(pokemon1)
     })
+    const getWinner = async() =>{
+        let footer = document.createElement("#footer")
+        footer.innerText = "Hello"
+        body.appendChild(footer)
+    }
+    battle.addEventListener("click", () =>{
+        getWinner()
+
     })
+})
            
                 
                  
