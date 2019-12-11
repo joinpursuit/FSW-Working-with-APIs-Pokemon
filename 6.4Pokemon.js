@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded",async()=>{
             let display = document.querySelector("#pokemonB")
             let hp = document.createElement("li")
             let ul = document.createElement("ul")
-            let health = document.querySelector("#pokemonA")
-            poke.innerText = data.name
+            let health = document.querySelector("#pokemonB")
+            poke.innerText = `Pokemon Name: ${data.name}`
             sprite.src = data.sprites.front_default;
-            hp.innerText = data.stats[5].base_stat;
+            hp.innerText = `Pokemon HP: ${data.stats[5].base_stat}`;
             div1.appendChild(poke)
             display.appendChild(sprite)
             ul.appendChild(hp)
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded",async()=>{
     get2Pokemon()
 
     })
+    
 
 
 
