@@ -45,6 +45,24 @@ body {
     margin-top: 25px
 }
 
+.subHeading{
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+}  
+#subHeading{
+    position: relative;
+    font-family: "Press Start 2P", cursive;
+    color: white;
+    font-size: 36px;
+    font-style: bold;
+    margin-left: 320px;
+    margin-bottom: 20px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #CBA840;
+}
+
 .image {
     position: relative;
     display: flex;
@@ -80,7 +98,7 @@ body {
 #lsideImage {
     position: relative;
     right: 200px;
-    height: 250px;
+    height: 200px;
 }
 
 .rsideImage {
@@ -89,13 +107,12 @@ body {
     display: flex;
     justify-content: flex-end;
     align-content: flex-start;
-    
 }
 
 #rsideImage {
     position: relative;
     top: 20px;
-    : 20px;
+    right: 20px;
     height: 250px
 }
 
@@ -113,8 +130,6 @@ body {
     padding: 100px;
 
 }
-
-
 
 #data {
     grid-area: data;
