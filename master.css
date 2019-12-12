@@ -26,6 +26,9 @@ body {
     filter: alpha(opacity=50);
     color: gold;
 }
+#mainPoke {
+    color: white
+}
 .mainHeading {
     margin-top: 30px;
     color: white
@@ -50,8 +53,16 @@ body {
 #button1 {
     border-radius: 12px;
     background-color: whitesmoke;
+    padding: 7px;
+    
 }
+
 #button2 {
     border-radius: 12px;
     background-color: whitesmoke;
+    padding: 7px;
+}
+.battleHistory {
+    padding: 20px;
+    color: white;
 }
