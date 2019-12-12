@@ -2,7 +2,7 @@ html body{
 background-color: aqua;
 text-align: center;
 }
-#getPokemon{ background-color: rgb(248, 37, 0); 
+/* #getPokemon{ background-color: rgb(248, 37, 0); 
 border: rgb(2, 0, 0);
 color: white;
 padding: 15px 32px;
@@ -11,11 +11,10 @@ text-decoration: none;
 display: inline-block;
 font-size: 16px;
 position: absolute;
-left: 150px;
-top: 200px;
+
 border-radius: 100%;
-}
-#battle{
+} */
+/* #battle{
     background-color: rgb(248, 55, 7); 
     border: rgb(8, 0, 0);
     color: white;
@@ -25,10 +24,9 @@ border-radius: 100%;
     display: inline-block;
     font-size: 16px;
     position: absolute;
-    left: 950px;
-    top: 200px;
+   
     border-radius: 100%;
-}
+} */
 #pokemonB{
     display: grid;
     grid-template-columns: 50% 50%
