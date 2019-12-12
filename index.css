@@ -7,8 +7,20 @@ body {
    text-align: center;
 }
 
+.buttons {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 120px;  
+}
+
+li {
+   list-style-type: none;
+   text-align: left;
+}
+
 h1 {
-   padding: 30px;
+   padding: 30px 30px;
 }
 
 .data {
