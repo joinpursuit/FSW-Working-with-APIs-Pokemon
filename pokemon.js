@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   let button = document.querySelector("#getPokemon")
-  // let pokemonInfo = document.querySelector(".pokemon-info")
   let poke1 = document.querySelector("#poke1")
   let poke2 = document.querySelector("#poke2")
   let p1 = document.querySelector("#p1")
