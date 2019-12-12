@@ -12,9 +12,9 @@ const getPokemon1 = async () => {
       
         let pokemonInfo = pokemon.data;
         let pokemonName = pokemonInfo.name;
-        let h1 = document.createElement("h1")
-        h1.innerText = pokemonName;
-        floatLeft.appendChild(h1);
+        let pk1h1 = document.createElement("h1")
+        pk1h1.innerText = pokemonName;
+        floatLeft.appendChild(pk1h1);
 
 
         let pokemonPicUrl = pokemonInfo.sprites.front_default;
@@ -63,7 +63,7 @@ const getPokemon2 = async () => {
         h1.innerText = pokemonName;
         floatRight.appendChild(h1);
 
-
+      
         let pokemonPicUrl = pokemonInfo.sprites.front_default;
         let pokemonPic = document.createElement("img");//same as line 17
         pokemonPic.src = pokemonPicUrl
@@ -99,10 +99,27 @@ const getPokemon2 = async () => {
       }
     }
 
+    const battleFunction = () => {
+      let randomwinner = Math.floor(Math.random() * 2);
+      if (randomwinner === 1) {
+        let pokemon1win = document.querySelector("batHisH3");
+        let p = document.createElement("p")
+        p.innerText = document.querySelector(`pk1h1`)//trying to get fill Battle History 
+
+      }
+    }
+
      let button = document.querySelector("#getPoke");
         button.addEventListener("click", () => {
           getPokemon1()
           getPokemon2()
 
         })
+
+        let button = document.querySelector("#battle");
+        button.addEventListener("click", () => {
+          battleFunction()
+        })
       })
+
+      console.log(pokemonName)
