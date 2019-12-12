@@ -3,6 +3,7 @@ body{
     background-repeat: no-repeat;
     background-size: 100%; 
 }
+
 #data {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -30,7 +31,28 @@ li {
     list-style: none;
 }
 
+#howToPlay {
+    text-align: center;
+    font-family: PokemonFireRedRegular;
+
+}
+
+#get, #battle { 
+    height: 20px;
+    width: auto;
+    border-radius: 25px;
+    display: block;
+    margin: auto;
+    
+}
 #get {
-    /* height: 40px;
-    width: 20px; */
+    margin-bottom: 10px;
+}
+
+
+
+#battleHistory {
+    text-align: center;
+    padding: 300px;
+    
 }

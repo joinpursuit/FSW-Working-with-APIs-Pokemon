@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Battle!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 battle.addEventListener("click", () => {
                     let battleHistory = document.querySelector("#battleHistory")
-                    battleHistory.innerHTML = ""
+                    // battleHistory.innerHTML = ""
                 let p = document.createElement("p")
                     if(champHP > challHP){
                         p.innerText = `Winner is ${champName.innerText}`
