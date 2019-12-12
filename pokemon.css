@@ -24,7 +24,6 @@ h1 {
   font-size: 35pt;
 }
 
-
 #action {
   width: 15%;
   margin: auto;
@@ -42,15 +41,29 @@ h1 {
   padding: 20pt;
 }
 
+#getPokemon {
+  background: red;
+  font-size: medium;
+  font-family: sans-serif;
+  border-color: goldenrod;
+}
+
+#battle {
+  background: red;
+  font-size: medium;
+  font-family: sans-serif;
+  border-color: goldenrod;
+}
+
 #data {
   display: grid;
   grid-column-gap: 130%;
   grid-template-columns: 2fr max-content;
   font-family: sans-serif;
   font-weight: bold;
-font-size: 12pt;
+  font-size: 12pt;
 
-  
+
 }
 
 #leftScreen {
@@ -89,28 +102,15 @@ font-size: 12pt;
 }
 
 .battleHistory {
-  flex-direction: row;
-  flex-flow: row;
-  width: 100%;
-  justify-content: baseline;
-  padding-left: 0%;
-  position: fixed;
-  padding-top: 1%;
-  flex-shrink: 0;
-  left: 0%;
-  right: 0%;
-  bottom: 0;
-  margin-right: auto;
-  margin-left: auto;
-  flex: 0 1 100%;
-  padding-bottom: 1%;
-  min-width: fit-content;
-  justify-content: space-around;
+  position: static;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 210px;
+  height: 50%;
+  margin-top: -500px;
+  margin-left: 42%;
   word-spacing: 10%;
-  flex-direction: row;
   font-family: sans-serif;
   word-spacing: 10%;
-  flex: 0 1 100%;
   list-style-type: none;
-  text-align-last: center;
 }

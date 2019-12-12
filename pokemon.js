@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let num = Math.floor(Math.random() * 807)
       let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
       let data = res.data
-      para.innerText = data.name;
+      para.innerText = data.name
       let img = document.createElement("img")
       img.src = data.sprites.front_default
       pokemon.appendChild(img)
