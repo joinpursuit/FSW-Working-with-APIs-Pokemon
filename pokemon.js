@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         } catch(err)  {
             console.log("Error")
         }
-        }
+    }
     const getBattle = ()=>{
         document.querySelector(".battleHistory")
         let p = document.createElement("p")
