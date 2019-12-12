@@ -55,5 +55,13 @@ html {
     background: transparent;
     box-shadow: 600px 1476px #FFF , 1675px 17px #FFF , 1644px 1337px #FFF , 898px 228px #FFF , 1696px 115px #FFF , 1738px 1353px #FFF , 1547px 1606px #FFF , 168px 1549px #FFF , 1020px 1554px #FFF , 1689px 1025px #FFF , 1921px 1660px #FFF , 1521px 861px #FFF , 1373px 1737px #FFF , 436px 1960px #FFF , 483px 1972px #FFF , 27px 800px #FFF , 1863px 343px #FFF , 1297px 1494px #FFF , 329px 1999px #FFF , 218px 1412px #FFF , 332px 1467px #FFF , 1620px 434px #FFF , 1873px 1856px #FFF , 360px 1743px #FFF , 406px 1574px #FFF , 781px 983px #FFF , 349px 1948px #FFF , 1832px 1570px #FFF , 1632px 1151px #FFF , 1310px 619px #FFF , 1715px 1937px #FFF , 7px 1238px #FFF , 1951px 611px #FFF , 1265px 1519px #FFF , 707px 1393px #FFF , 38px 959px #FFF , 234px 302px #FFF , 905px 1406px #FFF , 1512px 869px #FFF , 1596px 888px #FFF , 302px 1949px #FFF , 1263px 1711px #FFF , 437px 905px #FFF , 1602px 978px #FFF , 417px 1173px #FFF , 1494px 1723px #FFF , 286px 492px #FFF , 509px 1179px #FFF , 1900px 1528px #FFF , 1711px 131px #FFF , 1793px 205px #FFF , 881px 519px #FFF , 566px 1224px #FFF , 904px 969px #FFF , 925px 1188px #FFF , 978px 251px #FFF , 1665px 730px #FFF , 721px 1834px #FFF , 572px 1857px #FFF , 830px 997px #FFF , 405px 588px #FFF , 775px 1654px #FFF , 341px 509px #FFF , 21px 1136px #FFF , 776px 1066px #FFF , 500px 1088px #FFF , 337px 1356px #FFF , 1406px 999px #FFF , 680px 1290px #FFF , 1735px 1661px #FFF , 306px 894px #FFF , 740px 1100px #FFF , 199px 1074px #FFF , 313px 320px #FFF , 1050px 379px #FFF , 933px 779px #FFF , 354px 1020px #FFF , 1410px 1478px #FFF , 1955px 1729px #FFF , 1190px 297px #FFF , 1249px 124px #FFF , 652px 1699px #FFF , 580px 1182px #FFF , 1610px 1878px #FFF , 1816px 1363px #FFF , 1778px 1247px #FFF , 1224px 93px #FFF , 1765px 1719px #FFF , 1581px 444px #FFF , 812px 1411px #FFF , 662px 1627px #FFF , 1081px 1756px #FFF , 1383px 110px #FFF , 422px 617px #FFF , 1363px 780px #FFF , 550px 843px #FFF , 203px 34px #FFF , 582px 862px #FFF , 1385px 163px #FFF , 1904px 224px #FFF;
   }
-  
+
+  @keyframes animStar {
+    from {
+      transform: translateY(0px);
+    }
+    to {
+      transform: translateY(-2000px);
+    }
+  }
   
