@@ -1,39 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
-    
-    try {
-        const selectPoke = async (url, input) => { 
-            let randomPokeArray = []
-            let jsonPoke = await axios.get(url) 
-            let pokeObject = jsonPoke.data.results
-            for (let i = 0; i < input; i++) {
-                let randomPoke = pokeObject[Math.floor(Math.random() * pokeObject.length)];
-                randomPokeArray.push(randomPoke);
-            }
-            
-            randomPokeArray.forEach(pokemon => {
-                let data = document.querySelector("#data")
-                let h1 = document.createElement("h1")
-                h1.innerText = pokemon["name"].toUpperCase()
-                // debugger
-                data.appendChild(h1)
-            })
+try {
+    const selectPoke = async (url, input) => { 
+        let randomPokeArray = []
+        let jsonPoke = await axios.get(url) 
+        let pokeObject = jsonPoke.data.results
+        for (let i = 0; i < input; i++) {
+            let randomPoke = pokeObject[Math.floor(Math.random() * pokeObject.length)];
+            randomPokeArray.push(randomPoke);
         }
         
-        let form = document.querySelector("#masterInvoker")
-        form.addEventListener("submit", (event) => {
-            event.preventDefault()
-            let input = document.querySelector("#pokenum").value
-            input.value = ""
-            selectPoke("https://pokeapi.co/api/v2/pokemon/?limit=964", input) //refactor limit for pokemon game updates
-            form.reset()
+        randomPokeArray.forEach(pokemon => {
+            let data = document.querySelector("#data")
+            let h1 = document.createElement("h1")
+            h1.innerText = pokemon["name"].toUpperCase()
+            // debugger
+            data.appendChild(h1)
         })
     }
-    catch(err) {
-        console.log(err)
-        }
+    
+    let form = document.querySelector("#masterInvoker")
+    form.addEventListener("submit", (event) => {
+        event.preventDefault()
+        let input = document.querySelector("#pokenum").value
+        input.value = ""
+        selectPoke("https://pokeapi.co/api/v2/pokemon/?limit=964", input) //refactor limit for pokemon game updates
+        form.reset()
+    })
+}
+catch(err) {
+    console.log(err)
+    }
 
 
-})
 
 
 
