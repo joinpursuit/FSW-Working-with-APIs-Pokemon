@@ -1,42 +1,51 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    let select = document.querySelector("select")
-    const randomPokemon = async () => { 
-        try {
-            let jsonPoke = await axios.get("url") 
+    
+    try {
+        const selectPoke = async (url) => { 
+            let randomPokeArray = []
+            let jsonPoke = await axios.get(url) 
             let pokeObject = jsonPoke.data.results
             
-            pokeObject.forEach(element => {
-                let option = document.createElement("option")
-                option.innerText = element["name"]
-                option.value = element[""]
-                select.appendChild(option)
+            for (let i = 0; i < input.value; i++) {
+                let randomPoke = pokeObject[Math.floor(Math.random() * pokeObject.length)];
+                randomPokeArray.push(randomPoke);
+                }
+            
+            randomPokeArray.forEach(pokemon => {
+                let data = document.querySelector("#data")
+                let h1 = document.createElement("h1")
+                h1.innerText = pokemon["name"].toUpperCase()
+                // debugger
+                data.appendChild(h1)
             })
-        } 
-        catch(err) {
-            console.log(err)
         }
+        
+        selectPoke("https://pokeapi.co/api/v2/pokemon/?limit=964")
     }
-    
-    const selectPoke = () => {
-        var colArr = [];
-        for (var i = 0; i < input.value; i++) {
-          let rand = arr[Math.floor(Math.random() * d.length)];
-          colArr.push(rand);
+    catch(err) {
+        console.log(err)
         }
-        return 
-      }
     
-    let form = document.querySelector("form")
-    form.addEventListener("submit", (event) => {
-        event.preventDefault() 
+    
+    // const selectPoke = () => {
+    //     var colArr = [];
+    //     for (var i = 0; i < input.value; i++) {
+    //       let rand = arr[Math.floor(Math.random() * d.length)];
+    //       colArr.push(rand);
+    //     }
+    //     return 
+    //   }
+    
+    // let form = document.querySelector("form")
+    // form.addEventListener("submit", (event) => {
+    //     event.preventDefault() 
         
 
-        button.addEventListener("click", () => {
+    //     button.addEventListener("click", () => {
             
-        })
+    //     })
     
-    })
+    // })
 
 })
 

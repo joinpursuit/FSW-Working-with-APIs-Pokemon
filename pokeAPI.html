@@ -2,25 +2,31 @@
 <html lang=“en” dir=“ltr”>
   <head>
     <title>Poke Melee</title>
-    <link rel="stylesheet" href="./pokeAPI.css"/>
-    <link rel="stylesheet" href="./normalize.css"/>
-    <meta charset=“utf-8”/>
-    <meta name=“viewport” content=“width-device-width" initial-scale=1/>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./pokeAPI.js"></script>
+    <link rel="stylesheet" href="./pokeAPI.css"/>
+    <link rel="stylesheet" href="./normalize.css"/>
+    <link rel="stylesheet" href="./stars_background.css"/>
+    <meta charset=“utf-8”/>
+    <meta name=“viewport” content=“width-device-width" initial-scale=1/>
   </head>
-    
+  
+
+
   <body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
     <div class="headimg">
       <div class="image">
-        <img class="headtitle" src="./Pokemon Logo Turquoise.png"/>
+        <img class="headtitle" src="./Pokemon_Logo.png"/>
         <div class="subimage">
         <img class="headsubtitle" src="./Battledrome.png"/>
         </div>
       </div>
     </div>
-    <div class="gameInput">
-    <div class="getForm">
+    <div id="gameInput">
+    <div id="getForm">
         <form name="masterinvoker" action=""> 
             <label name="pokenum">Choose How Many Pokemon will be Summoned to Battle</label>
             <input id="pokenum" type="text" name="pokenum" placeholder="Enter Number">
@@ -31,8 +37,8 @@
         <button class="melee">MELEE</button>
     </div>
     </div>
-    <div class="data"></div>
-    <div class="footer">
+    <div id="data"></div>
+    <div id="footer">
       <h2>Battle History</h2>
     </div>
   </div>

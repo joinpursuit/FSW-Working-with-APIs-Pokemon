@@ -29,15 +29,20 @@ body {
         "form"
         "data"
         "footer";
-    background-image: url("./Pokemon_Background.jpg");
+    /* background-image: url("./Pokemon_Background.jpg");
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
+}
+
+h1 {
+    font-size: 40px;
 }
 
 .headimg {
     grid-area: header;
     display: block;
     height: 250px;
+    margin-top: 25px
 }
 
 .image {
@@ -45,7 +50,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
 .subimage{
     position: absolute;
@@ -54,7 +59,7 @@ body {
 
 .headtitle {
     position: relative;
-    height: 250px;
+    height: 200px;
     z-index: 0
 }
 
@@ -63,22 +68,21 @@ body {
     z-index:1
 }
 
-.gameInput {
+#gameInput {
+    grid-area: form;
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-.getForm {
-    grid-area: form;
+#getForm {
+
     display: flex;
     justify-content: center;
     align-items: center;
     margin-block: 100px;
 
 }
-
-.
 
 
 
