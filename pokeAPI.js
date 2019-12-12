@@ -33,20 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
     catch(err) {
         console.log(err)
         }
-    
-  
-    
-    // let form = document.querySelector("form")
-    // form.addEventListener("submit", (event) => {
-    //     event.preventDefault() 
+
         
-
-    //     button.addEventListener("click", () => {
-            
-    //     })
-    
-    // })
-
 })
 
 
