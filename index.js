@@ -90,10 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                 // shuffle(arr)
                                 let winner = arr[0]
                                 let div = document.querySelector("#battleHistory")
-                                div.innerHTML = ""
+                                
                                 let ul = document.createElement("ul")
                                 let li = document.createElement("li")
                                 // debugger
+                                li.innerText = ""
                                 li.innerText = `${winner} won!`
                                 ul.appendChild(li)
                                 div.appendChild(ul)
