@@ -30,8 +30,13 @@ const battleHistory = (battle) => {
     li.innerText = `${winner}, you win`
     ul.appendChild(li);
     div.appendChild(ul);
-    debugger
-    battle = [];
+    //the only I could empty out the array
+
+    battle.pop();
+    // debugger
+    battle.shift();
+    // debugger
+
     document.querySelector("#attackSound").play()
     
     
@@ -59,8 +64,8 @@ const getPokemon = async (pokemonDivId) =>{
         let h3 = document.createElement("h3");
         h3.innerText = pokeName;
         div.appendChild(h3)
-
-                
+        
+        
         //gets the hp of the pokemons
         let hpOne = res.data.stats[5].base_stat;
         let ul = document.createElement("ul");
@@ -69,7 +74,7 @@ const getPokemon = async (pokemonDivId) =>{
         li.innerText = `HP: ${hpOne}`
         ul.appendChild(li);
         div.appendChild(ul);
-
+        
         //gets four pp for both pokemons
         let pokeMoves = res.data.moves.slice(0,4);
         pokeMoves.forEach(async el =>{
@@ -78,11 +83,11 @@ const getPokemon = async (pokemonDivId) =>{
             li.innerText = `${el.move.name}, PP:${newData.data.pp}`
             ul.appendChild(li);
             div.appendChild(ul);
-      })
-      battle.push(pokeName);
-      debugger;
-
-    
+        })
+        
+        battle.push(pokeName);
+        debugger;
+        
     }catch(error){
         console.log(error)
     }
