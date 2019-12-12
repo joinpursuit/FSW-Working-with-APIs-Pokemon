@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   let button = document.querySelector("#getPokemon")
   let pokemon1info = document.querySelector(".pokemon1info")
-   
-  const getPokemon1 = async () => {
+  let pokemon2info = document.querySelector(".pokemon2info")
+
+  const getPokemon1 = async element => {
     try {
       let num = Math.floor(Math.random() * 807)
       let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
@@ -17,16 +18,14 @@ document.addEventListener("DOMContentLoaded", () => {
       let moves = res.data.moves.slice(0, 4)
       // debugger
       let ul = document.createElement("ul")
-      pokemon1info.appendChild(ul);
+      element.appendChild(ul)
       moves.forEach(async (move, i) => {
         let moveDeets2 = await axios.get(move.move.url)
         // debugger;
         let li = document.createElement("li")
         li.innerText = moveDeets2.data.name + " PP: " + moveDeets2.data.pp
-        ul.appendChild(li)
-
+        element.appendChild(li)
       })
-
     } catch (err) {
       console.log("ERROR")
       // debugger
@@ -48,16 +47,14 @@ document.addEventListener("DOMContentLoaded", () => {
       let moves2 = res.data.moves.slice(0, 4)
       // debugger
       let ul = document.createElement("ul")
-      pokemon2info.appendChild(ul);
+      pokemon2info.appendChild(ul)
       moves2.forEach(async (move, i) => {
         let moveDeets2 = await axios.get(move.move.url)
         // debugger;
         let li = document.createElement("li")
-        li.innerText = moveDeets.data.name + " PP: " + moveDeets.data.pp
+        li.innerText = moveDeets2.data.name + " PP: " + moveDeet2.data.pp
         ul.appendChild(li)
-
       })
-
     } catch (err) {
       console.log("ERROR")
       // debugger
@@ -65,8 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   button.addEventListener("click", () => {
-    getPokemon1()
-    getPokemon2()
+    let pokemonOne = document.querySelector(".pokemon1info")
+    let pokemonTwo = document.querySelector(".pokemon2info")
 
+    getPokemon1(pokemonOne)
+    getPokemon1(pokemonTwo)
   })
 })
