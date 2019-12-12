@@ -18,10 +18,13 @@ const getPokemon = async () => {
         let pokeName=res.data.name;
         let pokeImg=res.data.sprites.front_default;
         let pokeHP =res.data.stats[5].base_stat;
+
+
         let newMove=shuffleMove(res.data.moves);
         
         let move1 = newMove[0].move.name;
         let move1Url = newMove[0].move.url;
+
         let moveSat1= await axios.get(move1Url);
         let move1Power=moveSat1.data.power;
         let move1PP=moveSat1.data.pp;
@@ -245,13 +248,17 @@ const battle = () =>{
         let log=document.createElement("li")
         if(!pokemon1){
             alert("please get Pokemon first")
-         }else if(pokemon1.value>pokemon2.value){
+        }else if(pokemon1.value>pokemon2.value){
+            let audio=document.querySelector("#audio").play();
             log.innerText=`${pokemon1.title} defeated ${pokemon2.title}`
             battleHis.appendChild(log)
+            
         }else if(pokemon1.value===pokemon2.value) {
+            let audio=document.querySelector("#audio").play();
             log.innerText=`${pokemon2.title} tie ${pokemon1.title}`
             battleHis.appendChild(log)
         }else{
+            let audio=document.querySelector("#audio").play();
             log.innerText=`${pokemon2.title} defeated ${pokemon1.title}`
             battleHis.appendChild(log)
         }
