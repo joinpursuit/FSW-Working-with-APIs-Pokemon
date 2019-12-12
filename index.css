@@ -1,10 +1,11 @@
-*{
-    font-family: sans-serif;
-    
-}
-.data{
+body{
     width: 600px;
+    font-family: sans-serif;
+    justify-content: center;
 }
 h1{
     font-size: 30px;
+}
+div > ul{
+    font-style: bold;
 }
