@@ -59,8 +59,9 @@ body {
 
 #image {
     position: relative;
-    height: 150px;
+    height: 180px;
     opacity:80%;
+    left: 50px;
     z-index: 0
 }
 #subImage {
@@ -68,15 +69,33 @@ body {
     z-index: 1
 }
 
-.sideImage {
-    grid-area: header;
+.lsideImage {
+    grid-area: header ;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+#lsideImage {
+    position: relative;
+    right: 200px;
+    height: 250px;
+}
+
+.rsideImage {
+    grid-area: header ;
     position: relative;
     display: flex;
     justify-content: flex-end;
-    margin: 20px;
+    align-content: flex-start;
+    
 }
 
-#sideImage {
+#rsideImage {
+    position: relative;
+    top: 20px;
+    : 20px;
     height: 250px
 }
 
@@ -109,7 +128,7 @@ body {
 }
 
 .footImage {
-    display: block;
+    display: flex;
 }
 
 #footImage {
