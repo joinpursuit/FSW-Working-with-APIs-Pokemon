@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     let battlelist = document.querySelector("#battlelist")
     let rightImage = document.querySelector("#rightImage")
     let leftImage = document.querySelector("#leftImage")
+    let audio = document.querySelector("#audio")
     let pokemon = []
     let res
     // first pokemon is unique
@@ -89,9 +90,15 @@ document.addEventListener("DOMContentLoaded", () =>{
     }
     // will print both pokemon when button is pressed and reset array for the winners
     getPokemon.addEventListener("click", () =>{
+        audio.play();
+        //Trying to add loader while waiting for printing by creating child and removing at the end of functions
+        // let loader = document.createElement("loader");
+        // loader.id = `loader`
+        // document.body.appendChild(loader)
         randomPokemon1();
         randomPokemon2();
         pokemon = [];
+        // body.removeChild(body.lastElementChild)
     })
     //chooses a radom winner in a function, prints winner and loser in order
     const chooseWinner = (arr) =>{
