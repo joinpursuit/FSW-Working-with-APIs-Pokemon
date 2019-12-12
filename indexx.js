@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let secondPokemonUl = document.createElement("ul")
   // floatLeft.appendChild(firstPokemonUl)
 
-const getPokemon = async () => {
+const getPokemon1 = async () => {
       try {
         let randomNum = Math.floor(Math.random() * 807)
         let pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNum}`);
@@ -29,14 +29,66 @@ const getPokemon = async () => {
         floatLeft.appendChild(p)
 
        
-        let pokemonMove = pokemonInfo.move;
+        let pokemonMove = pokemonInfo.moves;
+        pokemon.data.moves[0].move.name//in dev tools
+        "vine-whip"
 
+        const findMovePP = async () => {
+          let moves = await axios(`https://pokeapi.co/api/v2/move/`)
+        } 
 
         // for (let i = 0; i < 4; i ++) {
         //   pokemonMove
         // }
 
-        debugger;
+
+        let movePP = pokemonInfo
+        res.data.moves.slice
+        // then take the url and grab the info from it  make a new ul
+
+
+      }catch(error) {
+        console.log("This is the " + error)
+      }
+    }
+
+const getPokemon2 = async () => {
+      try {
+        let randomNum = Math.floor(Math.random() * 807)
+        let pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNum}`);
+      
+        let pokemonInfo = pokemon.data;
+        let pokemonName = pokemonInfo.name;
+        let h1 = document.createElement("h1")
+        h1.innerText = pokemonName;
+        floatRight.appendChild(h1);
+
+
+        let pokemonPicUrl = pokemonInfo.sprites.front_default;
+        let pokemonPic = document.createElement("img");//same as line 17
+        pokemonPic.src = pokemonPicUrl
+        floatRight.appendChild(pokemonPic);
+
+
+        let pokemonHP = pokemonInfo.stats[5].base_stat;
+        let p = document.createElement("p");
+        p.innerText = ` HP : ${pokemonHP}` ;
+        floatRight.appendChild(p)
+
+        
+        let pokemonMove = pokemonInfo.moves;
+        pokemon.data.moves[0].move.name//in dev tools
+        "vine-whip"
+
+        const findMovePP = async () => {
+          let moves = await axios(`https://pokeapi.co/api/v2/move/`)
+        } 
+
+        // for (let i = 0; i < 4; i ++) {
+        //   pokemonMove
+        // }
+
+    
         let movePP = pokemonInfo
         res.data.moves.slice
         // then take the url and grab the info from it  make a new ul
@@ -49,6 +101,8 @@ const getPokemon = async () => {
 
      let button = document.querySelector("#getPoke");
         button.addEventListener("click", () => {
-          getPokemon()
+          getPokemon1()
+          getPokemon2()
+
         })
       })

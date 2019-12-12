@@ -14,3 +14,11 @@ body {
 .data {
     width: 600px;
 }
+
+.pokemon1 {
+    float: left;
+}
+
+.pokemon2 {
+    float: right;
+}
