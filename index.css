@@ -54,6 +54,13 @@ li{
 ul{
     margin-right: 20px;
 }
-#rdmWinner{
+/* #rdmWinner{
+    background-color: lightblue;
+    width: 110px;
+    height: 110px;
     overflow: scroll;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 675px;
+} */

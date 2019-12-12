@@ -18,24 +18,25 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 
 //function that declares a random winner
-const battleHistory = (battle) => {
+const battleHistory = () => {
     let randomWinner = Math.floor(Math.random()*battle.length);
     let winner = battle[randomWinner];
     // debugger;
     let div = document.querySelector("#rdmWinner");
-    //comment if you want a history of all the battles won
+
+    //comment if you don't want a history of all the battles won
+
     // div.innerHTML = ""
     let ul = document.createElement("ul");
     let li = document.createElement("li");
     li.innerText = `${winner}, you win`
     ul.appendChild(li);
     div.appendChild(ul);
-    //the only I could empty out the array
+    // debugger
+    // the only way I could empty out the array
+    battle = []
+    // debugger
 
-    battle.pop();
-    // debugger
-    battle.shift();
-    // debugger
 
     document.querySelector("#attackSound").play()
     
