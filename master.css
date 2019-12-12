@@ -1,0 +1,16 @@
+body {
+    font-family: sans-serif;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.PokeStim {
+    padding: 30px;
+}
+
+.data {
+    width: 600px;
+}
