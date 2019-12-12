@@ -1,0 +1,53 @@
+#display {
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+body {
+    margin: auto;
+    align-content: center;
+    width: 50%;
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #B9DEEC;
+}
+
+#left,#right,#battleHistory{
+    list-style-type:none;
+    margin: 100px;
+    font-size: large;
+    text-transform: capitalize
+
+}
+
+li{
+    width: auto
+}
+
+img{
+    height: 200px;
+}
+
+header{
+    align-content: center
+}
+
+#getPoke,#battle{
+    padding: 10px 012px 10px 12px;
+    border-radius: 90px;
+    width: 120px;
+    font-size: 15px;
+    height: auto;
+    cursor: pointer;
+    text-shadow: blueviolet;
+    color: crimson;
+    background: white;
+    border-color: black;
+
+}
+
+#getPoke:hover ,#battle:hover{
+    text-shadow: none;
+    color: white;
+    background-color: crimson
+}
