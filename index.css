@@ -1,0 +1,41 @@
+* {
+  font-family: sans-serif;
+}
+body {
+  background-color: lightblue;
+  
+}
+h1 {
+  padding: 30px;
+
+}
+.data {
+  width: 600px;
+}
+li {
+  list-style: none;
+}
+#pokeLeft {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: 50%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  /* width: 600px; */
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+#pokeRight {
+  position: relative;
+  display: inline-block;
+  float: right;
+  width: 50%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  /* width: 600px; */
+  /* margin-left: auto;
+  margin-right: auto; */
+}
