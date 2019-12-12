@@ -7,11 +7,12 @@ try {
             let randomPoke = pokeObject[Math.floor(Math.random() * pokeObject.length)];
             randomPokeArray.push(randomPoke);
         }
-        
+
         randomPokeArray.forEach(pokemon => {
             let data = document.querySelector("#data")
             let h1 = document.createElement("h1")
             h1.innerText = pokemon["name"].toUpperCase()
+            h1.className = "h1"
             // debugger
             data.appendChild(h1)
         })
