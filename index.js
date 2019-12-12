@@ -59,9 +59,34 @@ const createElements = async (pokemon) => {
     data.appendChild(ul)
 
 }
+
+const battlePokemon = () => {
+    let battleHistory = document.querySelector(".battleHistory")
+    let leftMon = document.querySelector("#left")
+    let rightMon = document.querySelector("#right")
+    let p = document.createElement("p")
+    if(Math.floor(Math.random())){
+       p.innerText = `${leftMon.firstChild.innerText} defeated ${rightMon.firstChild.innerText}`
+    } else {
+        p.innerText = `${rightMon.firstChild.innerText} deafeated ${leftMon.firstChild.innerText}`
+    }
+    battleHistory.appendChild(p)
+}
  
+const removeElements = () => {
+    let leftMon = document.querySelector("#left")
+    let rightMon = document.querySelector("#right")
+    if(leftMon){
+        leftMon.parentNode.removeChild(leftMon)
+    }
+    if(rightMon){
+        rightMon.parentNode.removeChild(rightMon)
+    }
+}
+
 const getPokemon = async () => {
     try {
+        removeElements()
         // Fetching a random Pokemon
         let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 807) + 1}`);
         // Initializing a pokemonOne for all information about the generated Pokemon
@@ -79,8 +104,8 @@ const getPokemon = async () => {
         let nameTwo = document.createElement("h4")
         nameTwo.innerText = pokemonTwo.name
         
-        createElements(pokemonOne)
-        createElements(pokemonTwo)
+        await createElements(pokemonOne)
+        await createElements(pokemonTwo)
 
     }catch(err) {
         console.log(err);
