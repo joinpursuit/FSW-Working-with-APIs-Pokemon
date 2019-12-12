@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     try {
-        const selectPoke = async (url) => { 
+        const selectPoke = async (url, input) => { 
             let randomPokeArray = []
             let jsonPoke = await axios.get(url) 
             let pokeObject = jsonPoke.data.results
-            
-            for (let i = 0; i < input.value; i++) {
+            console.log(input)
+            debugger
+            for (let i = 0; i < Number(input); i++) { //add input value
                 let randomPoke = pokeObject[Math.floor(Math.random() * pokeObject.length)];
                 randomPokeArray.push(randomPoke);
-                }
+            }
             
             randomPokeArray.forEach(pokemon => {
                 let data = document.querySelector("#data")
@@ -20,21 +21,20 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         }
         
-        selectPoke("https://pokeapi.co/api/v2/pokemon/?limit=964")
+        let form = document.querySelector("#masterInvoker")
+        form.addEventListener("submit", (event) => {
+            event.preventDefault()
+            let input = document.querySelector("#pokenum").value
+            input.value = ""
+            selectPoke("https://pokeapi.co/api/v2/pokemon/?limit=964", input) //refactor limit for pokemon game updates
+            form.reset()
+        })
     }
     catch(err) {
         console.log(err)
         }
     
-    
-    // const selectPoke = () => {
-    //     var colArr = [];
-    //     for (var i = 0; i < input.value; i++) {
-    //       let rand = arr[Math.floor(Math.random() * d.length)];
-    //       colArr.push(rand);
-    //     }
-    //     return 
-    //   }
+  
     
     // let form = document.querySelector("form")
     // form.addEventListener("submit", (event) => {
