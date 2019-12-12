@@ -1,0 +1,27 @@
+body{
+    background-image: url("https://images3.alphacoders.com/902/902690.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; 
+}
+#data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+h1 {
+    text-align: center;
+}
+
+img {
+    height: 120px;
+    width: auto; 
+}
+#challenger {
+    position: absolute;
+    left: 70%;
+}
+#champion {
+    position: absolute;
+    right: 70%;
+}

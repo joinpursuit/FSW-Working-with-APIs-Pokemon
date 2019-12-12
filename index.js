@@ -16,19 +16,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 let challengerinfo = document.querySelector("#challengerinfo");
                 let info = document.createElement("h1")
                 let sprite1 = document.createElement("img")
+                img.innerHTML =""
                 info.innerText = random.data.name;
                 let src = random.data.sprites.front_default
                 sprite1.src = src
                 let challbase = document.createElement("h3")
-                challbase.innerText = "HP: " + random.data.stats[0]["base_stat"] 
+                challbase.innerText = "HP: " + random.data.stats[0].base_stat
                 let challMovesList = random.data.moves.slice(1, 5)
-                
                 challengerinfo.appendChild(info)
                 challengerinfo.appendChild(sprite1)
                 challengerinfo.appendChild(challbase)
-                
-                debugger
-                
+
+                let moveHeader = document.createElement("p")
+                moveHeader.innerText = "Moves: "
+                // debugger
+                challengerinfo.appendChild(moveHeader)
                 challMovesList.forEach(async move => {
                     let moveID = await axios.get(move.move.url) // 12.10.19 left off
                     let challMoves = document.createElement("li")
@@ -54,7 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 championinfo.appendChild(info2)
                 championinfo.appendChild(sprite2)
                 championinfo.appendChild(champbase)
-                let move
+                let moveHeader2 = document.createElement("p")
+                moveHeader2.innerText = "Moves: "
+                championinfo.appendChild(moveHeader)
                 champMovesList.forEach(async move => {
                     let moveID2 = await axios.get(move.move.url) 
                     let champMoves = document.createElement("li")
@@ -62,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     let pp2 = moveID2.data.pp
                     champMoves.innerText = `${moveName2} PP: ${pp2}`
                     championinfo.appendChild(champMoves)
+
                 })
 
             } 
@@ -76,9 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // battle.addEventListener("click", () => {
         
     //     const battleHistory = async () => {
-
+    //         let pokemon1 = 
     //     }
     // })
+    // battleHistory()
 
 })
 // console.log("hello")
