@@ -1,6 +1,7 @@
 .data{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
 }
 
 ul{
@@ -17,9 +18,16 @@ ul{
 
 #buttons{
     align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 body{
     text-align: center;
+    font-family: sans-serif;
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
