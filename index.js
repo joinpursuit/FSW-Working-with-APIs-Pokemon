@@ -6,19 +6,18 @@ document.addEventListener("DOMContentLoaded",() => {
     const randomNum = (min,max) => {
         return Math.floor(Math.random() * (max - min + 1))
     }
-
-
     const getPokemon  = async () => {
        
         try{ 
-            let data = document.querySelector(".data")
+        let data = document.querySelector(".data")
 
             
-            
-        let pokemon1 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNum(1,89)}`)
-        let pokemon2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNum(1,89)}`)
-        
-    //    debugger
+           
+       let pokemon1 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNum(1,89)}`)
+       let pokemon2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNum(1,89)}`)
+       
+       
+      
        let pokemon1ul = document.querySelector("#pokemon1ul")
        pokemon1ul.style.listStyle = "none"
        let pokemon2ul = document.querySelector("#pokemon2ul")
@@ -58,17 +57,14 @@ document.addEventListener("DOMContentLoaded",() => {
        pokemon2BaseHpStatList.innerText = `HP:${pokemon2.data.stats[0].base_stat}`
        pokemon2ul.appendChild(pokemon2BaseHpStatList)
 
-       let pokemon1PpList = document.createElement("li")
+       
 
-    //    const getMoves = (pokemon) => {
-    //        let moves = []
-    //        for(let i = 0; i <= moves.length; i++){
-    //            moves.push(pokemon.data.moves[randomNum(0,20)])
-    //        }
-    //        return moves 
-    //     }
-    //     console.log(getMoves(pokemon1))
+      
 
+       
+
+       
+    
         
 
 
