@@ -19,9 +19,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 
 //function that declares a random winner
 const battleHistory = (battle) => {
-    
-    event.preventDefault();
-    
     let randomWinner = Math.floor(Math.random()*battle.length);
     let winner = battle[randomWinner];
     // debugger;
@@ -33,8 +30,9 @@ const battleHistory = (battle) => {
     li.innerText = `${winner}, you win`
     ul.appendChild(li);
     div.appendChild(ul);
-    // debugger
+    debugger
     battle = [];
+    document.querySelector("#attackSound").play()
     
     
 }
@@ -82,7 +80,7 @@ const getPokemon = async (pokemonDivId) =>{
             div.appendChild(ul);
       })
       battle.push(pokeName);
-    //   debugger;
+      debugger;
 
     
     }catch(error){
