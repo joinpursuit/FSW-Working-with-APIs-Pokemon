@@ -85,7 +85,7 @@ const getPokemons = async () => {
       }
 
       let ul2 = document.createElement('ul')
-      for (let j = 0; j <= 3; j++) {
+      for (let j = 4; j <= 7; j++) {
          let moveUrl2 = res1.data.moves[j].move.url
          let response2 = await axios.get(moveUrl2)
          let li2 = document.createElement('li')
@@ -106,7 +106,6 @@ const battlePokemon = () => {
    let secondPoke = document.querySelector("#pokeName2").innerText
    let declare = document.querySelector("#winOrLoss")
    let poke1HP = document.querySelector("#pokeStat1")
-   debugger
    let poke2HP = document.querySelector("#pokeStat2")
    if (!section) {
        window.alert("You must click getPokemon button first")
