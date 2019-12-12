@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", ()=>{
-    
     let battle = document.querySelector("#battle")
     let getPokemon = document.querySelector("#getPokemon")
     const getCharacter = async(element)=>{
@@ -28,18 +27,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 let li = document.createElement("li");
                 li.innerText = move.move.name;
                 ul.appendChild(li)
-                })
-                element.appendChild(ul)     
-            } catch(err)  {
-                console.log("Error")
-               //  debugger
-            }
+            })
+            element.appendChild(ul)     
+        } catch(err)  {
+            console.log("Error")
+        }
         }
     const getBattle = ()=>{
-    let p = document.createElement("p")
-    let winner = document.querySelector(".winner")
-    p.innerText = winner + " Wins"
-    document.body.appendChild(p)
+        document.querySelector(".battleHistory")
+        let p = document.createElement("p")
+        p.innerText = "Winner"
+        document.body.appendChild(p)
+    
+
 
     }
     
@@ -50,11 +50,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
         getCharacter(pokemon1)
     })
     battle.addEventListener("click", ()=>{
-        1
         getBattle()
     })
    
 })
+
            
                 
                  
