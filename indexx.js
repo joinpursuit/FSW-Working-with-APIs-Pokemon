@@ -29,11 +29,17 @@ const getPokemon = async () => {
         floatLeft.appendChild(p)
 
        
-
         let pokemonMove = pokemonInfo.move;
+
+
+        // for (let i = 0; i < 4; i ++) {
+        //   pokemonMove
+        // }
+
+        debugger;
         let movePP = pokemonInfo
         res.data.moves.slice
-        // then take the url and grab the info from it  make a new url
+        // then take the url and grab the info from it  make a new ul
 
 
       }catch(error) {
