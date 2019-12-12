@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: lightblue;
+    display: grid;
+    grid-auto-columns: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+h1 {
+    margin-top: 30px;
+}
+
+.data {
+    width: 600px;
+}
+
+.pokemon1 {
+    float: left;
+}
+
+.pokemon2 {
+    float: right;
+}
+
+#button1 {
+    border-radius: 12px;
+    background-color: whitesmoke;
+}
+#button2 {
+    border-radius: 12px;
+    background-color: whitesmoke;
+}
