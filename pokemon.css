@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: url("https://media.giphy.com/media/uWLJEGCSWdmvK/giphy.gif");
+  /* background-image: url("https://media.giphy.com/media/uWLJEGCSWdmvK/giphy.gif"); */
   background-size: cover;
   image-orientation: initial; 
   height: 100vh;
