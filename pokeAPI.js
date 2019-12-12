@@ -5,7 +5,9 @@ try {
         let pokeObject = jsonPoke.data.results
         for (let i = 0; i < input; i++) {
             let randomPoke = pokeObject[Math.floor(Math.random() * pokeObject.length)];
-            randomPokeArray.push(randomPoke);
+            if (!randomPokeArray.includes(randomPoke)){
+            randomPokeArray.push(randomPoke)
+            }
         }
 
         randomPokeArray.forEach(pokemon => {
