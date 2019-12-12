@@ -1,23 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => { 
-    // let select = document.querySelector("select");
     let button1 = document.querySelector("#button1");
     const choosePokemon = async () => { 
         try{
             let randomNum = Math.floor(Math.random() * 807)
             let pokemon1 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNum}`)
-        
         let info = pokemon1.data;
         let poke = info.name;
         let picture = info.sprites.front_default;
         let hp = info.stats[5].base_stat;
-        
-        for(let i = 0; i < 4; i++) {
-            
-        let mainPoke = document.querySelector("#mainPoke")
-        let getMoves = info.moves[i].move.name
-        let p4 = document.createElement("p")
-        p4.innerText = getMoves
-        mainPoke.appendChild(p4)}
         let mainPoke = document.querySelector("#mainPoke")
         let p1 = document.createElement("p")
         p1.innerText = poke
@@ -28,6 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let p3 = document.createElement("p")
         p3.innerText = hp 
         mainPoke.appendChild(p3)
+        for(let i = 0; i < 4; i++) {
+        let mainPoke = document.querySelector("#mainPoke")
+        let getMoves = info.moves[i].move.name
+        let p4 = document.createElement("p")
+        p4.innerText = getMoves
+        mainPoke.appendChild(p4)}
     } catch(err) {
     console.log(err);
     }
