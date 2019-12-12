@@ -5,9 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let randomPokeArray = []
             let jsonPoke = await axios.get(url) 
             let pokeObject = jsonPoke.data.results
-            console.log(input)
-            debugger
-            for (let i = 0; i < Number(input); i++) { //add input value
+            for (let i = 0; i < input; i++) {
                 let randomPoke = pokeObject[Math.floor(Math.random() * pokeObject.length)];
                 randomPokeArray.push(randomPoke);
             }
@@ -34,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(err)
         }
 
-        
+
 })
 
 
