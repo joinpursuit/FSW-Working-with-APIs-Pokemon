@@ -1,0 +1,78 @@
+body{
+    background-image: url("https://cdn.dribbble.com/users/184593/screenshots/2839736/pokeball.gif");
+    background-size: cover;
+}
+
+
+/* h1{
+    margin-left: 0px;
+    
+} */
+/* p{
+    margin-left: 220px;
+    font-size: 20px;
+    margin-bottom: -50px;
+} */
+#getPokemon{
+    margin-left: 400px;
+    background-color: rgb(254, 224, 49);
+    border-color: rgb(57, 107, 186);
+    color: rgb(57, 107, 186);
+    font-weight: 800;
+    width: 100px;
+    height: 20px;
+    
+    
+    
+}
+#battle{
+    margin-left: 400px;
+    background-color:rgb(254, 224, 49) ;
+    border-color:rgb(57, 107, 186);
+    position: relative;
+    width: 100px;
+    height: 20px;
+    font-weight: 800;
+    color: rgb(57, 107, 186);
+    margin-top: 10px;
+    left: 600px;
+    top: -30px;
+}
+
+/* }
+#pic{
+    margin-left: 200px;
+    margin-top: 50px
+} */
+#pokemon1{
+    margin-left:200px;
+    margin-top:50px;
+ 
+    margin-left: 100px;
+    font-size: larger;
+    
+}
+#pokemon2{
+    margin-left: 1200px;
+    margin-left: 1200px;
+    margin-top: -325px;
+    font-size: larger;
+}
+.footer{
+    
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.8;
+  color: white;
+  text-align: center;
+
+}
+p{
+    color: rgb(57, 107, 186);
+    
+}
+/* .name{
+    font-size: larger;
+} */
