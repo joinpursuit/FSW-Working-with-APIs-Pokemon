@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let p4 = document.createElement("p")
         p4.innerText = getMoves
         mainPoke.appendChild(p4)}
+
     } catch(err) {
     console.log(err);
     }
@@ -32,5 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
    button1.addEventListener("click", () => {
        choosePokemon()
    })
+// choosePokemon()
+// })
+// let button1 = document.querySelector("#button1") {}
+// button1.addEventListener("click", () => {
+    //  choosePokemon(pokemon1);
+    //     choosePokemon(pokemon2)
 
  })

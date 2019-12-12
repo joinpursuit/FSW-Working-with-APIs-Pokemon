@@ -1,14 +1,37 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: lightblue;
     display: grid;
     grid-auto-columns: 1;
     flex-direction: column;
     justify-content: space-evenly;
+    /* border: 10px dotted gold; */
 }
-h1 {
+body {
+    background-image: url(https://media.giphy.com/media/ZRpGgIuiDpSSI/giphy.gif);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+
+}
+#heyPoke {
+    text-align: center;
+    text-shadow: -3px 0 blue, 0 3px blue, 3px 0 blue, 0 -3px blue;
+    font: 50px;
+    font-size: 350%;
+    font-weight: bold;
+    font-variant: small-caps;
+    opacity: 0.8;
+    filter: alpha(opacity=50);
+    color: gold;
+}
+.mainHeading {
     margin-top: 30px;
+    color: white
+}
+#instruction {
+    color: white;
+    font-size: 20px;
 }
 
 .data {
