@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let secondPokemonUl = document.createElement("ul")
   // floatLeft.appendChild(firstPokemonUl)
 
-  // at bottom add the 
-
 const getPokemon = async () => {
       try {
         let randomNum = Math.floor(Math.random() * 807)
@@ -30,8 +28,7 @@ const getPokemon = async () => {
         p.innerText = ` HP : ${pokemonHP}` ;
         floatLeft.appendChild(p)
 
-        floatLeft.appendChild(firstPokemonUl);
-        firstPokemonUl.innerHTML;
+       
 
         let pokemonMove = pokemonInfo.move;
         let movePP = pokemonInfo
@@ -49,12 +46,3 @@ const getPokemon = async () => {
           getPokemon()
         })
       })
-      
-      
-      
-      
-
-
-//let it do 
-// return event.preventDefault();//do we need this???
-// getPokemon fucntion doesn't work when out inside
