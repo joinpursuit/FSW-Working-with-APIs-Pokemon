@@ -25,3 +25,12 @@ img {
     position: absolute;
     right: 70%;
 }
+
+li {
+    list-style: none;
+}
+
+#get {
+    /* height: 40px;
+    width: 20px; */
+}

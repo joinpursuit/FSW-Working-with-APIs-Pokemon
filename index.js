@@ -9,52 +9,54 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 let res = await axios.get("https://pokeapi.co/api/v2/pokemon/");
                 pokemonCount = res.data.count
-                
+                // debugger
                 // POKEMON 1
+                // let challenger = document.querySelector("#challenger")
                 let pokeID = Math.floor((Math.random() * pokemonCount) + 1);
                 let random = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeID}/`)
                 let challengerinfo = document.querySelector("#challengerinfo");
-                let info = document.createElement("h1")
-                let sprite1 = document.createElement("img")
-                // img.innerHTML =""
-                info.innerText = random.data.name;
+                challengerinfo.innerHTML = ""
+                let challengerName = document.createElement("h1")
+                let challengerSprite = document.createElement("img")
+                challengerName.innerText = random.data.name;
                 let src = random.data.sprites.front_default
-                sprite1.src = src
+                challengerSprite.src = src
                 let challbase = document.createElement("h3")
-                challbase.innerText = "HP: " + random.data.stats[0].base_stat
+                challHP = random.data.stats[0].base_stat
+                challbase.innerText = `HP: ${challHP}` 
                 let challMovesList = random.data.moves.slice(1, 5)
-                challengerinfo.appendChild(info)
-                challengerinfo.appendChild(sprite1)
+                challengerinfo.appendChild(challengerName)
+                challengerinfo.appendChild(challengerSprite)
                 challengerinfo.appendChild(challbase)
-
                 let moveHeader = document.createElement("p")
                 moveHeader.innerText = "Moves: "
-                // debugger
                 challengerinfo.appendChild(moveHeader)
                 challMovesList.forEach(async move => {
-                    let moveID = await axios.get(move.move.url) // 12.10.19 left off
+                    let moveID = await axios.get(move.move.url) 
                     let challMoves = document.createElement("li")
                     let moveName = move.move.name
                     let pp = moveID.data.pp
-                    challMoves.innerText = `${moveName} PP: ${pp}`  // 12.10.19 left off
+                    challMoves.innerText = `${moveName} PP: ${pp}` 
                     challengerinfo.appendChild(challMoves)
                 })
                 
-                
                 // POKEMON 2
+                // let champion = document.querySelector("#champion")
                 let pokeID2 = Math.floor((Math.random() * pokemonCount) + 1);
                 let random2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeID2}/`)
                 let championinfo = document.querySelector("#championinfo");
-                let info2 = document.createElement("h1")
-                let sprite2 = document.createElement("img")
+                championinfo.innerHTML = ""
+                let champName = document.createElement("h1")
+                let champSprite = document.createElement("img")
                 let src2 = random2.data.sprites.front_default
-                sprite2.src = src2
-                info2.innerText = random2.data.name;
+                champSprite.src = src2
+                champName.innerText = random2.data.name;
                 let champbase = document.createElement("h3")
-                champbase.innerText = "HP: " + random2.data.stats[0].base_stat
+                let champHP = random2.data.stats[0].base_stat
+                champbase.innerText = `HP: ${champHP}`
                 let champMovesList = random2.data.moves.slice(1, 5)
-                championinfo.appendChild(info2)
-                championinfo.appendChild(sprite2)
+                championinfo.appendChild(champName)
+                championinfo.appendChild(champSprite)
                 championinfo.appendChild(champbase)
                 let moveHeader2 = document.createElement("p")
                 moveHeader2.innerText = "Moves: "
@@ -66,25 +68,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     let pp2 = moveID2.data.pp
                     champMoves.innerText = `${moveName2} PP: ${pp2}`
                     championinfo.appendChild(champMoves)
+                })         
 
+                // Battle!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                battle.addEventListener("click", () => {
+                    let battleHistory = document.querySelector("#battleHistory")
+                    battleHistory.innerHTML = ""
+                let p = document.createElement("p")
+                    if(champHP > challHP){
+                        p.innerText = `Winner is ${champName.innerText}`
+                    } else {
+                        p.innerText = `Winner is ${challengerName.innerText}`
+                    }
+                    battleHistory.appendChild(p)
                 })
-
             } 
             catch(err){
                 console.log(err)
             }
         }
-
     getPokemon()
     })
-
-    // battle.addEventListener("click", () => {
-        
-    //     const battleHistory = async () => {
-    //         let pokemon1 = 
-    //     }
-    // })
-    // battleHistory()
-
 })
-// console.log("hello")
