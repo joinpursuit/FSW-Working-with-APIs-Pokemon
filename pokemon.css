@@ -1,0 +1,181 @@
+html {
+    min-height: 100%;
+}
+
+html, body{
+    overflow:auto;
+    /* min-height: 100%; */
+    height: 100vh;
+
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+    background-size: cover;
+    font-family: sans-serif;
+}
+/* title name */
+#title {
+    grid-row: 8;
+    grid-column-start: 3;
+    grid-column-end: 9;
+    color: white;
+    text-decoration: underline;
+    justify-self: center;
+    background-color: darkgrey;
+    filter: opacity(90%);
+    height: 5vh;
+    border-radius: 5%;
+    border: 2px solid darkslategrey;
+}
+/* general button design */
+button {
+    height: 50px;
+    width: 200px;
+    justify-self: center;
+    align-self: flex-end;
+    border-radius: 5%;
+    font-size: large;
+}
+button:hover {
+    cursor: pointer;
+}
+/* get pokemon button */
+#getPokemon {
+    grid-row: 9;
+    grid-column: 4;
+    background:lightblue;
+    color: darkblue;
+    border: 1px solid darkblue;
+    border-radius: 5%;
+}
+/* battle pokemon button */
+#battle {
+    grid-row: 9;
+    grid-column: 7;
+    background:red;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5%;
+}
+/* title of battle history */
+#battleTitle {
+    margin-left: 70px;
+    text-decoration: underline;
+}
+/* battle log entire class */
+.battleHistory {
+    grid-row: 8;
+    grid-column: 1;
+    color: white;
+    background-color: darkgrey;
+    filter: opacity(90%);
+    border-radius: 5%;
+    width: 26vw;
+    height: 28.1vh;
+    border: 3px solid darkslategrey;
+}
+/* battle log */
+#battlelist{
+    list-style: none;
+}
+#leftImage{
+    grid-row: 5;
+    grid-column: 4;
+    margin-top: 70px;
+}
+#leftPokemonStats {
+    display: grid;
+    grid-row: 1;
+    grid-column: 1;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    list-style: none;
+    gap: 10px;
+    justify-self: start;
+    background-color: teal;
+    filter: opacity(85%);
+    width: 20vw;
+    height: 66vh;
+    border-radius: 5%;
+    border: 3px solid darkslategrey;
+}
+#rightImage {
+    grid-row: 5;
+    grid-column: 7;
+    margin-top: 70px;
+}
+#rightPokemonStats {
+    display: grid;
+    grid-row: 1;
+    grid-column: 8;
+    margin-left: 90px;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+    list-style: none;
+    gap: 10px;
+    background-color: teal;
+    filter: opacity(85%);
+    width: 20vw;
+    height: 66vh;
+    border-radius: 5%;
+    border: 3px solid darkslategrey;
+}
+#gif {
+    grid-row: 9;
+    grid-column: 9;
+    width: 175%;
+    height: 175%;
+    border-radius: 5%;
+    margin-left: 35px;
+    margin-top: 9px;
+}
+#vs {
+    color: white;
+    font-size: 100px;
+    grid-row: 1;
+    grid-column: 5;
+    align-self: center;
+    margin-left: 70px;
+    margin-top: 100px;
+}
+#trainer1 {
+    width: 4vw;
+    height: 10vh;
+    grid-row: 5;
+    grid-column: 4;
+    z-index: -1;
+    margin-top: -14px;
+    margin-left: 75px;
+}
+#trainer2 {
+    width: 4vw;
+    height: 10vh;
+    grid-row: 5;
+    grid-column: 7;
+    z-index: -1;
+    margin-top: -15px;
+    margin-left: 15px;
+}
+/* choose your pokemon titles */
+.choose {
+    text-decoration: underline;
+    font-weight: lighter;
+}
+#loader {
+    border: 10px solid white; 
+    border-top: 10px solid red; 
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

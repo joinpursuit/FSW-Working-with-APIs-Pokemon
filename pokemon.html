@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./pokemon.js"></script>
+    <link rel="stylesheet" href="./pokemon.css">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA////AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIiIAACIiAAIiIiACIiIgAiIiIiIiIiACIhIiIiIiIAAiESIiIiIAACIiIiIiIgAAAiIiIiIgAAAAAiIiIAAAAAAAAAAAAAD4HwAA5+cAAN/7AAC//QAAvn0AAH2+AABBggAAAYAAAAAAAAAAAAAAAAAAAIABAACAAQAAwAMAAOAHAAD4HwAA" rel="icon" type="image/x-icon" />
+    <audio controls autoplay style="visibility: hidden" id="audio">    
+            <source src="./24 Free Battle Menu.mp3" type="audio/mpeg">  
+        </audio>  
+    <title>PokemonAPI Battles!!!</title>
+</head>
+<body background="./Pokemon_Stadium.png">
+    <h1 id="vs">VS</h1>
+    <h1 id="title">Pokemon Battle Simulator</h1>
+    <button id="getPokemon">Get Pokemon</button>
+    <button id="battle">Battle!</button>
+    <ul id="rightPokemonStats">
+        <p class="choose">Choose Your Pokemon</p>
+    </ul>
+    <p id= "rightImage"></p>
+    <ul id="leftPokemonStats">
+        <p class="choose">Choose Your Pokemon</p>
+    </ul>
+    <p id="leftImage"></p>
+    <div class="battleHistory">
+        <h3 id="battleTitle" >Battle History:</h3>
+        <ul id ="battlelist"></ul>
+    </div>
+    <img src="./cheergif.gif" id="gif">
+    <img src="./trainer1.png" id="trainer1">
+    <img src="./trainer2.png" id="trainer2">
+</body>
+</html>
