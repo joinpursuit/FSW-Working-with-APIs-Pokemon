@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 let challengerinfo = document.querySelector("#challengerinfo");
                 let info = document.createElement("h1")
                 let sprite1 = document.createElement("img")
-                img.innerHTML =""
+                // img.innerHTML =""
                 info.innerText = random.data.name;
                 let src = random.data.sprites.front_default
                 sprite1.src = src
@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 championinfo.appendChild(champbase)
                 let moveHeader2 = document.createElement("p")
                 moveHeader2.innerText = "Moves: "
-                championinfo.appendChild(moveHeader)
+                championinfo.appendChild(moveHeader2)
                 champMovesList.forEach(async move => {
                     let moveID2 = await axios.get(move.move.url) 
                     let champMoves = document.createElement("li")
