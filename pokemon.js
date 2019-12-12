@@ -1,9 +1,11 @@
 document.addEventListener("DOMContentLoaded", ()=>{
+    
     let battle = document.querySelector("#battle")
     let getPokemon = document.querySelector("#getPokemon")
-    //let body = document.querySelector("body")
     const getCharacter = async(element)=>{
         try{
+            element.querySelector("#pokemon1")
+            element.innerText= ""
             let num = Math.floor(Math.random() * 807)
             let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
              let pokemon = res.data
@@ -26,18 +28,20 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 let li = document.createElement("li");
                 li.innerText = move.move.name;
                 ul.appendChild(li)
-                
-
-
-
                 })
-                element.appendChild(ul)
-                
+                element.appendChild(ul)     
             } catch(err)  {
                 console.log("Error")
                //  debugger
             }
         }
+    const getBattle = ()=>{
+    let p = document.createElement("p")
+    let winner = document.querySelector(".winner")
+    p.innerText = winner + " Wins"
+    document.body.appendChild(p)
+
+    }
     
     getPokemon.addEventListener("click", () => {
         let pokemon1 = document.querySelector("#pokemon1")
@@ -45,15 +49,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
         getCharacter(pokemon2)
         getCharacter(pokemon1)
     })
-    const getWinner = async() =>{
-        let footer = document.createElement("#footer")
-        footer.innerText = "Hello"
-        body.appendChild(footer)
-    }
-    battle.addEventListener("click", () =>{
-        getWinner()
-
+    battle.addEventListener("click", ()=>{
+        1
+        getBattle()
     })
+   
 })
            
                 
