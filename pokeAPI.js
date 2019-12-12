@@ -23,7 +23,7 @@ try {
         event.preventDefault()
         let input = document.querySelector("#pokenum").value
         input.value = ""
-        selectPoke("https://pokeapi.co/api/v2/pokemon/?limit=964", input) //refactor limit for pokemon game updates
+        selectPoke("https://pokeapi.co/api/v2/pokemon/?limit=964", input) //refactor limit for pokemon game updates or recursive function for pagination
         form.reset()
     })
 }
