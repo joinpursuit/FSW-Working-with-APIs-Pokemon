@@ -1,0 +1,33 @@
+.data{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+ul{
+    list-style-type: none;
+}
+
+#left{
+    grid-column: 1 / 2;
+}
+
+#right{
+    grid-column: 3 / 4;
+}
+
+#buttons{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    text-align: center;
+    font-family: sans-serif;
+    background: lightblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
