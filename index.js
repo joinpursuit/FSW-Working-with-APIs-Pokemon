@@ -1,12 +1,13 @@
 
 let battle = [];
+
 // debugger;
 document.addEventListener("DOMContentLoaded",()=>{
     let button = document.querySelector("#getPokemon");
     button.addEventListener("click", ()=>{
+        document.querySelector("#openingAudio").play()
         getPokemon("pokemonOne");
         getPokemon("pokemonTwo");
-        
     })
     let buttonTwo = document.querySelector("#battlePokemon");
     buttonTwo.addEventListener("click", ()=>{
@@ -15,11 +16,12 @@ document.addEventListener("DOMContentLoaded",()=>{
     
 })
 
+
 //function that declares a random winner
 const battleHistory = (battle) => {
-
+    
     event.preventDefault();
-
+    
     let randomWinner = Math.floor(Math.random()*battle.length);
     let winner = battle[randomWinner];
     // debugger;
@@ -33,18 +35,18 @@ const battleHistory = (battle) => {
     div.appendChild(ul);
     // debugger
     battle = [];
- 
-
+    
+    
 }
 
 const getPokemon = async (pokemonDivId) =>{
-            
+    
     try{
-
+        
         //randomly gets the first pokemon
         let pokeId = Math.floor(Math.random() * 807)
         let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeId}/`);
-
+        
         
         //image of the pokemons
         let div = document.querySelector(`#${pokemonDivId}`);
