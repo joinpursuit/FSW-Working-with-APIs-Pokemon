@@ -1,15 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   let button = document.querySelector("#getPokemon")
   let pokemon1info = document.querySelector(".pokemon1info")
-  //   let pokemonOne = document.createElement("p1")
-  //   let pokemonTwo = document.createElement("p2")
+   
   const getPokemon = async () => {
     try {
       let num = Math.floor(Math.random() * 807)
       let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
       // debugger
-      let character = res.data
-      let name1 = character.name
+      let character1 = res.data
+      let name1 = character1.name
       let pokemonOne = document.querySelector("p")
       pokemonOne.innerText = name1
       let img = document.createElement("img")
