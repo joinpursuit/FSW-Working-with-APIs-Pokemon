@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='DataLab.js' type='text/javascript'></script>
+    <link rel="stylesheet" href="DataLAb.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+        href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAACAAP///wAVFdQALS3rANbW1gAAAL8AQkJCAAAARwBcXFwAAACoANvb2wAzMzMA6OjoAFJSUgAAAIoAvb29ANHR0QDy8vIAAAB4AAAAawAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDAwMDAwAAAAAAAAAAAcHEBAQEBAQBwcAAAAAAAcQEBERERERERAQBwAAAA4QERELCwsLCwsRERAOAAAOEBELDQ0NDQ0NCxEQDgAJEAsNDRIAAAAAEg0NCxAJCRALEhIAAAUFAAASEgsQCQAAAAAAAAUCAgUAAAAAAAAAAAAAAAAFAgIFAAAAAAAACAEKBgMAAAUFAAADBgoBCAgBCgYDAwAAAAADAwYKAQgAFAEKAwMDAwMDAwYKARQAABQBCgYDAwMDAwYGCgEUAAAAFAEKBAMDAwMECgEUAAAAAAATEwoEBAQEChMTAAAAAAAAAAAPDw8PDw8AAAAAAPgfAADgBwAAwAMAAIABAACAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAEAAIABAADAAwAA4AcAAPgfAAA="
+        rel="icon" type="image/x-icon" />
+    <title>Pokémon Showdown</title>
+</head>
+
+<body>
+    <div id='pic1'>
+        <img id='ash' src='hiclipart.com-id_icetu.png'>
+    </div>
+    <div id='game'>
+        <h1>Pokémon Battle Simulator</h1>
+        <div id='instructions'>
+            <audio src='PokemonMusic.mp3' type='audio/mpeg' controls></audio>
+        </div>
+
+        <div id='buttons'>
+            <button type='button' id='get'>Get Pokémon!</button>
+            <button type='button' id='battle'>Battle!</button>
+        </div>
+
+        <div class='data'>
+            <div id='load1'>
+                <h3 class="fake-type1">?????</h3>
+                <h2 class="fake-name1">?????????</h2>
+                <p id="fake-hp1">HP: ???</p>
+                <iframe id='mystery1' src="https://giphy.com/embed/DRfu7BT8ZK1uo" frameBorder="0"></iframe>
+                <ul>
+                    <li class="mm">??????<p class="pp"> PP: ??</p>
+                    </li>
+                    <li class="mm">??????<p class="pp"> PP: ??</p>
+                    </li>
+                    <li class="mm">??????<p class="pp"> PP: ??</p>
+                    </li>
+                    <li class="mm">??????<p class="pp"> PP: ??</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div id='load2'>
+                <h3 class="fake-type2">?????</h3>
+                <h2 class="fake-name2">?????????</h2>
+                <p id="fake-hp2">HP: ???</p>
+                <iframe id='mystery2' src="https://giphy.com/embed/DRfu7BT8ZK1uo" frameBorder="0"></iframe>
+                <ul>
+                    <li class="mm">??????<p class="pp"> PP: ??</p>
+                    </li>
+                    <li class="mm">??????<p class="pp"> PP: ??</p>
+                    </li>
+                    <li class="mm">??????<p class="pp"> PP: ??</p>
+                    </li>
+                    <li class="mm">??????<p class="pp"> PP: ??</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class='battleHistory'> 
+                <p id = 'tid-bit'>** Ultra Beasts currently picture-less **</p>
+            <h3>Battle History</h3>
+            <div id='battle-info'></div>
+        </div>
+    </div>
+    <div id='pic2'>
+        <img id='rocket' src='https://cdn.bulbagarden.net/upload/9/96/Team_Rocket_trio_DP_2.png'>
+    </div>
+</body>
+
+</html>

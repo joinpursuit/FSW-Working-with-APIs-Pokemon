@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css?family=Turret+Road&display=swap');
+
+html{
+    height: inherit; 
+    padding: 0px;
+     background-color: #FA4545;
+    
+    
+}
+
+body{
+    display:flex;
+    flex-direction: row;
+    align-items: start;
+    background-color:#4563FA;
+    font-family: 'Turret Road', sans-serif;
+    justify-content: space-around;
+    border: 20px solid #FA4545;
+    border-radius: 10px;
+    
+}
+
+#ash, #rocket{
+width: 300px;
+height: 500px;
+position: relative;
+top: 168px;
+}
+
+#game{
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    
+}
+
+h1{
+    margin-top: 30px;
+    margin-bottom: 0px;
+    font-family: 'Turret Road', sans-serif;
+    color: white;
+}
+
+#instructions{
+    color: white;
+}
+
+
+button{
+    margin-bottom: 10px;
+    margin-right: 100px;
+    margin-left: 100px;
+    font-size: 12px;
+    background-color:white;
+    border: 1px solid #FA4545;
+    color: black;
+    padding: 12px;
+    border-radius: 100px;
+    font-weight: bold;
+}
+
+audio{
+    position:fixed;
+    top: 0px;
+    right:0px;
+    filter: lightblue;
+    z-index:1;
+    transform: scale(.8);
+}
+
+.data{
+    width: 600px;
+}
+
+#pokeCard1{
+    float: left;
+}
+#pokeCard2{
+    float: right;
+}
+
+#pokeCard1, #pokeCard2{
+    display: grid;
+    width: 40%;
+    justify-items: center;
+    border: 10px solid gold;
+    padding: 5px;
+    opacity: 1;
+    box-shadow: 6px 6px 5px  #888888;
+    border-radius: 10px;
+}
+
+#poke1, #poke2{
+    width: 200px;
+    height: 200px;
+    border: 4.5px outset gold;
+    box-shadow: 4px 4px 3px  #888888;
+    background-color: white;
+}
+
+#hp1, #hp2, #fake-hp1, #fake-hp2{
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+#name1, #name2, .fake-name1, .fake-name2{
+    display: inline;
+    position: relative;
+    margin: 0px;
+}
+
+.power, .pp{
+display: inline;
+margin-left: 20px;
+}
+
+#move, .mm{
+    margin-bottom: 0px;
+    list-style-type: none;
+}
+
+.type1, .type2, .fake-type1, .fake-type2{
+    font-weight: bolder;
+    position: absolute;
+    z-index: 1;
+    margin-top: 59px;
+    margin-left: 21px;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    background-color: white;
+}
+
+h3{
+    font-weight: bolder;
+    text-align: center;
+}
+
+.battleHistory{
+    visibility: hidden;
+    text-align: center;
+    margin-top: 0;
+    color: white;
+}
+#battle-info p{
+    margin-top: 0;
+    color: white;
+}
+
+iframe{
+    /* position: relative;
+    top: 147px;
+    width: 50px;*/
+     height: 400px; 
+     
+}
+#load1{
+    float: left;
+}
+#load2{
+    float: right;
+}
+#load1, #load2{
+    display: grid;
+    width: 40%;
+    justify-items: center;
+    border: 10px solid gold;
+    padding: 5px;
+    opacity: 1;
+    box-shadow: 6px 6px 5px  #888888;
+    border-radius: 10px;
+    background-color: white;
+}
+#mystery1, #mystery2{
+    width: 200px;
+    height: 200px;
+    border: 4.5px outset gold;
+    box-shadow: 4px 4px 3px  #888888;
+}
+ul{
+    padding-left: 0;
+}
+#tid-bit{
+    visibility: hidden;
+}
