@@ -43,10 +43,11 @@ h1 {
   padding: 20pt;
 }
 
-#stats {
+#data {
   display: flex;
   flex-direction: column;
   flex-flow: column;
+  width: inherit;
 }
 
 #data {
@@ -72,6 +73,10 @@ h1 {
 }
 
 #rightScreen {
+  margin-top: -260px;
+  margin-bottom: 150px;
+}
+#rightScreen {
   align-content: center;
   background-color: (lightblue);
   height: 100%;
@@ -79,12 +84,12 @@ h1 {
   justify-content: center;
   background-color: lightblue;
   margin-right: 20px;
-  margin-left: 1400px;
-  width: 25%;
+  margin-left: 1000px;
   opacity: 30%;
   border: black;
   border-style: ridge;
   z-index: 4;
+  white-space: nowrap;
 }
 
 .battleHistory {
