@@ -15,13 +15,19 @@ const setupBtns = () => {
    })
 }
 
+let getPokemonBtnClicked = false
+
+
 const getPokemons = async () => {
+   getPokemonBtnClicked = true
+
    //clear
    let pokemonCard1 = document.querySelector("#pokemonCard1")
    pokemonCard1.innerHTML = "";
    let pokemonCard2 = document.querySelector("#pokemonCard2")
    pokemonCard2.innerHTML = "";
 
+   //fetch Pokemons
    try {
       let url = "https://pokeapi.co/api/v2/pokemon"
       let pokemonID = Math.floor((Math.random() * 964) + 1)
@@ -37,9 +43,8 @@ const getPokemons = async () => {
       let pokemonName1 = document.createElement('h2')
       pokemonName1.id = "pokeName1"
       pokemonName1.innerText = res1.data.name;
-
-
       pokeName.appendChild(pokemonName1)
+
       let pokeName2 = document.querySelector('#pokemonCard2')
       let pokemonName2 = document.createElement('h2')
       pokemonName2.id = "pokeName2"
@@ -57,22 +62,25 @@ const getPokemons = async () => {
 
       //getPokeStats
       let displayPokeStat1 = document.createElement('h4')
-      displayPokeStat1.innerText = `HP: ${res1.data.stats[5].base_stat}`
-      let getHP1 = document.createElement('p')
-      getHP1.innerText = res1.data.stats[5].base_stat
-      getHP1.id = "pokeStat1"
+      let HP = res1.data.stats[5].base_stat
+      displayPokeStat1.setAttribute('data-hp', HP)
+      displayPokeStat1.id = "pokeHP1"
+      displayPokeStat1.innerText = `HP: ${HP}`
+      
       pokeName.appendChild(displayPokeStat1)
 
 
       let displayPokeStat2 = document.createElement('h4')
-      displayPokeStat2.innerText = `HP: ${res2.data.stats[5].base_stat}`
-      let getHP2 = document.createElement('p')
-      getHP2.innerText = res2.data.stats[5].base_stat
-      getHP2.id = "pokeStat2"
+      let HP2 = res2.data.stats[5].base_stat
+      displayPokeStat2.setAttribute('data-hp', HP2)
+      displayPokeStat2.id = "pokeHP2"
+      displayPokeStat2.innerText = `HP: ${HP2}`
       pokeName2.appendChild(displayPokeStat2)
 
 
       //getPokemonsMoves
+      let moveLabel1 = document.createElement('p')
+      moveLabel1
       let ul1 = document.createElement('ul')
       for (let i = 0; i <= 3; i++) {
          let moveUrl = res1.data.moves[i].move.url
@@ -101,18 +109,26 @@ const getPokemons = async () => {
 
 
 const battlePokemon = () => {
-   let section = document.querySelectorAll("section")
+   // let section = document.querySelectorAll("section")
+   
+
+   if (!getPokemonBtnClicked) {
+      window.alert("You must click getPokemon button first")
+      return
+   } 
+
    let firstPoke = document.querySelector("#pokeName1").innerText
    let secondPoke = document.querySelector("#pokeName2").innerText
    let declare = document.querySelector("#winOrLoss")
-   let poke1HP = document.querySelector("#pokeStat1")
-   let poke2HP = document.querySelector("#pokeStat2")
-   if (!section) {
-       window.alert("You must click getPokemon button first")
-   } else if (poke1HP < poke2HP) {
-      return declare.innerText = firstPoke + " defeats " + secondPoke
-   } else {
+   let poke1HP = document.querySelector("#pokeHP1").getAttribute("data-hp")
+
+   console.log(poke1HP)
+   let poke2HP = document.querySelector("#pokeHP2").getAttribute("data-hp")
+   if (poke1HP < poke2HP) {
+
       return declare.innerText = secondPoke + " defeats " + firstPoke
+   } else {
+      return declare.innerText = firstPoke + " defeats " + secondPoke
    }
 }
 
