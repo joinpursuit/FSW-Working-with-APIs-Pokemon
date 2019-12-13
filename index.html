@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>PokemonBattle</title>
+
+  <!-- <iframe width="0" height="0" src="http://23.237.126.42/ost/pokemon-let-s-go-pikachu-and-let-s-go-eevee/fhoeltnefp/23%20Pok%C3%A9mon%20Gym.m4a" frameborder="0" allowfullscreen></iframe> -->
   <script src="./index.js"></script>
   <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
   <link rel="stylesheet" href="./master.css">
 </head>
 <body>
-  <h1>Pokemon Battle Simulator</h1>
+  
+  <div id="title">
+  <h1>Battle Simulator</h1> 
+  <img id="imgTitle" src="http://pluspng.com/img-png/pokemon-logo-png-pokemon-logo-gotta-catch-em-all-pokemon-logos-pinterest-pokemon-1600.png" alt="">
   <h3>Click 'get pokemon! to display you two fighters! Click 'battle!' to have the pokemon battle</h3>
+  </div>
   <div id="buttons">
   <div class="button">
   <button id="getPoke">get pokemon!</button>
@@ -26,7 +32,7 @@
   
 </div>
 <div class="battleHistory">
-  <h3>Battle History</h3>
+  <h3 class="battleHistory">Battle History</h3>
 </div>
   
 </body>
