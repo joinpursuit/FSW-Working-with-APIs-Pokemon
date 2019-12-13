@@ -19,7 +19,7 @@ const getPokemon = async () => {
         let pokeImg=res.data.sprites.front_default;
         let pokeHP =res.data.stats[5].base_stat;
 
-
+        
         let newMove=shuffleMove(res.data.moves);
         
         let move1 = newMove[0].move.name;
