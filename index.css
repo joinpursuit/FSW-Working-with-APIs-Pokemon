@@ -5,41 +5,40 @@ body {
    overflow-y: hidden;
 }
 
-.data { 
-   display: grid;
-   grid-column: auto;
+.pokeBtns {
+   display: flex;
+   flex-direction: column;
    align-items: center;
-   justify-content:center;
 }
-
 
 button {
    border-radius: 5px;
    height:30px;
    width: 105px;
+   margin-top: .5%;
 }
 
-button:hover{
-
-}
-
-#battlePokemon {
-   margin-top: 10px;
-}
+/* .data { 
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);align-items: center;
+   justify-content:center;
+} */
 
 #pokemonGrid {
    display: grid;
-   grid-template-columns: repeat(2, 50%);
-   justify-items: center;
-   grid-gap: 10px;
+   grid-template-columns: repeat(4, 1fr);
 }
 
 #pokemonCard1{
-   float: left;
+   grid-area: 1 / 2;
+   align-self: center;
+   justify-self: center;
 }
 
 #pokemonCard2{
-   float: right;
+   grid-area: 1 / 3;
+   align-self: center;
+   justify-self: center;
 }
 
 ul, li {
@@ -52,7 +51,7 @@ li {
 }
 
 h1 {
-   padding: 30px;
+   padding-top: 30px;
    text-align: center;
 }
 
