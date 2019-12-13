@@ -29,9 +29,6 @@ body {
         "form"
         "data"
         "footer";
-    /* background-image: url("./Pokemon_Background.jpg");
-    background-position: center;
-    background-repeat: no-repeat; */
 }
 
 /* .h1 {
@@ -127,9 +124,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px;
-
 }
+
+
 
 #data {
     grid-area: data;

@@ -3,20 +3,34 @@ try {
         let randomPokeArray = []
         let jsonPoke = await axios.get(url) 
         let pokeObject = jsonPoke.data.results
-        for (let i = 0; i < input; i++) {
-            let randomPoke = pokeObject[Math.floor(Math.random() * pokeObject.length)];
-            if (!randomPokeArray.includes(randomPoke)){
-            randomPokeArray.push(randomPoke)
+        debugger
+        
+        const randomSelector = (newArr, data, count=input) => { //recursiveSelector - avoid underfetch from duplication
+            if (newArr.length === count) return
+            let randomObject = data[Math.floor(Math.random() * data.length)]
+            if (!newArr.includes(randomObject)){
+                newArr.push(randomObject)
             }
+            randomSelector(newArr, data)
         }
-
+        debugger
+        randomSelector(randomPokeArray, pokeObject)
+        
+    
+        // for (let i = 0; i < input; i++) {
+        //     let randomPoke = pokeObject[Math.floor(Math.random() * pokeObject.length)];
+        //     if (!randomPokeArray.includes(randomPoke)){
+        //     randomPokeArray.push(randomPoke)
+        //     }
+        // }
+        debugger
         randomPokeArray.forEach(pokemon => {
-            // let data = document.querySelector("#data")
-            // let h1 = document.createElement("h1")
-            // h1.innerText = pokemon["name"].toUpperCase()
-            // h1.className = "h1"
-            // // debugger
-            // data.appendChild(h1)
+            let data = document.querySelector("#data")
+            let h1 = document.createElement("h1")
+            h1.innerText = pokemon["name"].toUpperCase()
+            h1.className = "h1"
+            // debugger
+            data.appendChild(h1)
         })
     }
     
