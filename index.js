@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // let ul2 = document.querySelector("#poke2")
     
     let pokebutton = document.getElementById("getPoke")
+    let battleButton = document.getElementById("battlePoke")
+    let savePokeName = []
     
     
     
@@ -23,12 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
         
         let ul = document.createElement("ul")
         pokemonDiv.appendChild(ul)
-
+        
         // let pokeArr =[pokemon1,pokemon2]
         
         let name1 = pokemon1.data.name // to get name and save to a variable
         // let name2 = pokemon2.data.name
         
+        savePokeName.push(name1)
         let h2 = document.createElement("h2")
         h2.innerText = name1
         ul.appendChild(h2)
@@ -47,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         let p = document.createElement("p")
         let hp1 = pokemon1.data.stats[5].base_stat //finds the hp and saves it to a variable
+        // debugger
         // let hp2 = pokemon2.data.stats[5].base_stat
 
         p.innerText = "HP: " + hp1
@@ -89,10 +93,33 @@ document.addEventListener("DOMContentLoaded", () => {
         // debugger
     }
     
-    
+    const clearDiv = () => {
+        div1 = document.querySelector(".data1")
+        div2 = document.querySelector(".data2")
+        div1.innerText= ""
+        div2.innerText= ""
+    }
+    const battlePokemon = () => {
+        // savePokeName[Math.floor(Math.random()* 2)]
+        let h3 = document.querySelector("#BH")
+        // let ul = document.createElement("ul")
+        let li = document.createElement("li")
+        li.innerText = savePokeName[Math.floor(Math.random()* 2)] + " is the winner !"
+
+        // h3.appendChild(ul)
+        h3.appendChild(li)
+
+
+    }
     pokebutton.addEventListener("click", () => {
-        getPokemon('data2')
+        clearDiv()
         getPokemon('data1')
+        getPokemon('data2')
+        savePokeName = []
+        // debugger
+    })
+    battleButton.addEventListener("click", () => {
+        battlePokemon()
     })
   
 })
