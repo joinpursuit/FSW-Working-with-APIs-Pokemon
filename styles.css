@@ -19,10 +19,6 @@ body {
     width: 600px;
 }
 
-h4 {
-    color: blue;
-}
-
 #pokemon1 {
     display: block;
     float: left; 
@@ -33,4 +29,19 @@ h4 {
     display: block;
     float: right;
     margin-right: 30%;
+}
+
+
+h3, h4, h5, h6 {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+#battleHistory {
+    display: block;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: ;
 }
