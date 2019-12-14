@@ -30,4 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
     getPokemon(poke1, p1)
     getPokemon(poke2, p2)
   })
-})
+
+  // let btn = document.querySelector("#battle");
+  // let battleHistory = document.querySelector(".battleHistory");
+  //   const getBattleOn = async (pokemon) => {
+
+      
+  //   }
+
+  // })
+  //   btn.addEventListener("click", () => {
+  //     getBattleOn(pokemon)
+  //   })
+    
+  })
