@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded" ,() =>{
     let getPokemon = document.querySelector("#getPokemon")
+    let battle = document.querySelector("#battle")
     let pokemon1 = document.querySelector("#pokemon1")
     let pokemon2 = document.querySelector("#pokemon2")
+    let audio = document.querySelector("audio")
+    let randomWinner = []   
     const getThatPokemon = async () => {
         try {
             random = Math.floor(Math.random() * Math.floor(809))
@@ -10,6 +13,7 @@ document.addEventListener("DOMContentLoaded" ,() =>{
             let h1 = document.createElement("h1")
             h1.innerText = pokemonName
             pokemon1.appendChild(h1)
+            randomWinner.push(pokemonName)
             
             let image = document.createElement("img")
             image.src = res.data.sprites.back_default
@@ -50,6 +54,7 @@ document.addEventListener("DOMContentLoaded" ,() =>{
             let h1 = document.createElement("h1")
             h1.innerText = pokemonName
             pokemon2.appendChild(h1)
+            randomWinner.push(pokemonName)
 
             let image = document.createElement("img")
             image.src = res.data.sprites.front_default
@@ -83,11 +88,25 @@ document.addEventListener("DOMContentLoaded" ,() =>{
         }
     }
 
+    getRandomWinner = () => {
+       let winner = randomWinner[Math.floor(Math.random() * 2)]
+        let h7 = document.createElement("h7")
+        h7.innerText = `${winner} wins!`
+        battleHistory.appendChild(h7)
+    }
+
     getPokemon.addEventListener("click", () => {
         getThatPokemon();
         getThatPokemon2();
+        randomWinner = [];
+        pokemon1.innerHTML = "";
+        pokemon2.innerHTML = "";   
     })  
+
+    battle.addEventListener ("click", () => {
+       getRandomWinner();   
+       audio.play();
+    })
 })
 
-// HP 
-// res.data.stats[5].base_stat
+
