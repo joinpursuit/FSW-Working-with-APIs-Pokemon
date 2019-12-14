@@ -1,7 +1,6 @@
 body {
     background: lightblue;
     text-align: center;
-
 }
 
 h1 {
@@ -38,4 +37,8 @@ h3 {
 
 #pokemonBattle li {
     list-style-type: none;
+}
+
+p {
+    font-size: 20px;
 }
