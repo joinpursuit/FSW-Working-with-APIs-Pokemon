@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-auto-columns: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    /* border: 10px dotted gold; */
+}
+
+body {
+    background-image: url(https://media.giphy.com/media/ZRpGgIuiDpSSI/giphy.gif);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+
+}
+#heyPoke {
+    text-align: center;
+    text-shadow: -3px 0 blue, 0 3px blue, 3px 0 blue, 0 -3px blue;
+    font: 50px;
+    font-size: 350%;
+    font-weight: bold;
+    font-variant: small-caps;
+    opacity: 0.8;
+    filter: alpha(opacity=50);
+    color: gold;
+}
+#mainPoke {
+    color: white
+}
+.mainHeading {
+    margin-top: 30px;
+    color: white
+}
+#instruction {
+    color: white;
+    font-size: 20px;
+}
+
+.data {
+    width: 600px;
+}
+
+.pokemon1 {
+    float: left;
+}
+
+.pokemon2 {
+    float: right;
+}
+
+#button1 {
+    border-radius: 12px;
+    background-color: whitesmoke;
+    padding: 7px;
+    
+}
+
+#button2 {
+    border-radius: 12px;
+    background-color: whitesmoke;
+    padding: 7px;
+}
+.battleHistory {
+    padding: 20px;
+    color: white;
+}
