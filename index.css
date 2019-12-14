@@ -5,7 +5,7 @@
     margin-left: 525px;
 }
 body {
-    background-color:gray
+    background-color: lightskyblue;
 }
 
 div#pokemonOne {
@@ -31,6 +31,3 @@ button#button{
     margin-left: 675px;
 }
 
-div#battleHistory {
-
-}
