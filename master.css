@@ -27,9 +27,15 @@ h3 {
 }
 
 #pokemon1 {
-
+    float: left;
+    margin-left: 15%;
 }
 
 #pokemon2 {
-    
+    float: right;
+    margin-right: 15%;
+}
+
+#pokemonBattle li {
+    list-style-type: none;
 }
