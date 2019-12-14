@@ -1,0 +1,97 @@
+HTML, body{
+  background: skyblue;
+  font-family: sans-serif;
+}
+
+#title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#imgTitle {
+  width: 1000px;
+  height: 200px;
+  position: absolute; 
+  top: 50px;
+ }
+
+ h1, h3 {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-weight: bold;
+}
+
+h1 {
+  padding-top: 30px;
+}
+
+h3 {
+  padding-top: 100px;
+}
+
+h4 {
+  align-content: center;
+  font-size: 200%;
+  font-stretch: extra-expanded;
+  text-shadow:0 1px 0 #ccc,
+              0 2px 0 #c9c9c9,
+              0 3px 0 #bbb,
+              0 4px 0 #b9b9b9,
+              0 5px 0 #aaa,
+              0 6px 1px rgba(0, 0, 0, 0.1),
+              0 0 5px rgba(0,0,0,.1),
+              0 1px 3px rgba(0,0,0,.3),
+              0 3px 5px rgba(0,0,0,.2),
+              0 5px 10px rgba(0,0,0,.25),
+              0 10px 10px rgba(0,0,0,.2),
+              0 20px 20px rgba(0,0,0,.15);
+
+}
+
+
+#buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button {
+ 
+  margin: 10px;
+  height: 20px;
+}
+.data{
+  display: flex;
+  justify-content: space-around;
+}
+#displayPicture {
+  padding-top: 20px;
+  align-content: space-between;
+  margin-top: 60px;
+}
+.battleHistory {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow:0 1px 0 #ccc,
+              0 2px 0 #c9c9c9,
+              0 3px 0 #bbb,
+              0 4px 0 #b9b9b9,
+              0 5px 0 #aaa,
+              0 6px 1px rgba(0, 0, 0, 0.1),
+              0 0 5px rgba(0,0,0,.1),
+              0 1px 3px rgba(0,0,0,.3),
+              0 3px 5px rgba(0,0,0,.2),
+              0 5px 10px rgba(0,0,0,.25),
+              0 10px 10px rgba(0,0,0,.2),
+              0 20px 20px rgba(0,0,0,.15);
+
+}
+
+li {
+  list-style: none;
+ } 
