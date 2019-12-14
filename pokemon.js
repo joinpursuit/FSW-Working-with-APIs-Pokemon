@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pokemon.appendChild(li)
         let h2 = document.createElement("h2")
         h2.innerText = `HP: ${data.stats[5].base_stat}`
-        pokemon1.appendChild(h2)
+        pokemon.appendChild(h2)
       })
     } catch (err) {
       console.log("err")
@@ -36,18 +36,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let btn = document.querySelector("#battle")
   let battleHistory = document.querySelector(".battleHistory")
-  let winner = [];
+  
 
   const getBattleOn = (poke1, poke2) => {
-    let winner = getBattleOn[Math.floor(Math.random) * 2]
+    let opponents = [];
+    opponents.push(poke1, poke2);
+    let winner = opponents[Math.floor(Math.random()) * 2]
+   
     let p = document.createElement("p");
     p.innerText = `${winner} wins!`
-    battleHistory.appendChild("p") 
-    
+    battleHistory.appendChild(p);
   }
 
   btn.addEventListener("click", () => {
-    getBattleOn(poke1, poke2)
+    getBattleOn(p1.innerText, p2.innerText)
+    
   })
 
 })
