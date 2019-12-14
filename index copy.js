@@ -1,16 +1,19 @@
-let random = Math.floor((Math.random() * 151) + 1);
 
-const fetchPoke =(url=`https://cors-anywhere.herokuapp.com/https://pokeapi.co/api/v2/pokemon/${random}/`,callback=buildPoke)=>{
-    axios.get(url).then(res=>{
+const fetchPoke =(callback=buildPoke)=>{
+    let random = Math.floor((Math.random() * 151) + 1);
+    axios.get(`https://cors-anywhere.herokuapp.com/https://pokeapi.co/api/v2/pokemon/${random}/`).then(res=>{
         callback(res.data)
     }).catch(err => {
         console.log(err);
     })
 }
 
+// let pokemon2=document.querySelector("#pokemon2")
 const buildPoke = (poke)=>{
-    // debugger;
-    let pokemon=document.querySelector("#pokemon1")
+    let data=document.querySelector(".data");
+    let pokemon=document.createElement("div");
+    let pokeMax=document.querySelector(".data > div:nth-child(4)");
+    pokeMax ? data.innerHTML=""  : console.log(`Max Pokemon is ${4}`)
     let name = document.createElement("h3");
     name.innerText=poke.name
     pokemon.appendChild(name)
@@ -31,9 +34,21 @@ const buildPoke = (poke)=>{
         li.innerText=`${move.data.name} [Power:${move.data.power}, PP:${move.data.pp}]`;
         li.value=move.data.power;
         pokemon.appendChild(li)   
+        data.appendChild(pokemon)
     })
-    
 }
+
+const battle =()=>{
+    // let pokemon=document.querySelector(".data")
+    let pokeMin=document.querySelector(".data > div:nth-child(1)");
+    if(pokeMin.innerHTML){
+        console.log("hell")
+    }{
+        alert("least need Two pokemon to battle")
+
+    }
+}
+
 
 const shuffleMove=(arr)=> {
     let j, x, i;
@@ -44,9 +59,6 @@ const shuffleMove=(arr)=> {
         arr[j] = x;
     }
     return arr;
-}
-const  hello =()=>{
-    console.log("hello")
 }
 
 
