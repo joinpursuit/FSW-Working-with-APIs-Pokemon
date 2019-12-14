@@ -1,0 +1,33 @@
+.logo {
+    display: flex;
+    align-items: center;
+    height: 300px;
+    margin-left: 525px;
+}
+body {
+    background-color: lightskyblue;
+}
+
+div#pokemonOne {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 50px;
+}
+
+div#pokemonTwo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 200px;
+}
+
+button#getPokemon{
+    align-items: center;
+    margin-left: 675px;
+}
+button#button{
+    align-items: center;
+    margin-left: 675px;
+}
+
