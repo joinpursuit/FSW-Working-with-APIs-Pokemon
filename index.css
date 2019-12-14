@@ -1,0 +1,70 @@
+body {
+   font-family: sans-serif;
+   background-color: lightblue;
+   position: inherit;
+   overflow-y: hidden;
+}
+
+.pokeBtns {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+button {
+   border-radius: 5px;
+   height:30px;
+   width: 105px;
+   margin-top: .5%;
+}
+
+/* .data { 
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);align-items: center;
+   justify-content:center;
+} */
+
+#pokemonGrid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+}
+
+#pokemonCard1{
+   grid-area: 1 / 2;
+   align-self: center;
+   justify-self: center;
+}
+
+#pokemonCard2{
+   grid-area: 1 / 3;
+   align-self: center;
+   justify-self: center;
+}
+
+ul, li {
+   padding: 0;
+}
+
+li {
+   list-style-type: none;
+   text-align: left;
+}
+
+h1 {
+   padding-top: 30px;
+   text-align: center;
+}
+
+h3 {
+   text-align: center;
+}
+
+ p {
+    font-size: large;
+    text-align: center;
+ }
+
+
+#winOrLoss{
+   text-align: center;
+}

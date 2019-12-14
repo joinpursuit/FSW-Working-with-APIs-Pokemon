@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Karen's Pokemon</title>
+   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+   <script src="./index.js"></script>
+   <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+   <h1>Pokemon Battle Simulator</h1>
+   <p>Click 'get pokemon' to display your two fighters! Click 'battle' to have the pokemon battle</p>
+   <div class="pokeBtns">
+      <button class ="btns" id="getPokemon">Get Pokemon</button>
+      <button class ="btns"id="battlePokemon">Battle!</button>
+   </div>
+
+      <div class="data">
+         <div id="pokemonGrid">
+            <section id="pokemonCard1"></section>
+            <section id="pokemonCard2"></section>
+         </div>
+      </div>
+      <div class="battleHistory">
+         <h3>Battle History</h3>
+         <p id="winOrLoss"></p>
+      </div>
+</body>
+
+</html>
