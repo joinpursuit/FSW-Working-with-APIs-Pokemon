@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
       let img = document.createElement("img")
       img.src = data.sprites.front_default
       pokemon.appendChild(img)
+      let h2 = document.createElement("h2")
+      h2.innerText = `HP: ${data.stats[5].base_stat}`
+      pokemon.appendChild(h2)
       let moves = data.moves.slice(0, 4)
       pokemon.appendChild(document.createElement("ul"))
       moves.forEach(async move => {
@@ -20,9 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let li = document.createElement("li")
         li.innerText = moveDeets.data.name + " PP: " + moveDeets.data.pp
         pokemon.appendChild(li)
-        let h2 = document.createElement("h2")
-        h2.innerText = `HP: ${data.stats[5].base_stat}`
-        pokemon.appendChild(h2)
       })
     } catch (err) {
       console.log(err)
