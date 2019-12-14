@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const getPokemon1 = async () => {
       try {
+        
         let randomNum = Math.floor(Math.random() * 807)
         let pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNum}`);
       
@@ -99,27 +100,32 @@ const getPokemon2 = async () => {
       }
     }
 
+    
+    let button = document.querySelector("#getPoke");
+    button.addEventListener("click", () => {
+      
+      getPokemon1();
+      getPokemon2();
+
+      floatLeft.innerHTML = "";
+      floatRight.innerHTML = "";
+    })
+    
     const battleFunction = () => {
-      let randomwinner = Math.floor(Math.random() * 2);
-      if (randomwinner === 1) {
-        let pokemon1win = document.querySelector("batHisH3");
+      // // let randomwinner = Math.floor(Math.random() * 2);
+      // let randomwinner = 1
+      // if (randomwinner === 1) {
+      
+
+
+        let pokemon1win = document.querySelector("battleHistory");
         let p = document.createElement("p")
-        p.innerText = document.querySelector(`pk1h1`)//trying to get fill Battle History 
-
+        p.innerText = pk1h1 //trying to get fill Battle History
+        pokemon1win.appendChild(p)
       }
-    }
-
-     let button = document.querySelector("#getPoke");
-        button.addEventListener("click", () => {
-          getPokemon1()
-          getPokemon2()
-
-        })
-
-        let button = document.querySelector("#battle");
-        button.addEventListener("click", () => {
+    // }
+        let battleButton = document.querySelector("#battle");
+        battleButton.addEventListener("click", () => {
           battleFunction()
         })
       })
-
-      console.log(pokemonName)
