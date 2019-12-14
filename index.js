@@ -30,8 +30,8 @@ const getPokemons = async () => {
    //fetch Pokemons
    try {
       let url = "https://pokeapi.co/api/v2/pokemon"
-      let pokemonID = Math.floor((Math.random() * 964) + 1)
-      let pokemonID2 = Math.floor((Math.random() * 964) + 1)
+      let pokemonID = Math.floor((Math.random() * 807) + 1)
+      let pokemonID2 = Math.floor((Math.random() * 807) + 1)
 
       let res1 = await axios.get(`${url}/${pokemonID}/`)
       res1.data
@@ -120,9 +120,10 @@ const battlePokemon = () => {
    let firstPoke = document.querySelector("#pokeName1").innerText
    let secondPoke = document.querySelector("#pokeName2").innerText
    let declare = document.querySelector("#winOrLoss")
+
    let poke1HP = document.querySelector("#pokeHP1").getAttribute("data-hp")
 
-   console.log(poke1HP)
+   // console.log(poke1HP)
    let poke2HP = document.querySelector("#pokeHP2").getAttribute("data-hp")
    if (poke1HP < poke2HP) {
 
