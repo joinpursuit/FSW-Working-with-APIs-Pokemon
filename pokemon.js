@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let li = document.createElement("li")
         li.innerText = moveDeets.data.name + " PP: " + moveDeets.data.pp
         pokemon.appendChild(li)
+        let h2 = document.createElement("h2")
+        h2.innerText = `HP: ${data.stats[5].base_stat}`
+        pokemon1.appendChild(h2)
       })
     } catch (err) {
       console.log("ERROR")
@@ -31,16 +34,20 @@ document.addEventListener("DOMContentLoaded", () => {
     getPokemon(poke2, p2)
   })
 
-  // let btn = document.querySelector("#battle");
-  // let battleHistory = document.querySelector(".battleHistory");
-  //   const getBattleOn = async (pokemon) => {
+  let btn = document.querySelector("#battle")
+  let battleHistory = document.querySelector(".battleHistory")
+  let winner = [];
 
-      
-  //   }
-
-  // })
-  //   btn.addEventListener("click", () => {
-  //     getBattleOn(pokemon)
-  //   })
+  const getBattleOn = (poke1, poke2) => {
+    let winner = getBattleOn[Math.floor(Math.random) * 2]
+    let p = document.createElement("p");
+    p.innerText = `${winner} wins!`
+    battleHistory.appendChild("p") 
     
+  }
+
+  btn.addEventListener("click", () => {
+    getBattleOn(poke1, poke2)
   })
+
+})
