@@ -1,0 +1,66 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: lightblue;
+}
+
+h1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+h3{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#pokemon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+#rdmWinner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#getPokemon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 4px;
+    width: 70px;
+    height: auto;
+    margin-left: 675px;
+}
+#battlePokemon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 4px;
+    width: 70px;
+    height: auto;
+    margin-left: 675px;
+}
+li{
+    list-style: none;
+    margin-right: 15px;
+}
+ul{
+    margin-right: 20px;
+}
+/* #rdmWinner{
+    background-color: lightblue;
+    width: 110px;
+    height: 110px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 675px;
+} */
