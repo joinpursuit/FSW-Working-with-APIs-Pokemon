@@ -1,4 +1,4 @@
-# Loading Data from API Lab - Pokemon Battle Simulator
+    # Loading Data from API Lab - Pokemon Battle Simulator
 
 ![gif](./pokemonGif.gif)
 
@@ -65,7 +65,7 @@ On top of default HTML styling, the app should have the following styles:
   - Should have a width of 600px.
   - The first pokemon should float left, the second pokemon should float right. 
 
-For a video of how the page changes when the buttons are clicked visit https://youtu.be/_XVy4hRZ_Ig
+For a video of how the page changes when the buttons are clicked visit https:// youtu.be/_XVy4hRZ_Ig
 
 ## Rubric
 

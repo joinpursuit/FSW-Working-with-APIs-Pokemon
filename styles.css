@@ -1,0 +1,49 @@
+* {
+    font-family: sans-serif;
+}
+
+body {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-size: cover;
+}
+
+/* #heading {
+    padding: 30px;
+} */
+
+#data {
+    width: 600px;
+}
+
+#pokemon1 {
+    display: block;
+    float: left; 
+    margin-left: 30%;  
+}
+
+#pokemon2 {
+    display: block;
+    float: right;
+    margin-right: 30%;
+}
+
+
+h3, h4, h5, h6 {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: normal;
+}
+
+#battleHistory {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-bottom: 10%;
+    line-height: 30px;
+}

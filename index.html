@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAx8fH/8fHx//Hx8f/x8fH/8fHx//Hx8f/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAx8fH/+Pj4//y8vL/8vLy//Ly8v/y8vL/4+Pj/8fHx/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAx8fH/+Pj4//y8vL///////////////////////Ly8v/j4+P/x8fH/wAAAAAAAAAAAAAAAAAAAAAAAAAAx8fH/+Pj4//y8vL///////////////9/////f///////////8vLy/+Pj4//Hx8f/AAAAAAAAAAAAAAAAAAAAAMfHx//y8vL///////////////9/AAAA/wAAAP////9////////////y8vL/x8fH/wAAAAAAAAAAAAAAAAAAAADj4+P/8vLy//////////9/AAAA/wAAAH4AAAB+AAAA/////3//////8vLy/+Pj4/8AAAAAAAAAAAAAAAAAAAAAxGYA/9lwAP//hAD//4QAfgAAAP8AAAB+AAAAfgAAAP9aEON+WhDj/1IQzP9OE73/AAAAAAAAAAAAAAAAAAAAAMRmAP//hAD//4QA//+EAP//hAB+AAAA/wAAAP9aEON+WhDj/1oQ4/9aEOP/ThO9/wAAAAAAAAAAAAAAAAAAAAD/hAD//4QA//+EAP//hAD//4QA//+EAH5aEON+WhDj/1oQ4/9aEOP/WhDj/1oQ4/8AAAAAAAAAAAAAAAAAAAAAAAAAAP+EAP//hAD//4QA//+EAP//hAD/WhDj/1oQ4/9aEOP/WhDj/1oQ4/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/4QA//+EAP//hAD//4QA/1oQ4/9aEOP/WhDj/1oQ4/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/hAD//4QA//+EAP9aEOP/WhDj/1oQ4/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP//AAD4HwAA8A8AAOAHAADBgwAAwkMAAMWjAADFowAAwkMAAMGDAADgBwAA8A8AAPgfAAD//wAA//8AAA==" rel="icon" type="image/x-icon" />
+    <title>Pokemon API</title>
+</head>
+<body background="./background.png" >
+    <div id="Main">
+        <img src="pokemonlogo.png" height="100px">
+        <h1 id="heading">Pokémon Battle Simulator</h1>
+        <button id="getPokemon">Get Pokemon!</button>
+        <br>
+        <br>
+        <button id="battle" value=>Battle!</button>
+        <div class="data"></div>
+        <br>
+        <!-- <h3 id="battleHistory">Battle History</h3> -->
+    </div>
+    <div class="battleHistory">
+    <div id="footerDiv">
+        <footer id="footer">
+            <audio controls id="audio">
+            <source src="./Pokemon Season 1 Music Pokemon Battle!.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+            </audio>        
+        </footer>
+    </div>
+    <div id="pokemon1"></div>
+    <div id="pokemon2"></div>
+    <div id="battleHistory">Battle History:</div>
+</body>
+</html>
