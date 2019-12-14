@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
             let poke = info.name;
             let picture = info.sprites.front_default;
             let hp = `HP: ${info.stats[5].base_stat}`;
-            let p1 = document.createElement("p");
+            let h2 = document.createElement("h2");
 
-            p1.innerText = poke 
-            div.appendChild(p1);
+            h2.innerText = poke
+            div.appendChild(h2);
             let p2 = document.createElement("img");
             p2.src = picture;
             div.appendChild(p2);
@@ -44,10 +44,21 @@ document.addEventListener("DOMContentLoaded", () => {
         choosePokemon1()
     })
     battleButton.addEventListener("click", () => {
-        // let battle = document.querySelector("dataBox")
-        const getWinner = (choosePokemon1) => {
-            let random = Math.floor(Math.random() * choosePokemon1())
-        }
         
+        const pokemons = document.querySelectorAll('h2')
+        console.log(pokemons)
+        // let random = Math.floor(Math.random() * pokemons.length);
+        // console.log(random)
+
+// Jenesh helped with this code but i want to go back and implement 
+// math.random so that the first pokemon is not always winning 
+
+        const notification = document.createElement('p');
+        const winner = pokemons[0].innerText;
+        const loser = pokemons[1].innerText;
+        console.log(winner, loser)
+        notification.innerText = winner + ' has defeated ' + loser;
+        const battleHistory = document.querySelector('.battleHistory');
+        battleHistory.append(notification)
     })
 })
