@@ -1,0 +1,14 @@
+html body{
+background-color: aqua;
+text-align: center;
+}
+
+#pokemonB{
+    display: grid;
+    grid-row:3;
+    grid-template-columns: 50% 50%
+}
+#moves{
+    display:grid;
+    grid-row: 6;
+}
