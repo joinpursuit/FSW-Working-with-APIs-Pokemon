@@ -1,0 +1,35 @@
+body {
+    background: lightblue;
+    text-align: center;
+
+}
+
+h1 {
+    font-size: 75px;
+}
+
+#pokemon {
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid blueviolet;
+    border-radius: 15px;
+}
+
+#battle {
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid salmon;
+    border-radius: 30px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+#pokemon1 {
+
+}
+
+#pokemon2 {
+    
+}
