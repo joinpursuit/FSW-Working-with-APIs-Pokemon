@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pokemon1.appendChild(h2)
       })
     } catch (err) {
-      console.log("ERROR")
+      console.log("err")
     }
   }
 
