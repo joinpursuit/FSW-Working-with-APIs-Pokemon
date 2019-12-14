@@ -38,26 +38,28 @@ body {
     font-size: 20px;
 }
 
-.data {
+#dataBox {
     width: 600px;
+    /* flex-direction: row; */
+    justify-content: space-evenly;
 }
 
-.pokemon1 {
+/* .pokemon1 {
     float: left;
 }
 
 .pokemon2 {
     float: right;
-}
+} */
 
-#button1 {
+#getPokeButton {
     border-radius: 12px;
     background-color: whitesmoke;
     padding: 7px;
     
 }
 
-#button2 {
+#battleButton {
     border-radius: 12px;
     background-color: whitesmoke;
     padding: 7px;

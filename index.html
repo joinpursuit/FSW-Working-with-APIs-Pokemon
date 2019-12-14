@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,43 +8,49 @@
     <script src="./index.js"> </script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="./master.css">
-    <title> Pokemon </title>
+    <title>Pokemon</title>
 </head>
+
 <body>
+    <div id="root">
         <div id="themeSong">
-        <audio controls autoplay
-        preload="metadata">
-                <source src="/Users/dylanabasiurua/Music/iTunes/iTunes Media/Music/TV/Themes Collection/Pokemon.mp3" type="audio/mp3"> </source>
-              </audio>
-        </div>
-         
-    <div> 
-        <div id="heyPoke"> 
-            <p> Pokemon </p>
-            <p> Gotta catch 'em all! </p>
+            <audio controls autoplay preload="metadata">
+                <source src="/Users/dylanabasiurua/Music/iTunes/iTunes Media/Music/TV/Themes Collection/Pokemon.mp3"
+                    type="audio/mp3">
+                </source>
+            </audio>
         </div>
 
+        <div>
+            <div id="heyPoke">
+                <p> Pokemon </p>
+                <p> Gotta catch 'em all! </p>
+            </div>
 
-        <div id="mainPoke"> 
-            <h1 class="mainHeading"> Pokemon Battle Simulator</h1>
-            
-            <p id="instruction"> Click "get pokemon!" to display your two fighters! Click "battle!" to have pokemon battle</p>
-                <div class="bttns"> 
+
+            <div id="mainPoke">
+                <h1 class="mainHeading"> Pokemon Battle Simulator</h1>
+
+                <p id="instruction"> Click "get pokemon!" to display your two fighters! Click "battle!" to have pokemon
+                    battle</p>
+                <div class="bttns">
                     <button id="getPokeButton"> get pokemon! </button>
-                
-                    <button id="button2"> battle! </button>
+
+                    <button id="battleButton"> battle! </button>
                 </div>
-        </div>
+            </div>
 
 
 
-        <div id="dataBox">
+            <div id="dataBox">
+            </div>
+
+            <div class="battleHistory">
+                <h3> Battle History</h3>
+            </div>
+
         </div>
-    
-        <div class="battleHistory"> 
-            <h3> Battle History</h3>
-        </div>
-        
     </div>
 </body>
+
 </html>
