@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let floatRight = document.querySelector(".pokemon2")
   let firstPokemonUl = document.createElement("ul")
   let secondPokemonUl = document.createElement("ul")
-  let pokemonName1
+  let pokemonName1//declaring in the outer scope so that they're accessible in all functions 
   let pokemonName2
 
   // floatLeft.appendChild(firstPokemonUl)
@@ -115,18 +115,17 @@ const getPokemon2 = async () => {
     })
     
     const battleFunction = () => {
-      // // let randomwinner = Math.floor(Math.random() * 2);
-      // let randomwinner = 1
-      // if (randomwinner === 1) {
-      
+      let randomwinner = Math.random() * 100;
+      let pokemon1win = document.querySelector(".battleHistory");
+      let p = document.createElement("p")
 
-
-        let pokemon1win = document.querySelector(".battleHistory");
-        let p = document.createElement("p")
-        p.innerText = `${pokemonName1} defeated ${pokemonName2}` //trying to get fill Battle History
-        pokemon1win.appendChild(p)
+      if (randomwinner <= 50) {
+        p.innerText = `${pokemonName2} defeated ${pokemonName1}`; //trying to get fill Battle History
+      } else if (randomwinner > 51) {
+        p.innerText = `${pokemonName1} defeated ${pokemonName2}`;
       }
-    // }
+      pokemon1win.appendChild(p)
+    }
         let battleButton = document.querySelector("#battle");
         battleButton.addEventListener("click", () => {
           battleFunction()
