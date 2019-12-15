@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let floatRight = document.querySelector(".pokemon2")
   let firstPokemonUl = document.createElement("ul")
   let secondPokemonUl = document.createElement("ul")
+  let pokemonName1
+  let pokemonName2
+
   // floatLeft.appendChild(firstPokemonUl)
 
 const getPokemon1 = async () => {
@@ -12,9 +15,9 @@ const getPokemon1 = async () => {
         let pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNum}`);
       
         let pokemonInfo = pokemon.data;
-        let pokemonName = pokemonInfo.name;
+        pokemonName1 = pokemonInfo.name;
         let pk1h1 = document.createElement("h1")
-        pk1h1.innerText = pokemonName;
+        pk1h1.innerText = pokemonName1;
         floatLeft.appendChild(pk1h1);
 
 
@@ -59,9 +62,9 @@ const getPokemon2 = async () => {
         let pokemon = await axios.get(`https://pokeapi.co/api/v2/pokemon/${randomNum}`);
       
         let pokemonInfo = pokemon.data;
-        let pokemonName = pokemonInfo.name;
+        pokemonName2 = pokemonInfo.name;
         let h1 = document.createElement("h1")
-        h1.innerText = pokemonName;
+        h1.innerText = pokemonName2;
         floatRight.appendChild(h1);
 
       
@@ -72,9 +75,9 @@ const getPokemon2 = async () => {
 
 
         let pokemonHP = pokemonInfo.stats[5].base_stat;
-        let p = document.createElement("p");
-        p.innerText = ` HP : ${pokemonHP}` ;
-        floatRight.appendChild(p)
+        let p2 = document.createElement("p");
+        p2.innerText = ` HP : ${pokemonHP}` ;
+        floatRight.appendChild(p2)
 
         
         let pokemonMove = pokemonInfo.moves;
@@ -107,7 +110,7 @@ const getPokemon2 = async () => {
       getPokemon1();
       getPokemon2();
 
-      floatLeft.innerHTML = "";
+      floatLeft.innerHTML = "";//so that it deletes the whole div when the button clicked
       floatRight.innerHTML = "";
     })
     
@@ -118,9 +121,9 @@ const getPokemon2 = async () => {
       
 
 
-        let pokemon1win = document.querySelector("battleHistory");
+        let pokemon1win = document.querySelector(".battleHistory");
         let p = document.createElement("p")
-        p.innerText = pk1h1 //trying to get fill Battle History
+        p.innerText = `${pokemonName1} defeated ${pokemonName2}` //trying to get fill Battle History
         pokemon1win.appendChild(p)
       }
     // }
