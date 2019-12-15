@@ -7,6 +7,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 }
 
 body {
@@ -15,12 +16,13 @@ body {
   image-orientation: initial;
   height: 100vh;
   background-repeat: no-repeat;
+  white-space: inherit;
 }
 
 h1 {
   display: flex;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 5pt;
   font-size: 35pt;
 }
 
@@ -39,9 +41,11 @@ h1 {
   border-style: dotted;
   text-align: center;
   padding: 20pt;
+  background-color: rgb(139, 215, 238, .502);
 }
 
 #getPokemon {
+  color: whitesmoke;
   background: red;
   font-size: medium;
   font-family: sans-serif;
@@ -49,6 +53,7 @@ h1 {
 }
 
 #battle {
+  color: whitesmoke;
   background: red;
   font-size: medium;
   font-family: sans-serif;
@@ -57,57 +62,54 @@ h1 {
 
 #data {
   display: grid;
-  grid-column-gap: 130%;
+  grid-column-gap: 75%;
   grid-template-columns: 2fr max-content;
-  font-family: sans-serif;
+  font-family: 'Segoe UI';
   font-weight: bold;
-  font-size: 12pt;
-
-
+  font-size: 13pt;
+  color: whitesmoke;
 }
 
-#leftScreen {
-  align-content: center;
-  background-color: (lightblue);
-  height: 75%;
-  align-items: left;
-  justify-content: center;
-  background-color: lightblue;
-  opacity: 30%;
-  z-index: 4;
+#img1 {
+  height: 100pt;
+  width: 100pt;
 }
 
 #poke1 {
-  display: block;
-  margin-left: 50%;
-  width: 200px;
+  text-align: center;
+  border: solid 1px;
+  border-color: gold;
+  size: 25%;
+  width: 175pt;
+  height: 55%;
+  margin: 45pt 20pt 40pt 100pt;
+  list-style: none;
+  background-color: rgb(139, 215, 238, .502);
+
 }
 
-#rightScreen {
-  margin-top: -260px;
-  margin-bottom: 150px;
-  align-content: center;
-  background-color: (lightblue);
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  background-color: lightblue;
-  margin-right: 100px;
-  margin-left: 1000px;
-  opacity: 30%;
-  border: black;
-  border-style: ridge;
-  z-index: 4;
-  white-space: nowrap;
+#poke2 {
+  text-align: center;
+  border: solid 1px;
+  border-color: gold;
+  size: 25%;
+  width: 175pt;
+  height: 55%;
+  margin: 45pt 20pt 40pt 50pt;
+  list-style: none;
+  background-color: rgb(139, 215, 238, .502);
 }
 
 .battleHistory {
+  background-color: rgb(139, 215, 238, .502);
+  border: dotted 7px gold;
+  color: whitesmoke;
   position: static;
   justify-content: space-evenly;
   text-align: center;
   width: 210px;
-  height: 50%;
-  margin-top: -500px;
+  height: 55%;
+  margin-top: -750px;
   margin-left: 42%;
   word-spacing: 10%;
   font-family: sans-serif;

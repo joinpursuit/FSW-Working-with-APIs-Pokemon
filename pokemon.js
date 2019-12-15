@@ -4,10 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let poke2 = document.querySelector("#poke2")
   let p1 = document.querySelector("#p1")
   let p2 = document.querySelector("#p2")
-  // poke1.innerText = ""
-  // poke2.innerText = ""
   const getPokemon = async (pokemon, para) => {
-    pokemon.innerText = '';
+    pokemon.innerText = ""
     try {
       let num = Math.floor(Math.random() * 807)
       let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}`)
@@ -18,11 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         pName.id = "p2Name"
       }
-      pName.innerText = data.name
+      pName.innerText = data.name.toUpperCase()
       pokemon.appendChild(pName)
-      let img = document.createElement("img")
-      img.src = data.sprites.front_default
-      pokemon.appendChild(img)
+      let img1 = document.createElement("img")
+      img1.src = data.sprites.front_default
+      img1.id = "img1"
+      pokemon.appendChild(img1)
       let h2 = document.createElement("h2")
       h2.innerText = `HP: ${data.stats[5].base_stat}`
       pokemon.appendChild(h2)
@@ -45,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   let btn = document.querySelector("#battle")
-  // let battleHistory = document.querySelector(".battleHistory")
 
   const getBattleOn = (poke1, poke2) => {
     let battleInfo = document.querySelector("#battleInfo")
