@@ -5,12 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             let poke = Math.floor(Math.random() * 807) + 1;
             let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${poke}/`);
+            // debugger
             return res.data;
         } catch(err) {
             console.log(err)
         }
     }
-    const getMoves = (pokemon, div) => {
+    const getMoves = async (pokemon, div) => {
         let foo = document.querySelector(`#${div.id} ul`);
         if (foo) {
             foo.parentNode.removeChild(foo);
@@ -21,9 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
         ul.innerText = `Moves:`
         div.appendChild(ul);
         for (let i = 0; i < 4; i++) {
-            let randomMove = pokemon.moves[Math.floor(Math.random() * pokemon.moves.length - 1)].move.name;
+            let url = await axios.get(pokemon[i]["move"]["url"]);
+            let movePp = url.data.pp;
+            // console.log(res.data.moves[i].move.url);
+            let randomMove = pokemon[Math.floor(Math.random() * pokemon.length - 1)].move.name;
+            // debugger
             let li = document.createElement("li");
-            li.innerText = randomMove;
+            li.innerText = `${randomMove} PP: ${movePp}`;
+            // `${randomMove} PP: ${res.data.pp}`
             ul.appendChild(li);
         }
     }
@@ -59,12 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let hp1 = document.createElement("p");
         hp1.innerText = `HP: ${pokemon1.stats[5].base_stat}`;
         poke1Data.appendChild(hp1);
-        getMoves(pokemon1, poke1Data);
+        getMoves(pokemon1.moves, poke1Data);
         
         let hp2 = document.createElement("p");
         hp2.innerText = `HP: ${pokemon2.stats[5].base_stat}`;
         poke2Data.appendChild(hp2);
-        getMoves(pokemon2, poke2Data);
+        getMoves(pokemon2.moves, poke2Data);
     })
     battleBtn.addEventListener("click", () => {
         let poke1 = document.querySelector("#poki1Name").innerText;
