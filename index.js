@@ -3,9 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let battleBtn = document.querySelector("#battle");
     const getPokemon = async () => {
         try {
-            let num = Math.floor(Math.random() * 807) + 1;
-            let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${num}/`);
-            // debugger
+            let poke = Math.floor(Math.random() * 807) + 1;
+            let res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${poke}/`);
             return res.data;
         } catch(err) {
             console.log(err)
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const getMoves = (pokemon, div) => {
         let foo = document.querySelector(`#${div.id} ul`);
-        // console.log(foo);
         if (foo) {
             foo.parentNode.removeChild(foo);
         }
@@ -58,7 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
         image2.src = pokemon2.sprites.front_default;
         poke2Data.appendChild(image2);
         
-        // debugger
         let hp1 = document.createElement("p");
         hp1.innerText = `HP: ${pokemon1.stats[5].base_stat}`;
         poke1Data.appendChild(hp1);
