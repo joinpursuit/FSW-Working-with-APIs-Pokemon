@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 let res = await axios.get("https://pokeapi.co/api/v2/pokemon/");
                 pokemonCount = res.data.count
-                // debugger
                 // POKEMON 1
-                // let challenger = document.querySelector("#challenger")
                 let pokeID = Math.floor((Math.random() * pokemonCount) + 1);
                 let random = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeID}/`)
                 let challengerinfo = document.querySelector("#challengerinfo");
@@ -41,7 +39,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
                 
                 // POKEMON 2
-                // let champion = document.querySelector("#champion")
                 let pokeID2 = Math.floor((Math.random() * pokemonCount) + 1);
                 let random2 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokeID2}/`)
                 let championinfo = document.querySelector("#championinfo");
@@ -77,8 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 let p = document.createElement("p")
                     if(champHP > challHP){
                         p.innerText = `Winner is ${champName.innerText}`
-                    } else {
+                    } else if (champHP < champHP) {
                         p.innerText = `Winner is ${challengerName.innerText}`
+                    } else {
+                        p.innerText = `Amazing! Both pokemon are exhausted. It's a tie!!!`
                     }
                     battleHistory.appendChild(p)
                 })
