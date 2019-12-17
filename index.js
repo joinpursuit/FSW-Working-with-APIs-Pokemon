@@ -74,9 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 let p = document.createElement("p")
                     if(champHP > challHP){
                         p.innerText = `Winner is ${champName.innerText}`
-                    } else if (champHP < champHP) {
+                    } else if (champHP < challHP) {
                         p.innerText = `Winner is ${challengerName.innerText}`
-                    } else {
+                    } else if (champHP === challHP) {
                         p.innerText = `Amazing! Both pokemon are exhausted. It's a tie!!!`
                     }
                     battleHistory.appendChild(p)
