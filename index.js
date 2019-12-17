@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     let get = document.querySelector("#get");
     get.addEventListener("click", getTwoPoke);
+    
     let fight = document.querySelector("#fight");
     fight.addEventListener("click",battle);
 }
