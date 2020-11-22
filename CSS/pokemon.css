@@ -1,0 +1,65 @@
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2016/01/02/17/38/fractal-1118515_1280.jpg");
+  background-size: cover;
+  color: rgb(253, 253, 253);
+}
+
+#top {
+  text-align: center;
+  font-family: "Righteous", cursive;
+  background-color: rgba(97, 95, 97, 0.705);
+  border: 1px solid white;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-bottom: 20px;
+  border-radius: 5px;
+}
+
+#arena {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 140px;
+  background-color: rgba(97, 95, 97, 0.705);
+  border: 2px solid black;
+}
+.card {
+  background-image: url("https://cdn.pixabay.com/photo/2016/01/02/17/38/fractal-1118515_1280.jpg");
+  border: 1px solid white;
+  border-radius: 3px;
+  background-color: rgba(97, 95, 97, 0.705);
+  font-family: "Roboto", sans-serif;
+  padding-right: 150px;
+  padding-left: 155px;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-bottom: 20px;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 90px white;
+  transition: 0.5s ease-in;
+}
+
+#pokemonBattle {
+  background-color: rgba(97, 95, 97, 0.705);
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+
+#scoreBoard {
+  display: flex;
+  justify-content: space-around;
+}
+
+h3 {
+  margin: 5px;
+  text-decoration: underline;
+}
