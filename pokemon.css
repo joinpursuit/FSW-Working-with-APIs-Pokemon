@@ -1,0 +1,118 @@
+#icon {
+  width: 70%;
+}
+
+#content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+body {
+  background-image: url("https://media.giphy.com/media/uWLJEGCSWdmvK/giphy.gif");
+  background-size: cover;
+  image-orientation: initial;
+  height: 100vh;
+  background-repeat: no-repeat;
+  white-space: inherit;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 5pt;
+  font-size: 35pt;
+}
+
+#action {
+  width: 15%;
+  margin: auto;
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 20%;
+  margin: auto;
+  padding: 10px 10px 25px 25px;
+  border: 7pt;
+  border-color: gold;
+  border-style: dotted;
+  text-align: center;
+  padding: 20pt;
+  background-color: rgb(139, 215, 238, .502);
+}
+
+#getPokemon {
+  color: whitesmoke;
+  background: red;
+  font-size: medium;
+  font-family: sans-serif;
+  border-color: goldenrod;
+}
+
+#battle {
+  color: whitesmoke;
+  background: red;
+  font-size: medium;
+  font-family: sans-serif;
+  border-color: goldenrod;
+}
+
+#data {
+  display: grid;
+  grid-column-gap: 75%;
+  grid-template-columns: 2fr max-content;
+  font-family: 'Segoe UI';
+  font-weight: bold;
+  font-size: 13pt;
+  color: whitesmoke;
+}
+
+#img1 {
+  height: 100pt;
+  width: 100pt;
+}
+
+#poke1 {
+  text-align: center;
+  border: solid 1px;
+  border-color: gold;
+  size: 25%;
+  width: 175pt;
+  height: 55%;
+  margin: 45pt 20pt 40pt 100pt;
+  list-style: none;
+  background-color: rgb(139, 215, 238, .502);
+
+}
+
+#poke2 {
+  text-align: center;
+  border: solid 1px;
+  border-color: gold;
+  size: 25%;
+  width: 175pt;
+  height: 55%;
+  margin: 45pt 20pt 40pt 50pt;
+  list-style: none;
+  background-color: rgb(139, 215, 238, .502);
+}
+
+.battleHistory {
+  background-color: rgb(139, 215, 238, .502);
+  border: dotted 7px gold;
+  color: whitesmoke;
+  position: static;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 210px;
+  height: 55%;
+  margin-top: -750px;
+  margin-left: 42%;
+  word-spacing: 10%;
+  font-family: sans-serif;
+  word-spacing: 10%;
+  list-style-type: none;
+}
