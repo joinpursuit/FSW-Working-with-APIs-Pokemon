@@ -1,0 +1,56 @@
+body {
+    background: lightblue;
+    text-align: center;
+}
+
+h1 {
+    font-size: 75px;
+}
+
+#pokemon {
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid blueviolet;
+    border-radius: 15px;
+}
+
+#pokemon:hover {
+    cursor: pointer;
+    background: blue;
+    color: burlywood;
+}
+
+#battle {
+    padding: 10px;
+    font-size: 20px;
+    border: 2px solid salmon;
+    border-radius: 30px;
+}
+
+#battle:hover {
+    cursor: pointer;
+    background: red;
+    color: royalblue;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+#pokemon1 {
+    float: left;
+    margin-left: 15%;
+}
+
+#pokemon2 {
+    float: right;
+    margin-right: 15%;
+}
+
+#pokemonBattle li {
+    list-style-type: none;
+}
+
+p {
+    font-size: 20px;
+}
