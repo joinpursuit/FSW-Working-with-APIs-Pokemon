@@ -1,0 +1,26 @@
+.bodyHeader {
+    text-align: center;
+}
+#BH {
+    position: absolute;
+    bottom: 20%;
+    left: 45%;
+
+    /* left: 0%; */
+}
+li {
+    list-style: none;
+}
+.pokeData {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: green;
+    /* flex-wrap: wrap; */
+}
+body {
+    background-image: url("https://cdn.worldvectorlogo.com/logos/pokemon-8.svg");
+    background-repeat: no-repeat;
+    background-size: 1450px 500px;
+    
+}

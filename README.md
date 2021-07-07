@@ -12,13 +12,12 @@ Create a page with five items:
 - A button that displays the text "get pokemon!" and when clicked triggers the function "getPokemon"
 - A button that displays the text "battle!" and when clicked triggers the function "battlePokemon"
 - An empty `div` with the class `data`
-- An `div` with the class `battleHistory` that contains a `h3` tag containing the words "Battle History"
+- An `div` with the class `battleHistory` that contains a `h3` tag containing the words "Battle History"2
 
 
 Each time your user clicks the 'get pokemon' button and the following must occur:
 
-- Call the PokéAPI api/v2/pokemon/{$pokemonID} endpoint **twice** to get the json data for two pokemon. These are your battlers. 
-- For each of the two pokemon, the following information needs to be displayed
+- 2
 - The Pokemon's name
 - The Pokemon's sprite
 - The Pokemon's base HP stat. 
